@@ -1,188 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductHub | Premium Products</title>
-    <link rel="stylesheet" href="../css/product.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | MERCYDA'Z INTERNATIONAL</title>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/product.css" />
 </head>
 <body>
+    <!-- Scroll padding anchor -->
+    <div id="top"></div>
+
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <i class="fas fa-cubes"></i>
-                <span>Mercyda'z International Pvt Ltd.</span>
+    <header class="main-header" id="mainHeader">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="branding">
+                    <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo" />
+                    <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+                </div>
+
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="../pages/index.html">Home</a></li>
+                        <li><a href="../pages/service.html">Service</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false" class="active">Products</a>
+                            <ul class="dropdown-content" role="menu">
+                                <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                                <li><hr class="divider"></li>
+                                <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                                <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                                <li><a href="../products/product-spgv.html">Speed Governor</a></li>
+                                <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                                <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../pages/contact.html">Contact</a></li>
+                        <li class="nav-store-item">
+                            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                                <i class="fab fa-google-play" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="nav-store-item">
+                            <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                                <i class="fab fa-app-store" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-            <div class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="../pages/product.html">Products</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">Deals</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Products Gallery</h1>
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <ul class="mobile-links">
+            <li><a href="../pages/index.html">Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+            <li><a href="../pages/product.html">Product</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+            <li class="nav-store-item">
+                <a href="https://play.google.com/store" target="_blank">
+                    <i class="fab fa-google-play"></i> Google Play
+                </a>
+            </li>
+            <li class="nav-store-item">
+                <a href="https://www.apple.com/app-store" target="_blank">
+                    <i class="fab fa-app-store"></i> App Store
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <h1>Products Hub</h1>
         <p>Discover our innovation of high-quality products to elevate your transport</p>
-        <a href="#products" class="btn">Shop Now</a>
+        <a href="../pages/product.html" class="btn">Products</a>
     </section>
 
-    <!-- Products Section -->
-<section class="products" id="products">
-    <div class="section-title">
-        <h2>Our Products</h2>
-        <p>Innovative solutions for transportation, safety, and wellness</p>
-    </div>
-    <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-            <div class="product-img">
-                <img src="../assets/ecu.jpg" alt="Electronic Control Unit">
-            </div>
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>Innovative solutions for transportation, safety, and wellness</p>
+        </div>
+        <div class="product-grid">
+            <!-- Product 1: ECU -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="../assets/ecu.jpg" alt="Electronic Control Unit" loading="lazy" />
+                </div>
             <div class="product-info">
                 <div class="product-category">Automotive Electronics</div>
-                <h3 class="product-title">ELECTRONIC CONTROL UNIT</h3>
-                <p class="product-desc">The term ECU may refer to an Engine Control Unit, but it broadly denotes any Electronic Control Unit in automotive mechatronic systems — not just engine management.</p>
+                <h3 class="product-title">Electronic Control Uni</h3>
+                
                 <div class="product-actions">
-                    <button class="btn-buy"><i class="fas fa-info-circle"></i> Details</button>
+                    <a href="../products/product-ecu.html" class="btn-buy">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Product 2 -->
+        <!-- Product 2: Speed Governor Complete Pack -->
         <div class="product-card">
             <div class="product-img">
-                <img src="../assets/spgset.jpg" alt="Speed Governor Complete Pack">
+                <img src="../assets/spgset.jpg" alt="Speed Governor Complete Pack" loading="lazy" />
             </div>
             <div class="product-info">
                 <div class="product-category">Vehicle Safety</div>
-                <h3 class="product-title">SPEED GOVERNOR COMPLETE PACK</h3>
-                <p class="product-desc">MERCYDA Speed Governor is ideal for all commercial transport & educational institution vehicles. 100% tamper-proof with precision-engineered components.</p>
+                <h3 class="product-title">Speed Governor Complete Pack</h3>
+                
                 <div class="product-actions">
-                    <button class="btn-buy"><i class="fas fa-info-circle"></i> Details</button>
+                    <a href="../products/product-spgset.html" class="btn-buy">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Product 3 -->
+        <!-- Product 3: Speed Governor (Unit) -->
         <div class="product-card">
             <div class="product-img">
-                <img src="../assets/spgv.jpg" alt="Speed Governor">
+                <img src="../assets/spgv.jpg" alt="Speed Governor" loading="lazy" />
             </div>
             <div class="product-info">
                 <div class="product-category">Vehicle Safety</div>
-                <h3 class="product-title">SPEED GOVERNOR</h3>
-                <p class="product-desc">MERCYDA Speed Governor ensures speed compliance across commercial fleets. Tamper-proof design with certified safety standards for transport vehicles.</p>
+                <h3 class="product-title">Speed Governor (Unit)</h3>
+                
                 <div class="product-actions">
-                    <button class="btn-buy"><i class="fas fa-info-circle"></i> Details</button>
+                    <a href="../products/product-spgv.html" class="btn-buy">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Product 4 -->
+        <!-- Product 4: VTS -->
         <div class="product-card">
             <div class="product-img">
-                <img src="../assets/vtsog.jpg" alt="Vehicle Tracking System">
+                <img src="../assets/vtsog.jpg" alt="Vehicle Tracking System" loading="lazy" />
             </div>
             <div class="product-info">
                 <div class="product-category">Telematics</div>
-                <h3 class="product-title">VEHICLE LOCATION TRACKING DEVICE</h3>
-                <p class="product-desc">MERCYDA VTS 140 meets AIS 140 standards with GNSS (IRNSS) & GSM. Deployed nationwide across Indian cities for real-time fleet monitoring.</p>
+                <h3 class="product-title">Vehicle Location Tracking Device</h3>
+                
                 <div class="product-actions">
-                    <button class="btn-buy"><i class="fas fa-info-circle"></i> Details</button>
+                    <a href="../products/product-vtsog.html" class="btn-buy">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
                 </div>
             </div>
         </div>
 
-        <!-- Product 5 -->
+        <!-- Product 5: VLTS + Panic Button -->
         <div class="product-card">
             <div class="product-img">
-                <img src="../assets/WATER3.png" alt="Water Purifier">
-            </div>
-            <div class="product-info">
-                <div class="product-category">Health & Wellness</div>
-                <h3 class="product-title">WATER PURIFIER</h3>
-                <p class="product-desc">Clean water is essential for health — not just for drinking, but sanitation too. Our purifiers deliver safe, disease-free water for communities and homes.</p>
-                <div class="product-actions">
-                    <button class="btn-buy"><i class="fas fa-info-circle"></i> Details</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product 6 -->
-        <div class="product-card">
-            <div class="product-img">
-                <img src="../assets/productsdetail.png" alt="VLTS & Panic Button">
+                <img src="../assets/productsdetail.png" alt="VLTS & Panic Button" loading="lazy" />
             </div>
             <div class="product-info">
                 <div class="product-category">Safety Compliance</div>
-                <h3 class="product-title">VLTS AND PANIC BUTTON</h3>
-                <p class="product-desc">Mandatory for passenger vehicles (except 2/3-wheelers). Ensures emergency response & location tracking as per Motor Vehicle Act, 1988 & AIS 140 norms.</p>
+                <h3 class="product-title">VLTS and Panic buttons</h3>
+                
                 <div class="product-actions">
-                    <button class="btn-buy"><i class="fas fa-info-circle"></i> Details</button>
+                    <a href="../products/product-vtpb.html" class="btn-buy">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </div>  
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>ProductHub</h3>
-                <p>Empowering your life with innovative, high-quality products since 2020.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#products"><i class="fas fa-chevron-right"></i> Products</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> New Arrivals</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Best Sellers</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Special Offers</a></li>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h2 class="footer-brand">
+                    <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+                </h2>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+                    <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+                    <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Shipping Policy</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Returns & Refunds</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+            <div class="footer-col">
+                <h3>Help & Guides</h3>
+                <ul>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe for updates and exclusive offers</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#privacy"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                </ul>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2025 ProductHub. All rights reserved.
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>© <span id="year">2025</span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- JS -->
     <script src="../js/product.js"></script>
 </body>
 </html>
