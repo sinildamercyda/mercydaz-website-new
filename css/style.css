@@ -895,8 +895,8 @@ body {
 /* -------------------- Tracker Features Section -------------------- */
 .tracker-features-section {
     width: 100%;
-    background: #f5f8fb; /* light semi-transparent blue-ish background */
-    padding: 80px 20px;
+    background: #f5f8fb; 
+    padding: 100px 20px; /* increase top & bottom padding */
 }
 
 .features-container {
@@ -904,18 +904,19 @@ body {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    align-items: flex-start; /* align items to top for more height */
+    gap: 60px; /* more space between left, center, right */
     flex-wrap: wrap;
 }
+
 /* -------------------- Section Title -------------------- */
 .tracker-features-section .section-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px; /* more space below title */
 }
 
 .tracker-features-section .section-title h2 {
-    font-size: 32px;
+    font-size: 36px; /* slightly bigger */
     font-weight: 700;
     color: #04034f;
     font-family: 'Poppins', sans-serif;
@@ -926,11 +927,11 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 40px; /* increase vertical space between features */
 }
 
 .features-center {
-    flex: 0 0 300px; /* fixed width for center image */
+    flex: 0 0 350px; /* slightly bigger center image */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -940,31 +941,32 @@ body {
     max-width: 100%;
     display: block;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* more prominent shadow */
 }
 
 /* Individual Feature */
 .feature-item {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 20px; /* more space between icon & text */
+    padding: 10px 0; /* vertical padding to increase height */
 }
+
 .feature-text {
     display: flex;
     flex-direction: column;
 }
 
-
 .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px; /* bigger icons */
+    height: 60px;
     background: #ffffff;
     border: 2px solid #1c69ff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 24px;
     color: #111111;
     flex-shrink: 0;
     transition: all 0.3s ease;
@@ -973,20 +975,20 @@ body {
 .feature-icon:hover {
     background: #1c69ff;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.15); /* slightly bigger hover effect */
 }
 
 .feature-item h4 {
-    font-size: 18px;
+    font-size: 20px; /* bigger text */
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #04034f;
 }
 
 .feature-item p {
-    font-size: 14px;
+    font-size: 15px; /* slightly bigger for readability */
     color: #555;
-    line-height: 1.6;
+    line-height: 1.8; /* more spacing between lines */
 }
 
 /* Responsive */
@@ -999,19 +1001,19 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 20px; /* spacing between items */
     }
     .features-left .feature-item,
     .features-right .feature-item {
-        width: 250px;
-        margin: 10px;
+        width: 280px; /* increase width for mobile */
+        margin: 15px;
     }
     .features-center {
-        margin: 40px 0;
+        margin: 50px 0;
     }
 }
-/* ===================== ANIMATIONS ===================== */
 
-/* Starting state before animation */
+/* ===================== ANIMATIONS ===================== */
 .feature-item, 
 .features-center img {
     opacity: 0;
@@ -1019,20 +1021,19 @@ body {
     transition: all 0.8s ease-out;
 }
 
-/* When item becomes visible */
 .reveal {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
-/* Hover animation */
 .feature-item:hover {
     transform: translateY(-5px);
 }
 
 .features-center img:hover {
-    transform: scale(1.05);
+    transform: scale(1.07); /* slightly larger hover effect */
 }
+
 
 /* ................................................................................................................. */
 

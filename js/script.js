@@ -141,8 +141,39 @@ items.forEach(item => observer.observe(item));
 document.querySelectorAll('.feature-item, .features-center img')
     .forEach(el => featureObserver.observe(el));
 
+const video = document.getElementById('routeVideo');
+  const controlBtn = document.getElementById('videoControl');
+  const icon = controlBtn.querySelector('i');
 
+  // Single click handler to toggle play/pause
+  controlBtn.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      icon.classList.remove('fa-play');
+      icon.classList.add('fa-pause');
+      controlBtn.style.opacity = 0; // hide button after play
+    } else {
+      video.pause();
+      icon.classList.remove('fa-pause');
+      icon.classList.add('fa-play');
+      controlBtn.style.opacity = 1; // show play button again
+    }
+  });
 
+  // Show pause button on hover if video is playing
+  video.parentElement.addEventListener('mouseenter', () => {
+    if (!video.paused) {
+      controlBtn.style.opacity = 1;
+      icon.classList.remove('fa-play');
+      icon.classList.add('fa-pause');
+    }
+  });
+
+  video.parentElement.addEventListener('mouseleave', () => {
+    if (!video.paused) {
+      controlBtn.style.opacity = 0;
+    }
+  });
 });
 
 
