@@ -462,6 +462,32 @@ body {
 .footer-bottom p {
   margin-top: 10px;
 }
+.footer-catalogue {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.catalogue-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: #1c69ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.catalogue-btn i {
+  font-size: 16px;
+}
+
+.catalogue-btn:hover {
+  background: #04034f;
+  transform: translateY(-2px);
+}
 
 
 /* ************************************************************************************************************************ */

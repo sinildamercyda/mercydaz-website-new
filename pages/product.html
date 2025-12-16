@@ -1,86 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products | MERCYDA'Z INTERNATIONAL</title>
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../css/product.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercyda International</title>
+    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+
+    <!-- Include Font Awesome (Optional) -->
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/product.css">
+
 </head>
 <body>
-    <!-- Scroll padding anchor -->
-    <div id="top"></div>
+<!-- Curtain Overlay -->
+<!-- <div class="curtain-overlay"></div> -->
 
-    <!-- Header -->
-    <header class="main-header" id="mainHeader">
-        <div class="container">
-            <div class="header-wrapper">
-                <div class="branding">
-                    <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo" />
-                    <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
-                </div>
-
-                <nav class="nav-menu" id="navMenu">
-                    <ul class="nav-links">
-                        <li><a href="../pages/index.html">Home</a></li>
-                        <li><a href="../pages/service.html">Service</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false" class="active">Products</a>
-                            <ul class="dropdown-content" role="menu">
-                                <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
-                                <li><hr class="divider"></li>
-                                <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
-                                <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
-                                <li><a href="../products/product-spgv.html">Speed Governor</a></li>
-                                <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
-                                <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="../pages/contact.html">Contact</a></li>
-                        <li class="nav-store-item">
-                            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-                                <i class="fab fa-google-play" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="nav-store-item">
-                            <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-                                <i class="fab fa-app-store" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+    <!-- Modern Header -->
+    <!-- Modern Header -->
+    <header class="main-header">
+    <div class="container">
+        <div class="header-wrapper">
+        <!-- Logo + Company Name -->
+        <div class="branding">
+            <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+            <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
         </div>
-    </header>
 
-    <!-- Mobile Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay">
-        <ul class="mobile-links">
-            <li><a href="../pages/index.html">Home</a></li>
-            <li><a href="../pages/service.html">Service</a></li>
-            <li><a href="../pages/product.html">Product</a></li>
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+            <li><a href="../pages/index.html" >Home</a></li>
+            <li><a href="../pages/service.html" >Service</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                    <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                    <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
+                    <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                    <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                </ul>
+            </li>
             <li><a href="../pages/contact.html">Contact</a></li>
+
+            <!-- Store Icons -->
             <li class="nav-store-item">
-                <a href="https://play.google.com/store" target="_blank">
-                    <i class="fab fa-google-play"></i> Google Play
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
                 </a>
             </li>
             <li class="nav-store-item">
-                <a href="https://www.apple.com/app-store" target="_blank">
-                    <i class="fab fa-app-store"></i> App Store
+                <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store" aria-hidden="true"></i>
                 </a>
             </li>
-        </ul>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Button (Mobile only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        </div>
     </div>
+    </header>
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
+
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/product.html">
+                <i class="fas fa-box-open"></i> Product
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/contact.html">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
 
     <!-- Hero -->
     <section class="hero" id="home">
@@ -103,7 +132,7 @@
                 </div>
             <div class="product-info">
                 <div class="product-category">Automotive Electronics</div>
-                <h3 class="product-title">Electronic Control Uni</h3>
+                <h3 class="product-title">Electronic Control Unit</h3>
                 
                 <div class="product-actions">
                     <a href="../products/product-ecu.html" class="btn-buy">
