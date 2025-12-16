@@ -174,6 +174,21 @@ const video = document.getElementById('routeVideo');
       controlBtn.style.opacity = 0;
     }
   });
+
+  const waBtn = document.getElementById("waBtn");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+
+  waBtn.addEventListener("click", () => {
+    chatWidget.style.display = "block";
+    waBtn.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    waBtn.style.display = "flex";
+  });
+
 });
 
 
