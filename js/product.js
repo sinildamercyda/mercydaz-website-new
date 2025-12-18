@@ -137,4 +137,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.product-card').forEach(card => {
         productObserver.observe(card);
     });
+
+    // ===== SUB-DROPDOWN CLICK TOGGLE (DESKTOP + MOBILE) =====
+    document.querySelectorAll('.sub-dropbtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent parent dropdown from closing
+
+            const parent = btn.closest('.sub-dropdown');
+
+            // Close other open sub-dropdowns
+            document.querySelectorAll('.sub-dropdown.active').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current
+            parent.classList.toggle('active');
+        });
+    });
+
+    // Close sub-dropdown when clicking outside
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.sub-dropdown.active').forEach(item => {
+            item.classList.remove('active');
+        });
+    });
+
 });

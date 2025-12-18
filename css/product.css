@@ -270,7 +270,6 @@ body {
     padding: 8px 0;
     z-index: 1001;
     overflow: hidden;
-    /* Smooth appear animation */
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
@@ -278,12 +277,11 @@ body {
 }
 
 /* Show with animation */
+/* KEEP DROPDOWN OPEN WHEN HOVERING INSIDE */
 .dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content,
-.dropdown.active .dropdown-content {
+.dropdown-content:hover {
     display: block;
     opacity: 1;
-    transform: translateY(0);
     visibility: visible;
 }
 
@@ -342,6 +340,66 @@ body {
     font-weight: 600;
 }
 
+/* === SUB-DROPDOWN (2nd LEVEL) === */
+.sub-dropdown {
+    position: relative;
+}
+
+/* Clickable button */
+.sub-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 20px;
+}
+
+/* Hover only for visual feedback (NOT opening) */
+.sub-dropbtn:hover {
+    background-color: #f0f7ff;
+    color: #0d5ab3;
+}
+
+/* Arrow rotation */
+.sub-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Submenu (hidden by default) */
+.sub-dropdown-content {
+    display: none;
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
+/* Submenu links */
+.sub-dropdown-content li a {
+    display: block;
+    padding: 10px 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sub-dropdown-content li a:hover {
+    background-color: #e6f0ff;
+    color: #1a73e8;
+    padding-left: 24px;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+    margin: 8px 0;
+    border: none;
+}
+
 /* -----------------------------------------------------------
    RESPONSIVE
 ----------------------------------------------------------- */
@@ -374,8 +432,6 @@ body {
         font-size: 0.9rem;
     }
 }
-
-/* ************************************************************************************************************************ */
 
 
 /* Hero Section */
