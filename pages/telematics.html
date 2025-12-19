@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telematics Solutions - Mercyda International</title>
+    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/telematics.css">
+    <style>
+        /* Additional styles to integrate with existing telematics.css */
+        
+        .device-showcase {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .device-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .device-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .device-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 3px solid #e2e8f0;
+        }
+        
+        .device-info {
+            flex: 1;
+        }
+        
+        .device-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+        
+        .device-specs {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .specs-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .specs-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .specs-list i {
+            color: var(--primary);
+            margin-right: 12px;
+            margin-top: 4px;
+            font-size: 1.1rem;
+        }
+        
+        .features-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 60px 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-category {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-category ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-category li {
+            padding: 8px 0;
+            color: #475569;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .feature-category li i {
+            color: var(--success);
+            margin-top: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .extra-features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+        }
+        
+        .extra-features h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .extra-features .lead {
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+        
+        .extra-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .extra-feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .extra-feature-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .extra-feature-card h3 i {
+            color: #3b82f6;
+        }
+        
+        .extra-feature-card p {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        /* Device Navigation Cards */
+        .device-navigation {
+            padding: 60px 0;
+            background: #f8fafc;
+        }
+        
+        .navigation-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .navigation-header h2 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .navigation-header p {
+            color: #64748b;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .navigation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .nav-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+        
+        .nav-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 992px) {
+            .device-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .device-info {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features-container,
+            .extra-features-grid,
+            .navigation-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- Logo + Company Name -->
+                <div class="branding">
+                    <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+                    <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-menu" id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="service.html">Service</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+                            <ul class="dropdown-content" role="menu">
+                                <li><a href="product.html">ALL PRODUCTS</a></li>
+                                <li><hr class="divider"></li>
+                                <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                                <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                                <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
+                                <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                                <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="telematics.html" class="active">Telematics</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                        <!-- Store Icons -->
+                        <li class="nav-store-item">
+                            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                                <i class="fab fa-google-play" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="nav-store-item">
+                            <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                                <i class="fab fa-apple" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="telematics-hero" aria-label="Telematics hero">
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="container">
+            <div class="hero-content hero-grid">
+                <div class="hero-text animate-fade-in-up">
+                    <h1>Smart Telematics for Safer, Greener Fleets</h1>
+                    <p class="lead">Turn raw vehicle data into action: real-time tracking, driver safety analytics, fuel and maintenance optimization — all on a single secure platform designed for scale.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary">Request a Demo</a>
+                        <a href="#device-navigation" class="btn btn-outline">Explore Devices</a>
+                    </div>
+                </div>
+                <div class="hero-media animate-fade-in-up" style="animation-delay: 0.15s;">
+                    <div class="device-mock">
+                        <img src="../assets/telematics-solutions.jpg" alt="Telematics dashboard and devices">
+                        <div class="floating-badge badge-1">Real-time</div>
+                        <div class="floating-badge badge-2">Geofence</div>
+                        <div class="floating-badge badge-3">Alerts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Device Navigation Cards -->
+    <section class="device-navigation" id="device-navigation">
+        <div class="container">
+            <div class="navigation-header">
+                <h2>Our Telematics Devices</h2>
+                <p>Choose the perfect tracking solution for your fleet management needs</p>
+            </div>
+            <div class="navigation-cards">
+                <a href="#device2g" class="nav-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>MERCYDA VTS-140 A - 2G</h3>
+                    <p>Reliable 2G tracking device with intelligent alert system for cost-effective fleet monitoring and safety applications.</p>
+                </a>
+                <a href="#device4g" class="nav-card">
+                    <i class="fas fa-signal"></i>
+                    <h3>MERCYDA GLS-4G+</h3>
+                    <p>Advanced 4G LTE tracking with voice communication, ideal for comprehensive fleet management and real-time interaction.</p>
+                </a>
+                 <a href="#extras" class="nav-card">
+                <i class="fas fa-star"></i>
+                <h3>EXTRAS</h3>
+                <p>Enhanced platform features including live tracking apps, 24/7 support, service center locator, and smart notifications.</p>
+            </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2G Device Showcase -->
+    <section class="device-showcase" id="device2g">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">MERCYDA VTS-140 A - 2G Advanced Telematics Device</h2>
+                <p class="section-subtitle">Complete vehicle tracking and safety monitoring solution with intelligent alert system</p>
+            </div>
+            <div class="device-container">
+                <div class="device-image">
+                    <img src="../assets/2G-1.jpg" alt="MERCYDA VTS-140 A - 2G Telematics Device">
+                </div>
+                <div class="device-info">
+                    <h2>Device Specifications</h2>
+                    <div class="device-specs">
+                        <ul class="specs-list">
+                            <li><i class="fas fa-microchip"></i> <strong>Model:</strong> MERCYDA VTS-140 A - 2G</li>
+                            <li><i class="fas fa-satellite"></i> <strong>Network:</strong> 2G GSM/GPRS</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>GPS:</strong> High-precision GPS/GLONASS</li>
+                            <li><i class="fas fa-battery-half"></i> <strong>Internal Battery:</strong> Rechargeable backup battery</li>
+                            <li><i class="fas fa-plug"></i> <strong>Power Consumption:</strong> Ultra-low (<200-300 mA)</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Protection:</strong> IP67 rated, tamper-proof design</li>
+                            <li><i class="fas fa-memory"></i> <strong>Storage:</strong> 3 months location history backup</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 2G Core Features -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Intelligent Alert System</h2>
+                <p class="section-subtitle">Comprehensive real-time monitoring with proactive notifications</p>
+            </div>
+            <div class="features-container">
+                <div class="feature-category">
+                    <h3><i class="fas fa-location-arrow"></i> Location Tracking</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Real-time location updates</li>
+                        <li><i class="fas fa-check-circle"></i> Historical location data (3 months)</li>
+                        <li><i class="fas fa-check-circle"></i> Offline message queuing for GPRS unavailability</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-plug"></i> Power & Battery Alerts</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Main battery disconnection alert</li>
+                        <li><i class="fas fa-check-circle"></i> Internal battery recharged notification</li>
+                        <li><i class="fas fa-check-circle"></i> Reconnection to main battery alert</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-key"></i> Vehicle Status Monitoring</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Ignition ON/OFF status alerts</li>
+                        <li><i class="fas fa-check-circle"></i> GPS box tamper detection (optional)</li>
+                        <li><i class="fas fa-check-circle"></i> Over-the-air parameter change notifications</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Safety & Emergency</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Emergency button activation alerts</li>
+                        <li><i class="fas fa-check-circle"></i> Automatic emergency state cancellation</li>
+                        <li><i class="fas fa-check-circle"></i> Vehicle tilt detection during accidents</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-car"></i> Driver Behavior Analytics</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Harsh braking detection</li>
+                        <li><i class="fas fa-check-circle"></i> Harsh acceleration alerts</li>
+                        <li><i class="fas fa-check-circle"></i> Rash turning notifications</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-border-all"></i> Geofencing</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Boundary entry/exit alerts</li>
+                        <li><i class="fas fa-check-circle"></i> Custom geofence creation</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time geofence status</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 4G Device Showcase -->
+    <section class="device-showcase" id="device4g">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">MERCYDA GLS-4G+ – Advanced 4G LTE GNSS Tracking System</h2>
+                <p class="section-subtitle">Advanced tracking and voice-enabled remote monitoring for fleet management and vehicle security</p>
+            </div>
+            <div class="device-container">
+                <div class="device-image">
+                    <img src="../assets/GLS-4G+.jpg" alt="MERCYDA GLS-4G+ – Advanced 4G LTE GNSS Tracking System">
+                </div>
+                <div class="device-info">
+                    <h2>Device Specifications</h2>
+                    <div class="device-specs">
+                        <ul class="specs-list">
+                            <li><i class="fas fa-microchip"></i> <strong>Model:</strong> MERCYDA GLS-4G+</li>
+                            <li><i class="fas fa-satellite"></i> <strong>Network:</strong> 4G LTE with 2G GSM fallback</li>
+                            <li><i class="fas fa-map-marker-alt"></i> <strong>GNSS:</strong> GPS & IRNSS (≤ 5 meters CEP)</li>
+                            <li><i class="fas fa-volume-up"></i> <strong>Audio:</strong> Mic input, speaker output, two-way calling</li>
+                            <li><i class="fas fa-plug"></i> <strong>Power Supply:</strong> Wide voltage 9–90V DC</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Protection:</strong> IP67 rated, rugged automotive-grade design</li>
+                            <li><i class="fas fa-sync-alt"></i> <strong>Connectivity:</strong> OTA firmware upgrade, TCP/UDP/HTTP/MQTT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- 4G Core Features -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Intelligent Monitoring & Communication</h2>
+                <p class="section-subtitle">Comprehensive real-time tracking with voice interaction and smart alerts</p>
+            </div>
+            <div class="features-container">
+                <div class="feature-category">
+                    <h3><i class="fas fa-signal"></i> 4G Connectivity</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> 4G LTE with seamless 2G fallback</li>
+                        <li><i class="fas fa-check-circle"></i> LTE-FDD: B1/B3/B5/B8</li>
+                        <li><i class="fas fa-check-circle"></i> LTE-TDD: B34/B38/B39/B40/B41</li>
+                        <li><i class="fas fa-check-circle"></i> GSM: 900 / 1800 MHz</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-location-arrow"></i> Real-Time Tracking</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> GPS & IRNSS dual-mode positioning</li>
+                        <li><i class="fas fa-check-circle"></i> ≤ 5 meters tracking accuracy</li>
+                        <li><i class="fas fa-check-circle"></i> Route history and event logging</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-volume-up"></i> Audio & Voice Features</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Built-in microphone support</li>
+                        <li><i class="fas fa-check-circle"></i> Two-way voice calling</li>
+                        <li><i class="fas fa-check-circle"></i> Voice recording & playback for compliance</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-bolt"></i> Power & Vehicle Monitoring</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Wide voltage: 9–90V DC</li>
+                        <li><i class="fas fa-check-circle"></i> Ignition ON/OFF detection</li>
+                        <li><i class="fas fa-check-circle"></i> Motion detection</li>
+                        <li><i class="fas fa-check-circle"></i> Current: ≤ 120mA @ 12V</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Smart Alerts</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Overspeed alerts</li>
+                        <li><i class="fas fa-check-circle"></i> Power cut & tamper detection</li>
+                        <li><i class="fas fa-check-circle"></i> Geofence entry/exit alerts</li>
+                    </ul>
+                </div>
+                <div class="feature-category">
+                    <h3><i class="fas fa-shield-alt"></i> Security & Durability</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Encrypted data transmission</li>
+                        <li><i class="fas fa-check-circle"></i> IP67-rated rugged enclosure</li>
+                        <li><i class="fas fa-check-circle"></i> Operating temp: -20°C to +70°C</li>
+                        <li><i class="fas fa-check-circle"></i> 2-year warranty</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Extra Features -->
+    <section class="extra-features" id="extras">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Enhanced Features by Mercyda</h2>
+                <p class="section-subtitle lead">Advanced capabilities that set our solution apart from standard telematics platforms</p>
+            </div>
+            <div class="extra-features-grid">
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Live Tracking App</h3>
+                    <p>Real-time vehicle tracking through MercydaTrack mobile application available on iOS and Android platforms.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-history"></i> Extended Playback</h3>
+                    <p>3 months of historical data with detailed reports and geolocation visualization across web and mobile platforms.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-bell"></i> Smart Notifications</h3>
+                    <p>Real-time alerts for overspeeding, emergency situations, battery disconnect, and ignition status changes.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-volume-up"></i> Audio Alerts & Announcements</h3>
+                    <p>Integrated hooter for emergency alerts and overspeed warnings, plus speaker support for custom announcements.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-calendar-check"></i> Subscription Management</h3>
+                    <p>Automatic renewal notifications with easy access to device activation, expiry, and installation dates.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-headset"></i> 24/7 Customer Support</h3>
+                    <p>Round-the-clock assistance via toll-free number and integrated ticket raising portal within the mobile app.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Service Centre Locator</h3>
+                    <p>Find the nearest Mercyda service centers directly through the mobile application for quick assistance.</p>
+                </div>
+                <div class="extra-feature-card">
+                    <h3><i class="fas fa-ticket-alt"></i> Customer Portal</h3>
+                    <p>Dedicated ticket raising system for customers to report issues and track resolution status in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- --------- COLUMN 1: Brand & Links --------- -->
+            <div class="footer-col">
+                <h2 class="footer-brand">
+                    <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+                </h2>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+                    <li><a href="service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- --------- COLUMN 2: Guides --------- -->
+            <div class="footer-col">
+                <h3>Help & Guides</h3>
+                <ul>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+                </ul>
+            </div>
+            <!-- --------- COLUMN 3: Policies --------- -->
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#privacy"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+                    <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+            <div class="footer-contact">
+                <p>
+                    <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
+                </p>
+                <p>
+                    <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/telematics.js"></script>
+    <script>
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

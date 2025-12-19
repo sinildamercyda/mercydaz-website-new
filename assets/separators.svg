@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Soft fade shape (id="fade") creates a gentle blended gradient -->
+  <linearGradient id="gFade" x1="0" x2="1">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+    <stop offset="55%" stop-color="#eaf6ff" stop-opacity="0.85" />
+    <stop offset="100%" stop-color="#07112a" stop-opacity="1" />
+  </linearGradient>
+  <symbol id="fade" viewBox="0 0 1440 160">
+    <rect class="shape" x="0" y="0" width="1440" height="160" fill="url(#gFade)" />
+  </symbol>
+
+  <!-- Minimal angled cut (id="angle") -->
+  <symbol id="angle" viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path class="shape" d="M0,100 L1440,0 L1440,100 Z" fill="#07112a"/>
+  </symbol>
+
+  <!-- Subtle wave (id="wave") -->
+  <symbol id="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path class="shape" d="M0,32 C240,96 480,0 720,28 C960,56 1200,8 1440,40 L1440,120 L0,120 Z" fill="#07112a" />
+  </symbol>
+</svg>

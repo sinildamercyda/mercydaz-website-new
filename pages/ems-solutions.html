@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EMS Solutions - Mercyda International</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/telematics.css">
+  <style>
+    /* Enhanced styling for EMS page while preserving existing structure */
+    .ems-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: #ebeef5;
+    }
+    
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: #64748b;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .content-card {
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .content-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .content-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .content-card p {
+      color: #475569;
+      line-height: 1.7;
+    }
+    
+    .advantage-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .advantage-section .section-title {
+      color: white;
+    }
+    
+    .advantage-section .section-subtitle {
+      color: #cbd5e1;
+    }
+    
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .advantage-card {
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .advantage-card i {
+      font-size: 2.5rem;
+      color: #3b82f6;
+      margin-bottom: 20px;
+    }
+    
+    .advantage-card h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+    
+    .advantage-card p {
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+    
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .btn-cta {
+      background: var(--primary);
+      color: white;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+    }
+    
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      margin: 60px auto;
+      width: 80%;
+    }
+    
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .section-subtitle {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="branding">
+          <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Logo">
+          <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+        </div>
+        <nav class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <span class="menu-icon"></span>
+          <span class="menu-icon"></span>
+          <span class="menu-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="telematics-hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="hero-content hero-grid">
+        <div class="hero-text animate-fade-in-up">
+          <h1>High-Precision Electronic Manufacturing Services (EMS)</h1>
+          <p class="lead">Advanced SMT assembly and end-to-end manufacturing solutions at MERCYDA.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" href="contact.html">Request Manufacturing Quote</a>
+            <a class="btn btn-outline" href="#facility">Capabilities</a>
+          </div>
+        </div>
+        <div class="hero-media animate-fade-in-up">
+          <div class="device-mock">
+            <img src="../assets/ems-solutions.png" alt="EMS" class="telematics-image1">
+            <div class="floating-badge badge-1">PCB</div>
+            <div class="floating-badge badge-2">Assembly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facility Overview -->
+  <section id="facility" class="ems-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Facility Overview</h2>
+      <p class="section-subtitle">Provide a high-level view of your production capabilities.</p>
+    </div>
+
+    <!-- Add your lab photo here -->
+    <div class="text-center" style="margin: 40px 0;">
+      <img src="../assets/ems-image.png" alt="MERCYDA EMS Manufacturing Facility" style="max-width: 100%; height: 500px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+
+    <div class="content-grid">
+      <!-- Your 3 cards (SMT, Cleanroom, Scalability) remain here -->
+      <div class="content-card">...</div>
+      <div class="content-card">...</div>
+      <div class="content-card">...</div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="section-divider"></div>
+
+  <!-- Technical Capabilities -->
+  <section class="ems-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Technical Capabilities</h2>
+        <p class="section-subtitle">Break down the specific services visible in your production line.</p>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3><i class="fas fa-fire"></i> Precision Soldering</h3>
+          <p>Utilizing advanced reflow ovens to ensure perfect solder joints and thermal management for complex PCBAs.</p>
+        </div>
+        <div class="content-card">
+          <h3><i class="fas fa-search"></i> Quality Inspection</h3>
+          <p>Integrated testing stations, including Automated Optical Inspection (AOI), to maintain a zero-defect policy.</p>
+        </div>
+        <div class="content-card">
+          <h3><i class="fas fa-cube"></i> Integrated Solutions</h3>
+          <p>Beyond board assembly, we offer box-build integration, ensuring your product is ready for the market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- The MERCYDA Advantage -->
+  <section class="advantage-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">The MERCYDA Advantage</h2>
+        <p class="section-subtitle">Why should customers choose your facility?</p>
+      </div>
+      <div class="advantage-grid">
+        <div class="advantage-card">
+          <i class="fas fa-microchip"></i>
+          <h3>Cutting-Edge Technology</h3>
+          <p>We invest in the latest machinery to provide the precision required for modern electronics.</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-user-tie"></i>
+          <h3>Expert Engineering</h3>
+          <p>Our team provides Design for Manufacturing (DFM) feedback to optimize your production costs.</p>
+        </div>
+        <div class="advantage-card">
+          <i class="fas fa-certificate"></i>
+          <h3>Certified Quality</h3>
+          <p>Highlighting our commitment to international manufacturing standards and rigorous testing protocols.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion & Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="section-title">Bring Your Innovations to Life</h2>
+        <p class="section-subtitle">At MERCYDA, we don't just manufacture electronics; we bring your innovations to life with precision, speed, and reliability.</p>
+        <a href="contact.html" class="btn-cta">Contact our engineering team today for a quote.</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-brand"><i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL</h2>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/telematics.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

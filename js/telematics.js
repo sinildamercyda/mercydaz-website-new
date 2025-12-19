@@ -1,0 +1,81 @@
+// Lightweight hero interactions for telematics page
+(function(){
+  // Reveal animations using IntersectionObserver
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+      }
+    });
+  },{threshold:0.12});
+
+  document.querySelectorAll('.animate-fade-in-up').forEach(el=>{
+    observer.observe(el);
+    // allow CSS animation-delay inline styles to work by adding class slightly later
+    el.addEventListener('animationend',()=>el.classList.add('animated'));
+  });
+
+  // Observe major sections to create a slow, full-section reveal while scrolling
+  const sectionObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll('section').forEach(sec=>{
+    // skip small utility sections or ones that shouldn't animate
+    if(sec.classList.contains('no-reveal') || sec.classList.contains('main-header')) return;
+    sectionObserver.observe(sec);
+  });
+
+  // Simple parallax for the device mock on mouse move
+  const device = document.querySelector('.device-mock');
+  if(device){
+    const img = device.querySelector('img');
+    const badges = device.querySelectorAll('.floating-badge');
+    device.addEventListener('mousemove', (e)=>{
+      const r = device.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      const tx = px * 12; const ty = py * 10;
+      img.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(1.01)`;
+      badges.forEach((b, i)=>{
+        const factor = (i+1) * 6;
+        b.style.transform = `translate3d(${tx/factor}px, ${-ty/factor}px, 0)`;
+      });
+    });
+    device.addEventListener('mouseleave', ()=>{
+      img.style.transform='translate3d(0,0,0) scale(1)';
+      badges.forEach(b=> b.style.transform='translate3d(0,0,0)');
+    });
+  }
+
+  // Smooth in-page navigation that accounts for a fixed header
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(evt){
+      const href = this.getAttribute('href');
+      if(!href || href === '#') return;
+      const target = document.querySelector(href);
+      if(!target) return; // let browser handle it if no target
+      evt.preventDefault();
+
+      // compute header offset (handle responsive header height)
+      const header = document.querySelector('.main-header');
+      const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
+      const extraGap = 12; // breathing room
+      const top = Math.max(0, target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraGap);
+
+      window.scrollTo({ top, behavior: 'smooth' });
+
+      // update URL hash without jumping
+      try{ history.pushState(null, '', href); }catch(e){}
+
+      // for accessibility, focus the element after scrolling
+      target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+    });
+  });
+
+})();
