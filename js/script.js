@@ -189,6 +189,42 @@ const video = document.getElementById('routeVideo');
     waBtn.style.display = "flex";
   });
 
+
+
+/* ==========================
+   COOKIE CONSENT
+========================== */
+
+ const cookieBanner = document.getElementById("cookie-banner");
+  const cookieOverlay = document.getElementById("cookie-overlay");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const rejectBtn = document.getElementById("reject-cookies");
+
+  const consent = localStorage.getItem("cookieConsent");
+
+  if (consent === "accepted") {
+    document.body.style.overflow = "auto";
+  } else {
+    cookieBanner.style.display = "block";
+    cookieOverlay.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "accepted");
+    cookieBanner.style.display = "none";
+    cookieOverlay.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+
+  rejectBtn.addEventListener("click", () => {
+    localStorage.setItem("cookieConsent", "rejected");
+    alert("You must accept cookies to use this website.");
+  });
+
+//localStorage.removeItem("cookieConsent");
+
+
 });
 
 

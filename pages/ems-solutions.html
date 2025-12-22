@@ -1,316 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EMS Solutions - Mercyda International</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/telematics.css">
-  <style>
-    /* Enhanced styling for EMS page while preserving existing structure */
-    .ems-section {
-      padding: 80px 0;
-      background: white;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-    
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #ebeef5;
-    }
-    
-    .section-subtitle {
-      font-size: 1.25rem;
-      color: #64748b;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .content-card {
-      background: #f8fafc;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-    
-    .content-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .content-card h3 {
-      color: var(--primary);
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .content-card p {
-      color: #475569;
-      line-height: 1.7;
-    }
-    
-    .advantage-section {
-      padding: 80px 0;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white;
-      text-align: center;
-    }
-    
-    .advantage-section .section-title {
-      color: white;
-    }
-    
-    .advantage-section .section-subtitle {
-      color: #cbd5e1;
-    }
-    
-    .advantage-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .advantage-card {
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .advantage-card i {
-      font-size: 2.5rem;
-      color: #3b82f6;
-      margin-bottom: 20px;
-    }
-    
-    .advantage-card h3 {
-      color: white;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-    
-    .advantage-card p {
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
-    
-    .cta-section {
-      padding: 100px 0;
-      text-align: center;
-    }
-    
-    .cta-content {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .btn-cta {
-      background: var(--primary);
-      color: white;
-      padding: 15px 40px;
-      font-size: 1.1rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-cta:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
-    }
-    
-    .section-divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      margin: 60px auto;
-      width: 80%;
-    }
-    
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 2rem;
-      }
-      
-      .section-subtitle {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercyda International</title>
+    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+
+    <!-- Include Font Awesome (Optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ems-solutions.css">
+
 </head>
 <body>
-  <header class="main-header">
+<!-- Curtain Overlay -->
+<!-- <div class="curtain-overlay"></div> -->
+
+    <!-- Modern Header -->
+    <!-- Modern Header -->
+    <header class="main-header">
     <div class="container">
-      <div class="header-wrapper">
+        <div class="header-wrapper">
+        <!-- Logo + Company Name -->
         <div class="branding">
-          <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Logo">
-          <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+            <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+            <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
         </div>
+
+        <!-- Desktop Navigation -->
         <nav class="nav-menu" id="navMenu">
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+            <ul class="nav-links">
+            <li><a href="../pages/index.html" class="active">Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                    <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                    <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
+                    <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                    <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                </ul>
+            </li>
+             <li><a href="solutions.html" >Solutions</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+
+            <!-- Store Icons -->
+            <li class="nav-store-item">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-store-item">
+                <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store" aria-hidden="true"></i>
+                </a>
+            </li>
+            </ul>
         </nav>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-          <span class="menu-icon"></span>
-          <span class="menu-icon"></span>
-          <span class="menu-icon"></span>
+
+        <!-- Hamburger Button (Mobile only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
         </button>
+        </div>
+    </div>
+    </header>
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
+
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/product.html">
+                <i class="fas fa-box-open"></i> Product
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/solutions.html">
+                <i class="fas fa-lightbulb"></i> Solutions
+            </a>
+
+        <li>
+            <a href="../pages/contact.html">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+  <section class="rd-hero">
+  <div class="rd-container">
+
+    <!-- Left Content -->
+    <div class="rd-content">
+      <h1>
+        High-Precision Electronic Manufacturing Services (EMS)
+      </h1>
+
+      <p>
+        Advanced SMT assembly and end-to-end manufacturing solutions at MERCYDA.
+      </p>
+
+      <div class="rd-actions">
+        <a href="#" class="btn btn-primary">Request manufacturing quote</a>
+        <a href="#" class="btn btn-outline">Capabilities</a>
       </div>
     </div>
-  </header>
 
-  <section class="telematics-hero">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="hero-content hero-grid">
-        <div class="hero-text animate-fade-in-up">
-          <h1>High-Precision Electronic Manufacturing Services (EMS)</h1>
-          <p class="lead">Advanced SMT assembly and end-to-end manufacturing solutions at MERCYDA.</p>
-          <div class="cta-buttons">
-            <a class="btn btn-primary" href="contact.html">Request Manufacturing Quote</a>
-            <a class="btn btn-outline" href="#facility">Capabilities</a>
-          </div>
-        </div>
-        <div class="hero-media animate-fade-in-up">
-          <div class="device-mock">
-            <img src="../assets/ems-solutions.png" alt="EMS" class="telematics-image1">
-            <div class="floating-badge badge-1">PCB</div>
-            <div class="floating-badge badge-2">Assembly</div>
-          </div>
-        </div>
+    <!-- Right Visual -->
+    <div class="rd-visual">
+      <span class="tag tag-top">PCB</span>
+
+      <div class="image-circle">
+        <img
+          src="../assets/r&d-solutions.jpg"
+          alt="Embedded R&D"
+        />
       </div>
-    </div>
-  </section>
 
-  <!-- Facility Overview -->
-  <section id="facility" class="ems-section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Facility Overview</h2>
-      <p class="section-subtitle">Provide a high-level view of your production capabilities.</p>
+      <span class="tag tag-bottom">Assembly</span>
     </div>
 
-    <!-- Add your lab photo here -->
-    <div class="text-center" style="margin: 40px 0;">
-      <img src="../assets/ems-image.png" alt="MERCYDA EMS Manufacturing Facility" style="max-width: 100%; height: 500px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-    </div>
-
-    <div class="content-grid">
-      <!-- Your 3 cards (SMT, Cleanroom, Scalability) remain here -->
-      <div class="content-card">...</div>
-      <div class="content-card">...</div>
-      <div class="content-card">...</div>
-    </div>
   </div>
 </section>
 
 
-  <div class="section-divider"></div>
 
-  <!-- Technical Capabilities -->
-  <section class="ems-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Technical Capabilities</h2>
-        <p class="section-subtitle">Break down the specific services visible in your production line.</p>
+
+ <section class="facility-overview">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="fo-header">
+      <h2>Facility Overview</h2>
+      <p>Provide a high-level view of your production capabilities.</p>
+      <h3>MERCYDA EMS Manufacturing Facility</h3>
+    </div>
+
+    <!-- Images -->
+    <div class="fo-images">
+      <!-- Main Image -->
+      <div class="fo-main-image">
+        <img src="../assets/ems-image.png" alt="MERCYDA EMS Facility" />
       </div>
-      <div class="content-grid">
-        <div class="content-card">
-          <h3><i class="fas fa-fire"></i> Precision Soldering</h3>
-          <p>Utilizing advanced reflow ovens to ensure perfect solder joints and thermal management for complex PCBAs.</p>
+
+      <!-- Sub Images in a Row -->
+      <div class="fo-sub-images">
+        <div class="fo-sub-image">
+          <img src="../assets/ems-solutions.png" alt="Facility View 1" />
         </div>
-        <div class="content-card">
-          <h3><i class="fas fa-search"></i> Quality Inspection</h3>
-          <p>Integrated testing stations, including Automated Optical Inspection (AOI), to maintain a zero-defect policy.</p>
+        <div class="fo-sub-image">
+          <img src="../assets/ems-solutions.png" alt="Facility View 2" />
         </div>
-        <div class="content-card">
-          <h3><i class="fas fa-cube"></i> Integrated Solutions</h3>
-          <p>Beyond board assembly, we offer box-build integration, ensuring your product is ready for the market.</p>
+        <div class="fo-sub-image">
+          <img src="../assets/ems-solutions.png" alt="Facility View 3" />
         </div>
       </div>
     </div>
-  </section>
 
-  <div class="section-divider"></div>
+  </div>
+</section>
 
-  <!-- The MERCYDA Advantage -->
-  <section class="advantage-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">The MERCYDA Advantage</h2>
-        <p class="section-subtitle">Why should customers choose your facility?</p>
-      </div>
-      <div class="advantage-grid">
-        <div class="advantage-card">
+
+
+
+ <section class="technical-capabilities">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="tc-header">
+      <h2>Technical Capabilities</h2>
+      <p>Break down the specific services visible in your production line.</p>
+    </div>
+
+    <!-- Capability Boxes -->
+    <div class="tc-grid">
+      <!-- Box 1 -->
+      <div class="tc-card">
+        <div class="tc-icon">
           <i class="fas fa-microchip"></i>
-          <h3>Cutting-Edge Technology</h3>
-          <p>We invest in the latest machinery to provide the precision required for modern electronics.</p>
         </div>
-        <div class="advantage-card">
-          <i class="fas fa-user-tie"></i>
-          <h3>Expert Engineering</h3>
-          <p>Our team provides Design for Manufacturing (DFM) feedback to optimize your production costs.</p>
+        <h3>Precision Soldering</h3>
+        <p>Utilizing advanced reflow ovens to ensure perfect solder joints and thermal management for complex PCBAs.</p>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="tc-card">
+        <div class="tc-icon">
+          <i class="fas fa-search"></i>
         </div>
-        <div class="advantage-card">
-          <i class="fas fa-certificate"></i>
-          <h3>Certified Quality</h3>
-          <p>Highlighting our commitment to international manufacturing standards and rigorous testing protocols.</p>
+        <h3>Quality Inspection</h3>
+        <p>Integrated testing stations, including Automated Optical Inspection (AOI), to maintain a zero-defect policy.</p>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="tc-card">
+        <div class="tc-icon">
+          <i class="fas fa-cogs"></i>
         </div>
+        <h3>Integrated Solutions</h3>
+        <p>Beyond board assembly, we offer box-build integration, ensuring your product is ready for the market.</p>
       </div>
     </div>
-  </section>
 
-  <!-- Conclusion & Call to Action -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="section-title">Bring Your Innovations to Life</h2>
-        <p class="section-subtitle">At MERCYDA, we don't just manufacture electronics; we bring your innovations to life with precision, speed, and reliability.</p>
-        <a href="contact.html" class="btn-cta">Contact our engineering team today for a quote.</a>
+  </div>
+</section>
+
+
+  <section class="mercyda-advantage">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="ma-header">
+      <h2>The MERCYDA Advantage</h2>
+      <p>Why should customers choose your facility?</p>
+    </div>
+
+    <!-- Advantage Boxes -->
+    <div class="ma-grid">
+      <!-- Box 1 -->
+      <div class="ma-card">
+        <div class="ma-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>Cutting-Edge Technology</h3>
+        <p>We invest in the latest machinery to provide the precision required for modern electronics.</p>
+      </div>
+
+      <!-- Box 2 -->
+      <div class="ma-card">
+        <div class="ma-icon">
+          <i class="fas fa-user-cog"></i>
+        </div>
+        <h3>Expert Engineering</h3>
+        <p>Our team provides Design for Manufacturing (DFM) feedback to optimize your production costs.</p>
+      </div>
+
+      <!-- Box 3 -->
+      <div class="ma-card">
+        <div class="ma-icon">
+          <i class="fas fa-shield-check"></i>
+        </div>
+        <h3>Certified Quality</h3>
+        <p>Highlighting our commitment to international manufacturing standards and rigorous testing protocols.</p>
       </div>
     </div>
-  </section>
 
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h2 class="footer-brand"><i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL</h2>
+  </div>
+</section>
+
+
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- --------- COLUMN 1: Brand & Links --------- -->
+    <div class="footer-col">
+      <h2 class="footer-brand">
+        <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+      </h2>
+
+      <ul>
+        <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+        <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+        <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- --------- COLUMN 2: Guides --------- -->
+    <div class="footer-col">
+      <h3>Help & Guides</h3>
+      <ul>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+        <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link"><i class="fas fa-download"></i> IOS App Usermanual</a></li>
+        <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link"><i class="fas fa-download"></i> Android App Usermanual</a></li>
+      </ul>
+    </div>
+<!-- --------- COLUMN: Quick Links --------- -->
+<div class="footer-col">
+  <h3>Quick Links</h3>
+  <ul>
+    <li>
+      <a href="https://echallan.parivahan.gov.in/" target="_blank">
+        <i class="fas fa-receipt"></i> e-Challan
+      </a>
+    </li>
+
+    <li>
+      <a href="https://parivahan.gov.in/" target="_blank">
+        <i class="fas fa-id-card"></i> Get / Renew License
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rajmargyatra.nhai.gov.in/" target="_blank">
+        <i class="fas fa-road"></i> Check Tolls
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.policybazaar.com/" target="_blank">
+        <i class="fas fa-shield-alt"></i> Buy Insurance
+      </a>
+    </li>
+
+    <li>
+      <a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en">
+        <i class="fas fa-truck-pickup"></i> Tow Service
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rechargezap.in/fastag" target="_blank">
+        <i class="fas fa-broadcast-tower"></i> FASTag Recharge
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <!-- --------- COLUMN 3: Policies --------- -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+        <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        
+      </ul>
+      <div class="footer-catalogue">
+        <a href="../assets/Mercydaz_Catalogue.pdf" 
+          class="catalogue-btn" 
+          download>
+          <i class="fas fa-file-pdf"></i> Download Catalogue
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL</p>
-    </div>
-  </footer>
 
-  <script src="../js/script.js"></script>
-  <script src="../js/telematics.js"></script>
+  </div>
+
+  <div class="footer-bottom">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </div>
+
+
+  <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+
+  <div class="footer-contact">
+    <p>
+      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
+    </p>
+    <p>
+      <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float" id="waBtn">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Chat Popup -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div>
+      <h4>Mercyda Support</h4>
+      <span class="status">online</span>
+    </div>
+    <span class="close-btn" id="closeChat">&times;</span>
+  </div>
+
+  <div class="chat-body">
+    <div class="chat-message">
+      <strong>Mercyda Support</strong>
+      <p>Hi 👋<br>How can I help you?</p>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <a
+      href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+      target="_blank"
+      class="start-chat-btn"
+    >
+      Start Chat
+    </a>
+    <small>⚡ Powered by WhatsApp</small>
+  </div>
+</div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     
+      /* ==========================
+       MOBILE MENU
+    ========================== */
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function toggleMenu() {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+
+
+
+    
+  const waBtn = document.getElementById("waBtn");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+
+  waBtn.addEventListener("click", () => {
+    chatWidget.style.display = "block";
+    waBtn.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    waBtn.style.display = "flex";
+  });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -324,6 +486,108 @@
         }
       });
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Animate header elements
+  const headerElements = document.querySelectorAll('.fo-header h2, .fo-header p, .fo-header h3');
+  headerElements.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(el);
+  });
+
+  // Animate main image
+  const mainImage = document.querySelector('.fo-main-image');
+  if(mainImage){
+    mainImage.style.transitionDelay = `0.5s`;
+    observer.observe(mainImage);
+  }
+
+  // Animate sub-images with stagger
+  const subImages = document.querySelectorAll('.fo-sub-image');
+  subImages.forEach((el, i) => {
+    el.style.transitionDelay = `${0.6 + i * 0.15}s`;
+    observer.observe(el);
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Animate header
+  const headerElements = document.querySelectorAll('.tc-header h2, .tc-header p');
+  headerElements.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(el);
+  });
+
+  // Animate cards with stagger
+  const cards = document.querySelectorAll('.tc-card');
+  cards.forEach((el, i) => {
+    el.style.transitionDelay = `${0.3 + i * 0.15}s`;
+    observer.observe(el);
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Animate header
+  const headerElements = document.querySelectorAll('.ma-header h2, .ma-header p');
+  headerElements.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(el);
+  });
+
+  // Animate cards with stagger
+  const cards = document.querySelectorAll('.ma-card');
+  cards.forEach((el, i) => {
+    el.style.transitionDelay = `${0.3 + i * 0.15}s`;
+    observer.observe(el);
+  });
+});
   </script>
 </body>
 </html>

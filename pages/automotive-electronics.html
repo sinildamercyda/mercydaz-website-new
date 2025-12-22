@@ -3,317 +3,697 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive Electronics - Mercyda International</title>
+    <title>Mercyda International</title>
     <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css  ">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins  :wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/telematics.css">
+
+    <!-- Include Font Awesome (Optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/automotive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter  :wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <meta name="description" content="Automotive electronics design, ECUs, sensors, CAN integration, diagnostics and rugged embedded solutions by Mercyda'Z International.">
+
 </head>
 <body>
-    <!-- Header (same as site) -->
+
+    <!-- Modern Header -->
     <header class="main-header">
-        <div class="container">
-            <div class="header-wrapper">
-                <div class="branding">
-                    <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
-                    <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
-                </div>
-
-                <nav class="nav-menu" id="navMenu">
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="service.html">Service</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
-                            <ul class="dropdown-content" role="menu">
-                                <li><a href="product.html">ALL PRODUCTS</a></li>
-                                <li><hr class="divider"></li>
-                                <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
-                                <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
-                                <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
-                                <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
-                                <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="solutions.html">Solutions</a></li>
-                        <li><a href="telematics.html">Telematics</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-
-                        <li class="nav-store-item">
-                            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-                                <i class="fab fa-google-play" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="nav-store-item">
-                            <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-                                <i class="fab fa-apple" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-                    <span class="menu-icon"></span>
-                    <span class="menu-icon"></span>
-                    <span class="menu-icon"></span>
-                </button>
-            </div>
+    <div class="container">
+        <div class="header-wrapper">
+        <!-- Logo + Company Name -->
+        <div class="branding">
+            <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+            <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
         </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+            <li><a href="../pages/index.html" >Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                    <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                    <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
+                    <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                    <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                </ul>
+            </li>
+             <li><a href="solutions.html" >Solutions</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+
+            <!-- Store Icons -->
+            <li class="nav-store-item">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-store-item">
+                <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store" aria-hidden="true"></i>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Button (Mobile only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        </div>
+    </div>
     </header>
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
 
-    <!-- HERO -->
-    <section class="telematics-hero" aria-label="Automotive electronics hero">
-      <div class="overlay" aria-hidden="true"></div>
-      <div class="container">
-        <div class="hero-content hero-grid">
-          <div class="hero-text animate-fade-in-up">
-            <h1>Advanced Automotive Electronics & ECUs</h1>
-            <p class="lead">Designing rugged, safety-certified embedded systems for vehicles — from ECUs and gateway modules to sensors, CAN/ethernet integration and OTA-enabled firmware.</p>
-            <div class="cta-buttons">
-              <a href="contact.html" class="btn btn-primary">Talk to an Engineer</a>
-              <a href="#solutions" class="btn btn-outline">View Solutions</a>
-            </div>
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/product.html">
+                <i class="fas fa-box-open"></i> Product
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/solutions.html">
+                <i class="fas fa-lightbulb"></i> Solutions
+            </a>
+
+        <li>
+            <a href="../pages/contact.html">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+<section class="auto-hero">
+  <div class="auto-hero-overlay"></div>
+
+  <div class="container auto-hero-grid">
+    <!-- LEFT CONTENT -->
+    <div class="auto-hero-text">
+      <h1>
+        Advanced Automotive<br>
+        Electronics & ECUs
+      </h1>
+
+      <p>
+        Designing rugged, safety-certified embedded systems for vehicles —
+        from ECUs and gateway modules to sensors, CAN/ethernet integration and
+        OTA-enabled firmware.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary">Talk to an Engineer</a>
+        <a href="#" class="btn-outline">View Solutions</a>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="auto-hero-visual">
+      <div class="circle-image">
+        <img src="../assets/automotive-solutions.jpg" alt="Automotive ECU diagnostics">
+      </div>
+
+      <span class="tech-badge badge-ecu">ECU</span>
+      <span class="tech-badge badge-can">CAN</span>
+      <span class="tech-badge badge-diag">Diagnostics</span>
+    </div>
+  </div>
+</section>
+
+
+   <section class="solutions-section">
+  <div class="solutions-container">
+    <h2>Our Automotive Electronics Solutions</h2>
+    <p class="solutions-subtitle">
+      We provide end-to-end hardware and software for automotive applications,
+      focused on reliability, safety and manufacturability.
+    </p>
+
+    <div class="solutions-grid">
+      <!-- Card 1 -->
+      <div class="solution-card">
+        <div class="icon-box">
+          <i class="fas fa-microchip"></i>
+          
+        </div>
+        <h3>Custom ECUs & Controllers</h3>
+        <p>
+          Architecture, PCB, firmware and validation for powertrain, body,
+          and telematics ECUs.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="solution-card">
+        <div class="icon-box">
+          <i class="fas fa-network-wired"></i>
+        
+        </div>
+        <h3>CAN / LIN / Ethernet Integration</h3>
+        <p>
+          Robust in-vehicle networking, gateways, and diagnostics compatible
+          with industry stacks.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="solution-card">
+        <div class="icon-box">
+          <i class="fas fa-tools"></i>
+          
+        </div>
+        <h3>Testing & Compliance</h3>
+        <p>
+          EMC, thermal, vibration and ISO/SAE functional safety guidance to
+          help you reach production.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="solution-card">
+        <div class="icon-box">
+          <i class="fas fa-cloud-upload-alt"></i>
+          
+        </div>
+        <h3>OTA & Diagnostics</h3>
+        <p>
+          Secure remote firmware updates and fleet diagnostics to keep
+          systems healthy in service.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-container">
+    <h2>Prototype to Production</h2>
+    <p>
+      From rapid prototyping to high-volume manufacturing, we support the full
+      product lifecycle.
+    </p>
+    <a href="#contact" class="cta-btn">Get Started</a>
+  </div>
+</section>
+
+
+
+<section class="capabilities-section">
+  <div class="container">
+
+    <h2 class="section-title">How We Build & Deliver — Detailed Capabilities</h2>
+    <p class="section-desc">
+      Below we explain how each capability is executed, what customers receive,
+      and the customer benefits.
+    </p>
+
+    <!-- ================= ECU ENGINEERING ================= -->
+    <div class="capability-tag">ECU Engineering</div>
+
+    <div class="capability-card">
+      <!-- IMAGE -->
+      <div class="capability-image">
+        <img src="../assets/ECU-web.jpg" alt="Custom ECU Engineering">
+      </div>
+
+      <!-- CONTENT -->
+      <div class="capability-content">
+        <h3>Custom ECU Engineering & Productization</h3>
+        <p class="sub-title">End-to-end delivery</p>
+
+        <p>
+          Key features and compliance of our Mercyda ECU includes ARAI approval,
+          ICAT certification, AIS-140 compliance, PC-TEN approval, IP67 rating,
+          BS-IV compatibility, BCU support, and high tamper resistance.
+          Deliverables include:
+        </p>
+
+        <ul>
+          <li>ARAI certified for AIS and CMVR compliance</li>
+          <li>ICAT tested for durability, performance, and reliability</li>
+          <li>Fully compliant with AIS-140 standards for vehicle tracking and emergency alerts</li>
+          <li>PC-TEN certified for protocol compliance and data integrity</li>
+          <li>IP67 rated dust-tight and water-immersible enclosure</li>
+          <li>BS-IV (BS4) compatible with accurate engine data acquisition</li>
+          <li>BCU integration support for centralized vehicle control</li>
+          <li>Advanced tamper detection with multiple alert mechanisms</li>
+        </ul>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Customer Benefit</h4>
+            <p>
+              Regulatory compliance assurance, enhanced vehicle safety,
+              and reliable operation in extreme conditions.
+            </p>
           </div>
 
-          <div class="hero-media animate-fade-in-up" style="animation-delay: 0.15s;">
-            <div class="device-mock">
-              <img src="../assets/automotive-solutions.jpg" alt="Automotive electronics" class="telematics-image1">
-              <div class="floating-badge badge-1">ECU</div>
-              <div class="floating-badge badge-2">CAN</div>
-              <div class="floating-badge badge-3">Diagnostics</div>
-            </div>
+          <div class="info-box">
+            <h4>Our Process</h4>
+            <p>
+              Automotive-grade design with fail-safe architecture,
+              secure firmware, and rigorous testing protocols.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- SOLUTIONS -->
-    <section id="solutions" class="telematics-section">
-      <div class="container narrow">
-        <h2>Our Automotive Electronics Solutions</h2>
-        <p class="lead">We provide end-to-end hardware and software for automotive applications, focused on reliability, safety and manufacturability.</p>
+    <!-- ================= CONNECTIVITY ================= -->
+    <div class="capability-tag">Connectivity</div>
 
-        <div class="features-grid" style="margin-top:30px;">
-          <a href="#deliver-ecu" class="feature-card animate-fade-in-up">
-            <div class="feature-icon"><i class="fas fa-microchip"></i></div>
-            <h3>Custom ECUs & Controllers</h3>
-            <p>Architecture, PCB, firmware and validation for powertrain, body, and telematics ECUs.</p>
-          </a>
-  
-          <a href="#deliver-connect" class="feature-card animate-fade-in-up">
-            <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
-            <h3>CAN / LIN / Ethernet Integration</h3>
-            <p>Robust in-vehicle networking, gateways, and diagnostics compatible with industry stacks.</p>
-          </a>
-  
-          <a href="#deliver-test" class="feature-card animate-fade-in-up">
-            <div class="feature-icon"><i class="fas fa-tools"></i></div>
-            <h3>Testing & Compliance</h3>
-            <p>EMC, thermal, vibration and ISO/SAE functional safety guidance to help you reach production.</p>
-          </a>
-  
-          <a href="#deliver-ota" class="feature-card animate-fade-in-up">
-            <div class="feature-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <h3>OTA & Diagnostics</h3>
-            <p>Secure remote firmware updates and fleet diagnostics to keep systems healthy in service.</p>
-          </a>
-        </div>
-
+    <div class="capability-card">
+      <div class="capability-image">
+        <img src="../assets/connectivity.jpg" alt="Connectivity & Gateways">
       </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="cta-content">
-        <h2>Prototype to Production</h2>
-        <p>From rapid prototyping to high-volume manufacturing, we support the full product lifecycle.</p>
-        <a href="contact.html" class="btn btn-primary">Get Started</a>
-      </div>
-    </section>
+      <div class="capability-content">
+        <h3>Connectivity, Gateways & Diagnostics</h3>
+        <p class="sub-title">Reliable vehicle networks</p>
 
-    <!-- DETAILED DELIVERABLES (anchors from cards) -->
-    <section class="blog-section" aria-label="How we build and deliver">
-      <div class="container narrow">
-        <h2>How We Build & Deliver — Detailed Capabilities</h2>
-        <p class="lead">Below we explain how each capability is executed, what customers receive, and the customer benefits.</p>
+        <p>
+          Our ECU model MEC-4G-IRNSS features 4G LTE, IRNSS, GPS, and Bluetooth 5.0
+          connectivity with multiple interface options. Key specifications include:
+        </p>
 
-        <div class="section-divider"></div>
+        <ul>
+          <li>Model: MEC-4G-IRNSS</li>
+          <li>Dimensions: 120mm × 80mm × 35mm, Weight: 250g</li>
+          <li>Power: 9–36V DC, Current: ≤ 120mA @ 12V</li>
+          <li>LTE bands: B1/3/5/8 (FDD), B34/38/39/40/41 (TDD), GSM: B3/8</li>
+          <li>IP67 protection rating for all-weather operation</li>
+          <li>Multiple form factors: LCC, Mini PCIe-C, Mini PCIe</li>
+          <li>Comprehensive interfaces: (U)SIM, UART, Audio digital (PCM)</li>
+          <li>2-year warranty with panel mount installation</li>
+        </ul>
 
-        <article id="deliver-ecu" class="blog-article animate-fade-in-up">
-          <div class="photo-frame"><img src="../assets/ECU-web.jpg" alt="ECU engineering"></div>
-          <div>
-            <h3>Custom ECU Engineering & Productization</h3>
-            <div class="meta">End-to-end delivery</div>
-            <p>Key features and compliance of our Mercyda ECU includes ARAI approval, ICAT certification, AIS-140 compliance, PC-TEN approval, IP67 rating, BS-IV compatibility, BCU support, and high tamper resistance. Deliverables include:</p>
-            <ul>
-              <li>ARAI certified for AIS and CMVR compliance</li>
-              <li>ICAT tested for durability, performance, and reliability</li>
-              <li>Fully compliant with AIS-140 standards for vehicle tracking and emergency alerts</li>
-              <li>PC-TEN certified for protocol compliance and data integrity</li>
-              <li>IP67 rated dust-tight and water-immersible enclosure</li>
-              <li>BS-IV (BS4) compatible with accurate engine data acquisition</li>
-              <li>BCU integration support for centralized vehicle control</li>
-              <li>Advanced tamper detection with multiple alert mechanisms</li>
-            </ul>
-            <div class="benefit-row">
-              <div class="benefit"><h4>Customer Benefit</h4><p>Regulatory compliance assurance, enhanced vehicle safety, and reliable operation in extreme conditions.</p></div>
-              <div class="benefit"><h4>Our Process</h4><p>Automotive-grade design with fail-safe architecture, secure firmware, and rigorous testing protocols.</p></div>
-            </div>
-          </div>
-        </article>
-
-        <div class="section-divider"></div>
-
-        <article id="deliver-connect" class="blog-article animate-fade-in-up">
-          <div class="photo-frame"><img src="../assets/networking.jpg" alt="Connectivity"></div>
-          <div>
-            <h3>Connectivity, Gateways & Diagnostics</h3>
-            <div class="meta">Reliable vehicle networks</div>
-            <p>Our ECU model MEC-4G-IRNSS features 4G LTE, IRNSS, GPS, and Bluetooth 5.0 connectivity with multiple interface options. Key specifications include:</p>
-            <ul>
-              <li>Model: MEC-4G-IRNSS</li>
-              <li>Dimensions: 120mm × 80mm × 35mm, Weight: 250g</li>
-              <li>Power: 9-36V DC, Current: ≤ 120mA @ 12V</li>
-              <li>LTE bands: B1/3/5/8 (FDD), B34/38/39/40/41 (TDD), GSM: B3/8</li>
-              <li>IP67 protection rating for all-weather operation</li>
-              <li>Multiple form factors: LCC, Mini PCIe-C, Mini PCIe</li>
-              <li>Comprehensive interfaces: (U)SIM, UART, Audio digital (PCM)</li>
-              <li>2-year warranty with panel mount installation</li>
-            </ul>
-            <div class="benefit-row">
-              <div class="benefit"><h4>Customer Benefit</h4><p>Future-proof connectivity, compact form factor, and reliable performance across diverse vehicle platforms.</p></div>
-              <div class="benefit"><h4>Our Process</h4><p>Multi-band validation, environmental testing, and interface compatibility verification.</p></div>
-            </div>
-          </div>
-        </article>
-
-        <div class="section-divider"></div>
-
-        <article id="deliver-test" class="blog-article animate-fade-in-up">
-          <div class="photo-frame"><img src="../assets/testing.jpg" alt="Testing and compliance"></div>
-          <div>
-            <h3>Validation, Compliance & Manufacturing Handoff</h3>
-            <div class="meta">Production readiness</div>
-            <p>Our automotive electronics undergo comprehensive validation to ensure they meet the highest standards for fleet management, safety, and operational efficiency:</p>
-            <ul>
-              <li>Fleet Management: Real-time tracking, route optimization, and driver behavior analysis</li>
-              <li>Vehicle Safety: Emergency alerts, geofencing, and remote diagnostics</li>
-              <li>Performance Analytics: Comprehensive data reporting for maintenance scheduling</li>
-              <li>Cost Reduction: Predictive maintenance to reduce fuel consumption and downtime</li>
-              <li>Fail-safe architecture for stable operation during voltage fluctuations</li>
-              <li>Secure bootloader and encrypted firmware updates</li>
-              <li>Automotive-grade design for harsh vehicle environments</li>
-            </ul>
-            <div class="benefit-row">
-              <div class="benefit"><h4>Customer Benefit</h4><p>Reduced operational costs, improved fleet efficiency, and enhanced vehicle safety through intelligent monitoring.</p></div>
-              <div class="benefit"><h4>Our Process</h4><p>Real-world scenario testing, predictive analytics validation, and comprehensive safety protocol verification.</p></div>
-            </div>
-          </div>
-        </article>
-
-        <div class="section-divider"></div>
-
-        <article id="deliver-ota" class="blog-article animate-fade-in-up">
-          <div class="photo-frame"><img src="../assets/ota.jpg" alt="OTA and diagnostics"></div>
-          <div>
-            <h3>OTA, Fleet Services & Aftercare</h3>
-            <div class="meta">Long-term platform support</div>
-            <p>Our ECU platform enables comprehensive fleet management and vehicle intelligence through advanced automotive capabilities:</p>
-            <ul>
-              <li>Real-time vehicle status monitoring and compliance reporting</li>
-              <li>Advanced tamper detection: power cut, ignition tamper, enclosure open, antenna disconnection</li>
-              <li>High intelligence processing for alerts, diagnostics, and system coordination</li>
-              <li>Vibration, heat, and electrical noise protection for harsh environments</li>
-              <li>Centralized control integration with vehicle Body Control Units (BCU)</li>
-              <li>Emission-related monitoring and stable ECU integration for BS-IV vehicles</li>
-              <li>Government-mandated public transport safety system compliance</li>
-            </ul>
-            <div class="benefit-row">
-              <div class="benefit"><h4>Customer Benefit</h4><p>Complete regulatory compliance, enhanced vehicle security, and intelligent fleet management capabilities.</p></div>
-              <div class="benefit"><h4>Our Process</h4><p>Integration testing with OEM systems, regulatory compliance validation, and field deployment verification.</p></div>
-            </div>
-          </div>
-        </article>
-
-        <div class="section-divider"></div>
-
-        <div class="conclusion">
-          <h3>Why Customers Choose Mercyda'Z</h3>
-          <p>We combine domain expertise, robust engineering practices, and manufacturing partnerships to deliver ECUs and vehicle electronics that perform in the field. Below are what we consistently deliver to customers:</p>
-          <div class="trust-icons" style="margin-top:18px;">
-            <div class="trust-item"><i class="fas fa-shield-alt"></i><div><strong>Safety-first engineering</strong><div class="meta">ISO/SAE-aligned processes</div></div></div>
-            <div class="trust-item"><i class="fas fa-cogs"></i><div><strong>Production-ready designs</strong><div class="meta">DFM/DFX applied</div></div></div>
-            <div class="trust-item"><i class="fas fa-headset"></i><div><strong>Dedicated support</strong><div class="meta">SLA options & long-term care</div></div></div>
-            <div class="trust-item"><i class="fas fa-rocket"></i><div><strong>Fast ramp to volume</strong><div class="meta">Pilot runs to scale</div></div></div>
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Customer Benefit</h4>
+            <p>
+              Future-proof connectivity, compact form factor,
+              and reliable performance across diverse vehicle platforms.
+            </p>
           </div>
 
-          <div class="lead-cta">
-            <a href="contact.html" class="btn btn-primary">Request a Capability Brief</a>
-            <a href="#" class="btn btn-outline">Schedule a Technical Call</a>
+          <div class="info-box">
+            <h4>Our Process</h4>
+            <p>
+              Multi-band validation, environmental testing,
+              and interface compatibility verification.
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Footer (same as site) -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h2 class="footer-brand">
-            <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
-          </h2>
-          <ul>
-            <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
-            <li><a href="product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
-            <li><a href="service.html"><i class="fas fa-briefcase"></i> Service</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
-          </ul>
-        </div>
+    <!-- ================= TESTING & COMPLIANCE ================= -->
+    <div class="capability-tag">Testing and Compliance</div>
 
-        <div class="footer-col">
-          <h3>Help & Guides</h3>
-          <ul>
-            <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
-            <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Legal</h3>
-          <ul>
-            <li><a href="#privacy"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
-            <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
-          </ul>
-        </div>
-
+    <div class="capability-card">
+      <div class="capability-image">
+        <img src="../assets/testing.jpg" alt="Testing and Compliance">
       </div>
 
-      <div class="footer-bottom">
-        <div class="social-icons">
-          <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
+      <div class="capability-content">
+        <h3>Validation, Compliance & Manufacturing Handoff</h3>
+        <p class="sub-title">Production readiness</p>
 
-        <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+        <p>
+          Our automotive electronics undergo comprehensive validation to ensure
+          they meet the highest standards for fleet management, safety,
+          and operational efficiency:
+        </p>
 
-        <div class="footer-contact">
-          <p><strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592</p>
-          <p><strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a></p>
-          <p><strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a></p>
+        <ul>
+          <li>Fleet Management: Real-time tracking, route optimization, and driver behavior analysis</li>
+          <li>Vehicle Safety: Emergency alerts, geofencing, and remote diagnostics</li>
+          <li>Performance Analytics: Comprehensive data reporting for maintenance scheduling</li>
+          <li>Cost Reduction: Predictive maintenance to reduce fuel consumption and downtime</li>
+          <li>Fail-safe architecture for stable operation during voltage fluctuations</li>
+          <li>Secure bootloader and encrypted firmware updates</li>
+          <li>Automotive-grade design for harsh vehicle environments</li>
+        </ul>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Customer Benefit</h4>
+            <p>
+              Reduced operational costs, improved fleet efficiency,
+              and enhanced vehicle safety through intelligent monitoring.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>Our Process</h4>
+            <p>
+              Real-world scenario testing, predictive analytics validation,
+              and comprehensive safety protocol verification.
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
+    </div>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/telematics.js"></script>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- ================= OTA & DIAGNOSTICS ================= -->
+    <div class="capability-tag">OTA and Diagnostics</div>
+
+    <div class="capability-card">
+      <div class="capability-image">
+        <img src="../assets/ota.jpg" alt="OTA and Diagnostics">
+      </div>
+
+      <div class="capability-content">
+        <h3>OTA, Fleet Services & Aftercare</h3>
+        <p class="sub-title">Long-term platform support</p>
+
+        <p>
+          Our ECU platform enables comprehensive fleet management and vehicle
+          intelligence through advanced automotive capabilities:
+        </p>
+
+        <ul>
+          <li>Real-time vehicle status monitoring and compliance reporting</li>
+          <li>Advanced tamper detection: power cut, ignition tamper, enclosure open, antenna disconnection</li>
+          <li>High intelligence processing for alerts, diagnostics, and system coordination</li>
+          <li>Vibration, heat, and electrical noise protection for harsh environments</li>
+          <li>Centralized control integration with vehicle Body Control Units (BCU)</li>
+          <li>Emission-related monitoring and stable ECU integration for BS-IV vehicles</li>
+          <li>Government-mandated public transport safety system compliance</li>
+        </ul>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <h4>Customer Benefit</h4>
+            <p>
+              Complete regulatory compliance, enhanced vehicle security,
+              and intelligent fleet management capabilities.
+            </p>
+          </div>
+
+          <div class="info-box">
+            <h4>Our Process</h4>
+            <p>
+              Integration testing with OEM systems, regulatory compliance validation,
+              and field deployment verification.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="why-choose">
+  <div class="why-card">
+
+    <h2>Why Customers Choose Mercyda'Z</h2>
+    <p class="why-desc">
+      We combine domain expertise, robust engineering practices, and manufacturing
+      partnerships to deliver ECUs and vehicle electronics that perform in the field.
+      Below are what we consistently deliver to customers:
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-item">
+        <div class="icon">🛡️</div>
+        <div>
+          <h4>Safety-first engineering</h4>
+          <span>ISO/SAE-aligned processes</span>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="icon">⚙️</div>
+        <div>
+          <h4>Production-ready designs</h4>
+          <span>DFM/DFX applied</span>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="icon">🎧</div>
+        <div>
+          <h4>Dedicated support</h4>
+          <span>SLA options & long-term care</span>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="icon">🚀</div>
+        <div>
+          <h4>Fast ramp to volume</h4>
+          <span>Pilot runs to scale</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="why-actions">
+      <a href="#" class="btn-primary">Request a Capability Brief</a>
+      <a href="#" class="btn-secondary">Schedule a Technical Call</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- --------- COLUMN 1: Brand & Links --------- -->
+    <div class="footer-col">
+      <h2 class="footer-brand">
+        <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+      </h2>
+
+      <ul>
+        <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+        <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+        <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- --------- COLUMN 2: Guides --------- -->
+    <div class="footer-col">
+      <h3>Help & Guides</h3>
+      <ul>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+        <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link"><i class="fas fa-download"></i> IOS App Usermanual</a></li>
+        <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link"><i class="fas fa-download"></i> Android App Usermanual</a></li>
+      </ul>
+    </div>
+<!-- --------- COLUMN: Quick Links --------- -->
+<div class="footer-col">
+  <h3>Quick Links</h3>
+  <ul>
+    <li>
+      <a href="https://echallan.parivahan.gov.in/" target="_blank">
+        <i class="fas fa-receipt"></i> e-Challan
+      </a>
+    </li>
+
+    <li>
+      <a href="https://parivahan.gov.in/" target="_blank">
+        <i class="fas fa-id-card"></i> Get / Renew License
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rajmargyatra.nhai.gov.in/" target="_blank">
+        <i class="fas fa-road"></i> Check Tolls
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.policybazaar.com/" target="_blank">
+        <i class="fas fa-shield-alt"></i> Buy Insurance
+      </a>
+    </li>
+
+    <li>
+      <a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en">
+        <i class="fas fa-truck-pickup"></i> Tow Service
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rechargezap.in/fastag" target="_blank">
+        <i class="fas fa-broadcast-tower"></i> FASTag Recharge
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <!-- --------- COLUMN 3: Policies --------- -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+        <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        
+      </ul>
+      <div class="footer-catalogue">
+        <a href="../assets/Mercydaz_Catalogue.pdf" 
+          class="catalogue-btn" 
+          download>
+          <i class="fas fa-file-pdf"></i> Download Catalogue
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </div>
+
+
+  <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+
+  <div class="footer-contact">
+    <p>
+      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
+    </p>
+    <p>
+      <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float" id="waBtn">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Chat Popup -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div>
+      <h4>Mercyda Support</h4>
+      <span class="status">online</span>
+    </div>
+    <span class="close-btn" id="closeChat">&times;</span>
+  </div>
+
+  <div class="chat-body">
+    <div class="chat-message">
+      <strong>Mercyda Support</strong>
+      <p>Hi 👋<br>How can I help you?</p>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <a
+      href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+      target="_blank"
+      class="start-chat-btn"
+    >
+      Start Chat
+    </a>
+    <small>⚡ Powered by WhatsApp</small>
+  </div>
+</div>
+
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ==========================
+       MOBILE MENU
+    ========================== */
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function toggleMenu() {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+
+     const waBtn = document.getElementById("waBtn");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+
+  waBtn.addEventListener("click", () => {
+    chatWidget.style.display = "block";
+    waBtn.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    waBtn.style.display = "flex";
+  });
+
+    const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(
+    ".capability-card, .capability-tag, .solution-card"
+  ).forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
 

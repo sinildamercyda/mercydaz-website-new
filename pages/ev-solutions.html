@@ -1,730 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EV Solutions - Mercyda International</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #0f172a;
-      --accent: #0ea5e9;
-      --light: #f8fafc;
-      --gray: #64748b;
-      --light-gray: #e2e8f0;
-      --success: #10b981;
-      --warning: #f59e0b;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--secondary);
-      background-color: var(--light);
-    }
-    
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    .narrow {
-      max-width: 800px;
-    }
-    
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-      text-align: center;
-    }
-    
-    .btn-primary {
-      background-color: var(--primary);
-      color: white;
-    }
-    
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    }
-    
-    .btn-outline {
-      background-color: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-    
-    .btn-outline:hover {
-      background-color: var(--primary);
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .lead {
-      font-size: 18px;
-      color: var(--gray);
-      margin: 16px 0;
-    }
-    
-    /* Header Styles */
-    .main-header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    
-    .header-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 0;
-    }
-    
-    .branding {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    .brand-logo {
-      height: 50px;
-      width: auto;
-    }
-    
-    .brand-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--secondary);
-      white-space: nowrap;
-    }
-    
-    .nav-menu {
-      display: block;
-    }
-    
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 24px;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: var(--secondary);
-      font-weight: 600;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-    
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    
-    .dropdown {
-      position: relative;
-    }
-    
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      z-index: 1;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    
-    .dropdown-content a {
-      padding: 12px 16px;
-      display: block;
-      color: var(--secondary);
-    }
-    
-    .dropdown-content a:hover {
-      background-color: var(--light-gray);
-    }
-    
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-    }
-    
-    .menu-icon {
-      width: 25px;
-      height: 3px;
-      background-color: var(--secondary);
-      margin: 3px 0;
-      transition: 0.3s;
-    }
-    
-    /* Hero Section */
-    .telematics-hero {
-      position: relative;
-      background: linear-gradient(135deg, #1e40af 0%, #0c4a6e 100%);
-      color: white;
-      padding: 80px 0;
-      overflow: hidden;
-    }
-    
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.2);
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    
-    .hero-text h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-    
-    .cta-buttons {
-      display: flex;
-      gap: 16px;
-      margin-top: 24px;
-    }
-    
-    .hero-media {
-      text-align: right;
-    }
-    
-    .device-mock {
-      position: relative;
-      display: inline-block;
-      max-width: 100%;
-    }
-    
-    .telematics-image1 {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-    
-    .floating-badge {
-      position: absolute;
-      background: var(--accent);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 14px;
-      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
-    }
-    
-    .badge-1 {
-      top: 20px;
-      left: 20px;
-    }
-    
-    .badge-2 {
-      bottom: 120px;
-      right: 20px;
-    }
-    
-    .badge-3 {
-      bottom: 30px;
-      left: 50px;
-    }
-    
-    /* Telematics Section */
-    .telematics-section {
-      padding: 80px 0;
-    }
-    
-    .telematics-section h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: var(--secondary);
-    }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 28px;
-    }
-    
-    .feature-card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    }
-    
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    }
-    
-    .feature-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      color: white;
-      font-size: 28px;
-    }
-    
-    .feature-card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: var(--secondary);
-    }
-    
-    .feature-card p {
-      color: var(--gray);
-      font-size: 16px;
-    }
-    
-    /* Device Showcase Section */
-    .devices-section {
-      padding: 80px 0;
-      background: white;
-    }
-    
-    .devices-section h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: var(--secondary);
-    }
-    
-    .devices-subtitle {
-      text-align: center;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 50px;
-      font-size: 18px;
-    }
-    
-    .devices-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .device-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    
-    .device-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .device-image {
-      height: 200px;
-      background: var(--light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    
-    .device-image img {
-      max-width: 100%;
-      max-height: 160px;
-      object-fit: contain;
-    }
-    
-    .device-content {
-      padding: 25px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .device-content h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--secondary);
-    }
-    
-    .device-description {
-      color: var(--gray);
-      margin-bottom: 20px;
-      flex-grow: 1;
-      line-height: 1.6;
-    }
-    
-    .device-features {
-      background: var(--light);
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    
-    .device-features h4 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    
-    .features-list {
-      list-style: none;
-      font-size: 14px;
-      color: var(--gray);
-    }
-    
-    .features-list li {
-      margin: 4px 0;
-      display: flex;
-      align-items: center;
-    }
-    
-    .features-list li i {
-      color: var(--success);
-      margin-right: 8px;
-      font-size: 12px;
-    }
-    
-    .device-actions {
-      text-align: center;
-    }
-    
-    /* Footer */
-    .footer {
-      background: var(--secondary);
-      color: white;
-      padding: 50px 0 20px;
-    }
-    
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-    
-    .footer-brand {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-    
-    .footer-col h3 {
-      font-size: 18px;
-      margin-bottom: 20px;
-      color: var(--accent);
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--light-gray);
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      
-      .hero-media {
-        text-align: center;
-      }
-      
-      .cta-buttons {
-        justify-content: center;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .mobile-menu-btn {
-        display: flex;
-      }
-      
-      .hero-text h1 {
-        font-size: 32px;
-      }
-      
-      .telematics-section h2,
-      .devices-section h2 {
-        font-size: 28px;
-      }
-      
-      .lead {
-        font-size: 16px;
-      }
-      
-      .devices-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero-text h1 {
-        font-size: 26px;
-      }
-      
-      .cta-buttons {
-        flex-direction: column;
-        gap: 12px;
-      }
-      
-      .btn {
-        width: 100%;
-      }
-      
-      .floating-badge {
-        font-size: 12px;
-        padding: 6px 12px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercyda International</title>
+    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+
+    <!-- Include Font Awesome (Optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ev-solutions.css">
+
 </head>
 <body>
-  <!-- header -->
-  <header class="main-header">
+<!-- Curtain Overlay -->
+<!-- <div class="curtain-overlay"></div> -->
+
+    <!-- Modern Header -->
+    <!-- Modern Header -->
+    <header class="main-header">
     <div class="container">
-      <div class="header-wrapper">
+        <div class="header-wrapper">
+        <!-- Logo + Company Name -->
         <div class="branding">
-          <img src="https://placehold.co/150x50/2563eb/white?text=LOGO" class="brand-logo" alt="Logo">
-          <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+            <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+            <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
         </div>
+
+        <!-- Desktop Navigation -->
         <nav class="nav-menu" id="navMenu">
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li class="dropdown"><a href="#" class="dropbtn">Products</a>
-              <ul class="dropdown-content">
-                <li><a href="product.html">ALL PRODUCTS</a></li>
-              </ul>
+            <ul class="nav-links">
+            <li><a href="../pages/index.html" class="active">Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                    <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                    <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
+                    <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                    <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                </ul>
             </li>
-            <li><a href="solutions.html">Solutions</a></li>
-            <li><a href="telematics.html">Telematics</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+             <li><a href="solutions.html" >Solutions</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+
+            <!-- Store Icons -->
+            <li class="nav-store-item">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-store-item">
+                <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store" aria-hidden="true"></i>
+                </a>
+            </li>
+            </ul>
         </nav>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-          <span class="menu-icon"></span><span class="menu-icon"></span><span class="menu-icon"></span>
+
+        <!-- Hamburger Button (Mobile only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
         </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="telematics-hero">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="hero-content hero-grid">
-        <div class="hero-text">
-          <h1>Electric Vehicle Systems & Power Electronics</h1>
-          <p class="lead">Battery management, motor controllers, charging interfaces and system-level telematics engineered for EV reliability and range optimization.</p>
-          <div class="cta-buttons"><a class="btn btn-primary" href="contact.html">Speak to an EV Expert</a><a class="btn btn-outline" href="#solutions">Solutions</a></div>
         </div>
-        <div class="hero-media">
-          <div class="device-mock">
-            <img src="https://placehold.co/400x300/e2e8f0/64748b?text=EV+Systems" alt="EV systems" class="telematics-image1">
-            <div class="floating-badge badge-1">BMS</div>
-            <div class="floating-badge badge-2">Inverter</div>
-            <div class="floating-badge badge-3">Charging</div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+    </header>
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
 
-  <!-- SOLUTIONS -->
-  <section id="solutions" class="telematics-section">
-    <div class="container narrow">
-      <h2>EV Solutions</h2>
-      <p class="lead">Comprehensive EV electronics from cell monitoring to fleet charging platforms.</p>
-      <div class="features-grid" style="margin-top:28px;">
-        <div class="feature-card"><div class="feature-icon"><i class="fas fa-battery-full"></i></div><h3>Battery Management Systems</h3><p>Cell balancing, SOC estimation and thermal protection.</p></div>
-        <div class="feature-card"><div class="feature-icon"><i class="fas fa-charging-station"></i></div><h3>Charging & Power Interfaces</h3><p>AC/DC converters, charging protocols and smart charging management.</p></div>
-        <div class="feature-card"><div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div><h3>Motor Controllers</h3><p>High-efficiency inverters with safety and torque control.</p></div>
-        <div class="feature-card"><div class="feature-icon"><i class="fas fa-cloud"></i></div><h3>Fleet Energy Management</h3><p>Cloud telematics for range, charging scheduling and analytics.</p></div>
-      </div>
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/product.html">
+                <i class="fas fa-box-open"></i> Product
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/solutions.html">
+                <i class="fas fa-lightbulb"></i> Solutions
+            </a>
+
+        <li>
+            <a href="../pages/contact.html">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
+<section class="ev-section">
+
+  <!-- Left Content -->
+  <div class="ev-content reveal-left">
+    <h1>Electric Vehicle Systems</h1>
+    <p>
+      Intelligent EV electronics including Battery Management,
+      Power Inverters and Smart Charging solutions.
+    </p>
+
+    <div class="btn-group">
+      <a href="#" class="btn btn-primary">Explore Solutions</a>
+      <a href="#" class="btn btn-outline">Learn More</a>
     </div>
-  </section>
+  </div>
 
-  <!-- DEVICES SHOWCASE -->
-  <section class="devices-section" id="devices">
-    <div class="container">
-      <h2>Advanced Telematics Devices</h2>
-      <p class="devices-subtitle">Purpose-built for Electric Vehicle Applications</p>
-      
-      <div class="devices-grid">
-        <!-- Device 1: GLS-4G+ -->
-        <div class="device-card">
-          <div class="device-image">
-            <img src="https://placehold.co/250x150/3b82f6/white?text=GLS-4G%2B" alt="MERCYDA GLS-4G+">
-          </div>
-          <div class="device-content">
-            <h3>MERCYDA GLS-4G+</h3>
-            <p class="device-description">Advanced 4G LTE GNSS-based tracking and monitoring device with integrated audio communication features including microphone support, voice recording, and remote calling.</p>
-            <div class="device-features">
-              <h4>Key Features</h4>
-              <ul class="features-list">
-                <li><i class="fas fa-check-circle"></i> 4G LTE with 2G fallback</li>
-                <li><i class="fas fa-check-circle"></i> Real-time GPS & IRNSS tracking</li>
-                <li><i class="fas fa-check-circle"></i> Two-way voice calling</li>
-                <li><i class="fas fa-check-circle"></i> Wide voltage 9-90V DC</li>
-                <li><i class="fas fa-check-circle"></i> IP67 rugged enclosure</li>
-              </ul>
-            </div>
-            <div class="device-actions">
-              <a href="contact.html" class="btn btn-primary">Get Details</a>
-            </div>
-          </div>
-        </div>
+  <!-- Right Card -->
+  <div class="ev-systems-card reveal-right">
+    <img src="../assets/ev-systems.jpg" alt="EV Systems" class="card-image">
+    <h2>EV Systems</h2>
+
+    <div class="floating-label bms">BMS</div>
+    <div class="floating-label inverter">Inverter</div>
+    <div class="floating-label charging">Charging</div>
+  </div>
+
+</section>
+
+
+<section class="ev-solutions-section">
+
+  <!-- EV Solutions -->
+  <div class="container">
+    <h2 class="section-title">EV Solutions</h2>
+    <p class="section-subtitle">
+      Comprehensive EV electronics from cell monitoring to fleet charging platforms.
+    </p>
+
+    <div class="ev-solutions-grid">
+
+      <div class="ev-solution-card reveal">
+        <div class="icon-circle">🔋</div>
+        <h3>Battery Management Systems</h3>
+        <p>Cell balancing, SOC estimation and thermal protection.</p>
+      </div>
+
+      <div class="ev-solution-card">
+        <div class="icon-circle">⚡</div>
+        <h3>Charging & Power Interfaces</h3>
+        <p>AC/DC converters, charging protocols and smart charging management.</p>
+      </div>
+
+      <div class="ev-solution-card">
+        <div class="icon-circle">⚙️</div>
+        <h3>Motor Controllers</h3>
+        <p>High-efficiency inverters with safety and torque control.</p>
+      </div>
+
+      <div class="ev-solution-card">
+        <div class="icon-circle">☁️</div>
+        <h3>Fleet Energy Management</h3>
+        <p>Cloud telematics for range, charging scheduling and analytics.</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ============================= -->
+
+<section class="devices-section">
+
+  <div class="container">
+    <h2 class="section-title">Advanced Telematics Devices</h2>
+    <p class="section-subtitle blue">
+      Purpose-built for Electric Vehicle Applications
+    </p>
+
+    <div class="devices-grid">
+
+      <!-- Device 1 -->
+     <div class="device-card reveal">
+  <div class="device-header blue">GLS-4G+</div>
+
+  <h4>MERCYDA GLS-4G+</h4>
+  <p>
+    Advanced 4G LTE GNSS based tracking and monitoring device including
+    microphone support, voice recording and remote calling.
+  </p>
+
+  <h5 class="key-title">Key Features</h5>
+  <ul class="key-features">
+    <li>4G LTE with 2G fallback</li>
+    <li>GNSS & IRNSS tracking</li>
+    <li>Two-way voice calling</li>
+    <li>IP67 rugged enclosure</li>
+  </ul>
+
+  <a href="#" class="btn-primary">Get Details</a>
+</div>
+
+
+     <div class="device-card">
+  <div class="device-header purple">Device 2</div>
+
+  <h4>MERCYDA EV-TRACK PRO</h4>
+  <p>
+    Next generation EV monitoring system with advanced battery analytics,
+    real-time diagnostics and predictive maintenance.
+  </p>
+
+  <h5 class="key-title">Key Features</h5>
+  <ul class="key-features">
+    <li>Battery health monitoring</li>
+    <li>Predictive maintenance alerts</li>
+    <li>Real-time vehicle analytics</li>
+    <li>Secure cloud integration</li>
+  </ul>
+
+  <a href="#" class="btn-primary">Get Details</a>
+</div>
+
+
+    <div class="device-card">
+  <div class="device-header cyan">Device 3</div>
+
+  <h4>MERCYDA CHARGE-CONNECT</h4>
+  <p>
+    Smart charging gateway for EV fleets with load balancing,
+    remote management and real-time energy insights.
+  </p>
+
+  <h5 class="key-title">Key Features</h5>
+  <ul class="key-features">
+    <li>Smart charging management</li>
+    <li>Load balancing control</li>
+    <li>Energy consumption analytics</li>
+    <li>Multi-protocol charger support</li>
+  </ul>
+
+  <a href="#" class="btn-primary">Get Details</a>
+</div>
+
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- --------- COLUMN 1: Brand & Links --------- -->
+    <div class="footer-col">
+      <h2 class="footer-brand">
+        <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+      </h2>
+
+      <ul>
+        <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+        <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+        <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- --------- COLUMN 2: Guides --------- -->
+    <div class="footer-col">
+      <h3>Help & Guides</h3>
+      <ul>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+        <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link"><i class="fas fa-download"></i> IOS App Usermanual</a></li>
+        <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link"><i class="fas fa-download"></i> Android App Usermanual</a></li>
+      </ul>
+    </div>
+<!-- --------- COLUMN: Quick Links --------- -->
+<div class="footer-col">
+  <h3>Quick Links</h3>
+  <ul>
+    <li>
+      <a href="https://echallan.parivahan.gov.in/" target="_blank">
+        <i class="fas fa-receipt"></i> e-Challan
+      </a>
+    </li>
+
+    <li>
+      <a href="https://parivahan.gov.in/" target="_blank">
+        <i class="fas fa-id-card"></i> Get / Renew License
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rajmargyatra.nhai.gov.in/" target="_blank">
+        <i class="fas fa-road"></i> Check Tolls
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.policybazaar.com/" target="_blank">
+        <i class="fas fa-shield-alt"></i> Buy Insurance
+      </a>
+    </li>
+
+    <li>
+      <a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en">
+        <i class="fas fa-truck-pickup"></i> Tow Service
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rechargezap.in/fastag" target="_blank">
+        <i class="fas fa-broadcast-tower"></i> FASTag Recharge
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <!-- --------- COLUMN 3: Policies --------- -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+        <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
         
-        <!-- Device 2: Placeholder for next device -->
-        <div class="device-card">
-          <div class="device-image">
-            <img src="https://placehold.co/250x150/8b5cf6/white?text=Device+2" alt="Device 2">
-          </div>
-          <div class="device-content">
-            <h3>MERCYDA EV-TRACK PRO</h3>
-            <p class="device-description">Next-generation EV monitoring system with advanced battery analytics, real-time diagnostics, and predictive maintenance capabilities.</p>
-            <div class="device-features">
-              <h4>Key Features</h4>
-              <ul class="features-list">
-                <li><i class="fas fa-check-circle"></i> Battery health monitoring</li>
-                <li><i class="fas fa-check-circle"></i> Predictive maintenance alerts</li>
-                <li><i class="fas fa-check-circle"></i> Real-time diagnostics</li>
-                <li><i class="fas fa-check-circle"></i> Cloud-based analytics</li>
-                <li><i class="fas fa-check-circle"></i> Secure data encryption</li>
-              </ul>
-            </div>
-            <div class="device-actions">
-              <a href="contact.html" class="btn btn-primary">Get Details</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Device 3: Placeholder for next device -->
-        <div class="device-card">
-          <div class="device-image">
-            <img src="https://placehold.co/250x150/0ea5e9/white?text=Device+3" alt="Device 3">
-          </div>
-          <div class="device-content">
-            <h3>MERCYDA CHARGE-CONNECT</h3>
-            <p class="device-description">Smart charging gateway for EV fleets with load balancing, remote management, and real-time charging analytics.</p>
-            <div class="device-features">
-              <h4>Key Features</h4>
-              <ul class="features-list">
-                <li><i class="fas fa-check-circle"></i> Smart charging management</li>
-                <li><i class="fas fa-check-circle"></i> Load balancing</li>
-                <li><i class="fas fa-check-circle"></i> Remote monitoring</li>
-                <li><i class="fas fa-check-circle"></i> Energy consumption analytics</li>
-                <li><i class="fas fa-check-circle"></i> Multi-protocol support</li>
-              </ul>
-            </div>
-            <div class="device-actions">
-              <a href="contact.html" class="btn btn-primary">Get Details</a>
-            </div>
-          </div>
-        </div>
+      </ul>
+      <div class="footer-catalogue">
+        <a href="../assets/Mercydaz_Catalogue.pdf" 
+          class="catalogue-btn" 
+          download>
+          <i class="fas fa-file-pdf"></i> Download Catalogue
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col"><h2 class="footer-brand"><i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL</h2></div>
-      <div class="footer-col"><h3>Help & Guides</h3></div>
-      <div class="footer-col"><h3>Legal</h3></div>
+  </div>
+
+  <div class="footer-bottom">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </div>
+
+
+  <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+
+  <div class="footer-contact">
+    <p>
+      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
+    </p>
+    <p>
+      <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float" id="waBtn">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Chat Popup -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div>
+      <h4>Mercyda Support</h4>
+      <span class="status">online</span>
     </div>
-    <div class="footer-bottom"><p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL</p></div>
-  </footer>
+    <span class="close-btn" id="closeChat">&times;</span>
+  </div>
 
+  <div class="chat-body">
+    <div class="chat-message">
+      <strong>Mercyda Support</strong>
+      <p>Hi 👋<br>How can I help you?</p>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <a
+      href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+      target="_blank"
+      class="start-chat-btn"
+    >
+      Start Chat
+    </a>
+    <small>⚡ Powered by WhatsApp</small>
+  </div>
+</div>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Mobile menu functionality
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navMenu = document.getElementById('navMenu');
-    
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => {
-        const navLinks = navMenu.querySelector('.nav-links');
-        if (navLinks.style.display === 'flex') {
-          navLinks.style.display = 'none';
-        } else {
-          navLinks.style.display = 'flex';
-          navLinks.style.flexDirection = 'column';
-          navLinks.style.position = 'absolute';
-          navLinks.style.top = '80px';
-          navLinks.style.left = '0';
-          navLinks.style.width = '100%';
-          navLinks.style.backgroundColor = 'white';
-          navLinks.style.padding = '20px';
-          navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+    document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(
+    ".reveal-left, .reveal-right"
+  );
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target); // animate once
         }
       });
+    },
+    {
+      threshold: 0.25,
+      rootMargin: "0px 0px -120px 0px"
     }
+  );
+
+  revealElements.forEach(el => observer.observe(el));
+});
+
+  /* ==========================
+       MOBILE MENU
+    ========================== */
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function toggleMenu() {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+
+      const waBtn = document.getElementById("waBtn");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+
+  waBtn.addEventListener("click", () => {
+    chatWidget.style.display = "block";
+    waBtn.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    waBtn.style.display = "flex";
+  });
   </script>
 </body>
 </html>

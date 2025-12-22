@@ -1,216 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>R&D Solutions - Mercyda International</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/rnd.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercyda International</title>
+    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+
+    <!-- Include Font Awesome (Optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/rnd.css">
+
 </head>
 <body>
-  <header class="main-header">
-    <div class="container">
-      <div class="header-wrapper">
-        <div class="branding"><img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Logo"><h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1></div>
-        <nav class="nav-menu" id="navMenu"><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="service.html">Service</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"><span class="menu-icon"></span><span class="menu-icon"></span><span class="menu-icon"></span></button>
-      </div>
-    </div>
-  </header>
+<!-- Curtain Overlay -->
+<!-- <div class="curtain-overlay"></div> -->
 
-  <section class="telematics-hero">
-    <div class="overlay"></div>
+    <!-- Modern Header -->
+    <!-- Modern Header -->
+    <header class="main-header">
     <div class="container">
-      <div class="hero-content hero-grid">
-        <div class="hero-text animate-fade-in-up">
-          <h1>R&D Services & Embedded Research</h1>
-          <p class="lead">Collaborative R&D for new product concepts, hardware-software co-design, sensor fusion and prototype validation.</p>
-          <div class="cta-buttons"><a class="btn btn-primary" href="contact.html">Start a Project</a><a class="btn btn-outline" href="#solutions">Our R&D</a></div>
+        <div class="header-wrapper">
+        <!-- Logo + Company Name -->
+        <div class="branding">
+            <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+            <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
         </div>
-        <div class="hero-media animate-fade-in-up"><div class="device-mock"><img src="../assets/r&d-solutions.jpg" alt="R&D" class="telematics-image1"><div class="floating-badge badge-1">Prototype</div><div class="floating-badge badge-2">Validation</div></div></div>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+            <li><a href="../pages/index.html">Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
+                    <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
+                    <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
+                    <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
+                    <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+                </ul>
+            </li>
+             <li><a href="solutions.html" >Solutions</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+
+            <!-- Store Icons -->
+            <li class="nav-store-item">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-store-item">
+                <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store" aria-hidden="true"></i>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Button (Mobile only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        </div>
+    </div>
+    </header>
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
+
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/product.html">
+                <i class="fas fa-box-open"></i> Product
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/solutions.html">
+                <i class="fas fa-lightbulb"></i> Solutions
+            </a>
+
+        <li>
+            <a href="../pages/contact.html">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+
+
+  <section class="rd-hero">
+  <div class="rd-container">
+
+    <!-- Left Content -->
+    <div class="rd-content">
+      <h1>
+        R&D Services &<br />
+        Embedded Research
+      </h1>
+
+      <p>
+        Collaborative R&D for new product concepts, hardware–software
+        co-design, sensor fusion and prototype validation.
+      </p>
+
+      <div class="rd-actions">
+        <a href="#" class="btn btn-primary">Start a Project</a>
+        <a href="#" class="btn btn-outline">Our R&amp;D</a>
       </div>
     </div>
-  </section>
+
+    <!-- Right Visual -->
+    <div class="rd-visual">
+      <span class="tag tag-top">Prototype</span>
+
+      <div class="image-circle">
+        <img
+          src="../assets/r&d-solutions.jpg"
+          alt="Embedded R&D"
+        />
+      </div>
+
+      <span class="tag tag-bottom">Validation</span>
+    </div>
+
+  </div>
+</section>
+
 
   
-  <section id="solutions" class="telematics-section">
-    <div class="container narrow">
-      <h2>R&D Capabilities</h2>
-      <p class="lead">From ideation to verification — fast iterations with engineering rigor.</p>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-flask"></i></div>
-          <h3>Concept Engineering</h3>
-          <p>Feasibility studies and system architecture.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
-          <h3>Hardware-Software Co-Design</h3>
-          <p>PCB, firmware and algorithm integration.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-vial"></i></div>
-          <h3>Test & Validation</h3>
-          <p>Environmental, EMI and performance validation.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fas fa-robot"></i></div>
-          <h3>Automation & Tools</h3>
-          <p>Custom test rigs, CI for firmware and data pipelines.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="rd-capabilities">
+  <div class="rd-cap-container">
 
-  <section id="services" class="services-section">
-    <div class="container">
+    <div class="rd-cap-header">
+      <h2>R&amp;D Capabilities</h2>
+      <p>
+        From ideation to verification — fast iterations with engineering rigor.
+      </p>
+    </div>
+
+    <div class="rd-cap-grid">
+
+      <!-- Card 1 -->
+      <div class="rd-cap-card">
+        <div class="cap-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3>Concept Engineering</h3>
+        <p>Feasibility studies and system architecture.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="rd-cap-card">
+        <div class="cap-icon">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <h3>Hardware–Software Co-Design</h3>
+        <p>PCB, firmware and algorithm integration.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="rd-cap-card">
+        <div class="cap-icon">
+          <i class="fas fa-vial"></i>
+        </div>
+        <h3>Test &amp; Validation</h3>
+        <p>Environmental, EMI and performance validation.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="rd-cap-card">
+        <div class="cap-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3>Automation &amp; Tools</h3>
+        <p>Custom test rigs, CI for firmware and data pipelines.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="embedded-services">
+  <div class="es-container">
+
+    <!-- Header -->
+    <div class="es-header">
       <h2>Our Embedded Services</h2>
-      <p class="lead">Comprehensive embedded systems solutions tailored to your specific requirements.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="https://placehold.co/400x200/2563eb/ffffff?text=IoT+Solutions" alt="IoT Solutions" class="service-image">
-          <div class="service-content">
-            <h3>IoT Solutions</h3>
-            <p>End-to-end IoT development from sensor networks to cloud connectivity with secure communication protocols.</p>
-          </div>
+      <p>
+        Comprehensive embedded systems solutions tailored to your specific requirements.
+      </p>
+    </div>
+
+    <!-- Service List -->
+    <div class="es-list">
+
+      <!-- Item 1 -->
+      <div class="es-item">
+        <div class="es-rail">
+          <span class="es-index">01</span>
         </div>
-        <div class="service-card">
-          <img src="https://placehold.co/400x200/0f172a/ffffff?text=Automotive+Electronics" alt="Automotive Electronics" class="service-image">
-          <div class="service-content">
-            <h3>Automotive Electronics</h3>
-            <p>Advanced automotive systems including telematics, ADAS, and vehicle connectivity solutions.</p>
+        <div class="es-content">
+          <div class="es-icon">
+            <i class="fas fa-network-wired"></i>
           </div>
-        </div>
-        <div class="service-card">
-          <img src="https://placehold.co/400x200/8b5cf6/ffffff?text=Industrial+Automation" alt="Industrial Automation" class="service-image">
-          <div class="service-content">
-            <h3>Industrial Automation</h3>
-            <p>Robust industrial control systems, PLC programming, and factory automation solutions.</p>
-          </div>
+          <h3>IoT Solutions</h3>
+          <p>
+            End-to-end IoT development from sensor networks to cloud connectivity
+            with secure communication protocols.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="stats-section">
-    <div class="container">
+      <!-- Item 2 -->
+      <div class="es-item">
+        <div class="es-rail">
+          <span class="es-index">02</span>
+        </div>
+        <div class="es-content">
+          <div class="es-icon">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3>Automotive Electronics</h3>
+          <p>
+            Advanced automotive systems including telematics, ADAS,
+            and vehicle connectivity solutions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="es-item">
+        <div class="es-rail">
+          <span class="es-index">03</span>
+        </div>
+        <div class="es-content">
+          <div class="es-icon">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3>Industrial Automation</h3>
+          <p>
+            Robust industrial control systems, PLC programming,
+            and factory automation solutions.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="impact-section">
+  <div class="impact-overlay"></div>
+
+  <div class="impact-container">
+    <div class="impact-header">
       <h2>Our Impact</h2>
-      <p class="lead" style="color: var(--light-gray);">Delivering excellence through innovation and expertise.</p>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>500+</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div class="stat-item">
-          <h3>98%</h3>
-          <p>Client Satisfaction</p>
-        </div>
-        <div class="stat-item">
-          <h3>15+</h3>
-          <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-          <h3>50+</h3>
-          <p>Expert Engineers</p>
-        </div>
+      <p>Delivering excellence through innovation and expertise.</p>
+    </div>
+
+    <div class="impact-stats">
+      <div class="impact-item">
+        <span class="impact-number" data-target="500">0</span>+
+        <p>Projects Completed</p>
+      </div>
+
+      <div class="impact-item">
+        <span class="impact-number" data-target="98">0</span>%
+        <p>Client Satisfaction</p>
+      </div>
+
+      <div class="impact-item">
+        <span class="impact-number" data-target="15">0</span>+
+        <p>Years Experience</p>
+      </div>
+
+      <div class="impact-item">
+        <span class="impact-number" data-target="50">0</span>+
+        <p>Expert Engineers</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="portfolio-section">
-    <div class="container">
+
+<!-- ================================
+   RECENT PROJECTS
+================================ -->
+<section class="recent-projects">
+  <div class="rp-container">
+    <div class="rp-header">
       <h2>Recent Projects</h2>
-      <p class="lead">Explore our latest embedded systems innovations and successful implementations.</p>
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="https://placehold.co/300x250/1e40af/ffffff?text=Smart+Healthcare" alt="Smart Healthcare" class="portfolio-image">
-          <div class="portfolio-overlay">
-            <h3>Smart Healthcare</h3>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://placehold.co/300x250/0f172a/ffffff?text=Smart+City" alt="Smart City" class="portfolio-image">
-          <div class="portfolio-overlay">
-            <h3>Smart City</h3>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://placehold.co/300x250/8b5cf6/ffffff?text=Robotics" alt="Robotics" class="portfolio-image">
-          <div class="portfolio-overlay">
-            <h3>Advanced Robotics</h3>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="https://placehold.co/300x250/2563eb/ffffff?text=Energy+Management" alt="Energy Management" class="portfolio-image">
-          <div class="portfolio-overlay">
-            <h3>Energy Management</h3>
-          </div>
-        </div>
+      <p>Explore our latest embedded systems innovations and successful implementations.</p>
+    </div>
+
+    <div class="rp-grid">
+      <div class="rp-card">
+        <div class="rp-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3>project1</h3>
+      </div>
+      <div class="rp-card">
+        <div class="rp-icon"><i class="fas fa-city"></i></div>
+        <h3>project1</h3>
+      </div>
+      <div class="rp-card">
+        <div class="rp-icon"><i class="fas fa-robot"></i></div>
+        <h3>project1</h3>
+      </div>
+      <div class="rp-card">
+        <div class="rp-icon"><i class="fas fa-bolt"></i></div>
+        <h3>project1</h3>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="testimonials-section">
-    <div class="container">
+<!-- ================================
+   CLIENT TESTIMONIALS
+================================ -->
+<section class="testimonials">
+  <div class="testi-container">
+    <div class="testi-header">
       <h2>Client Testimonials</h2>
-      <p class="lead">Hear what our partners say about our embedded solutions and collaborative approach.</p>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            "Mercyda's embedded team transformed our product development process. Their technical expertise and attention to detail resulted in a robust, production-ready solution that exceeded our expectations."
-          </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">JD</div>
-            <div class="author-info">
-              <h4>John Davis</h4>
-              <p>CTO, TechInnovate Inc.</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            "The collaborative R&D approach and rapid prototyping capabilities of Mercyda enabled us to bring our IoT product to market 6 months ahead of schedule. Exceptional partnership!"
-          </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">SR</div>
-            <div class="author-info">
-              <h4>Sarah Roberts</h4>
-              <p>Product Manager, SmartSolutions Ltd</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            "From concept to validation, Mercyda provided comprehensive embedded systems expertise that was crucial to our automotive electronics project's success. Highly recommended!"
-          </div>
-          <div class="testimonial-author">
-            <div class="author-avatar">MK</div>
-            <div class="author-info">
-              <h4>Michael Kim</h4>
-              <p>Engineering Director, AutoTech Corp</p>
-            </div>
-          </div>
-        </div>
+      <p>Hear what our partners say about our embedded solutions and collaborative approach.</p>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <p>"Mercyda's embedded team transformed our product development process. Their technical expertise and attention to detail resulted in a robust, production-ready solution that exceeded our expectations."</p>
+        <h4>JD</h4>
+        <span>John Davis, CTO, TechInnovate Inc.</span>
+      </div>
+
+      <div class="testi-card">
+        <p>"The collaborative R&D approach and rapid prototyping capabilities of Mercyda enabled us to bring our IoT product to market 6 months ahead of schedule. Exceptional partnership!"</p>
+        <h4>SR</h4>
+        <span>Sarah Roberts, Product Manager, SmartSolutions Ltd</span>
+      </div>
+
+      <div class="testi-card">
+        <p>"From concept to validation, Mercyda provided comprehensive embedded systems expertise that was crucial to our automotive electronics project's success. Highly recommended!"</p>
+        <h4>MK</h4>
+        <span>Michael Kim, Engineering Director, AutoTech Corp</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================
+   CALL TO ACTION
+================================ -->
+<section class="cta-section">
+  <div class="cta-container">
+    <h2>Ready to Start Your Next Embedded Project?</h2>
+    <p>Partner with our expert R&D team to bring your innovative ideas to life with cutting-edge embedded systems solutions.</p>
+    <a href="#" class="btn btn-primary">Get In Touch</a>
+  </div>
+</section>
+
+  
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- --------- COLUMN 1: Brand & Links --------- -->
+    <div class="footer-col">
+      <h2 class="footer-brand">
+        <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+      </h2>
+
+      <ul>
+        <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+        <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+        <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- --------- COLUMN 2: Guides --------- -->
+    <div class="footer-col">
+      <h3>Help & Guides</h3>
+      <ul>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+        <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link"><i class="fas fa-download"></i> IOS App Usermanual</a></li>
+        <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link"><i class="fas fa-download"></i> Android App Usermanual</a></li>
+      </ul>
+    </div>
+<!-- --------- COLUMN: Quick Links --------- -->
+<div class="footer-col">
+  <h3>Quick Links</h3>
+  <ul>
+    <li>
+      <a href="https://echallan.parivahan.gov.in/" target="_blank">
+        <i class="fas fa-receipt"></i> e-Challan
+      </a>
+    </li>
+
+    <li>
+      <a href="https://parivahan.gov.in/" target="_blank">
+        <i class="fas fa-id-card"></i> Get / Renew License
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rajmargyatra.nhai.gov.in/" target="_blank">
+        <i class="fas fa-road"></i> Check Tolls
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.policybazaar.com/" target="_blank">
+        <i class="fas fa-shield-alt"></i> Buy Insurance
+      </a>
+    </li>
+
+    <li>
+      <a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en">
+        <i class="fas fa-truck-pickup"></i> Tow Service
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rechargezap.in/fastag" target="_blank">
+        <i class="fas fa-broadcast-tower"></i> FASTag Recharge
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <!-- --------- COLUMN 3: Policies --------- -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+        <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        
+      </ul>
+      <div class="footer-catalogue">
+        <a href="../assets/Mercydaz_Catalogue.pdf" 
+          class="catalogue-btn" 
+          download>
+          <i class="fas fa-file-pdf"></i> Download Catalogue
+        </a>
       </div>
     </div>
-  </section>
 
-  <section class="cta-section" id="contact">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Ready to Start Your Next Embedded Project?</h2>
-        <p class="lead">Partner with our expert R&D team to bring your innovative ideas to life with cutting-edge embedded systems solutions.</p>
-        <a href="#contact" class="btn btn-cta">Get In Touch</a>
-      </div>
+  </div>
+
+
+
+
+
+
+  <div class="footer-bottom">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </div>
+
+
+  <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+
+  <div class="footer-contact">
+    <p>
+      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
+    </p>
+    <p>
+      <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float" id="waBtn">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Chat Popup -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div>
+      <h4>Mercyda Support</h4>
+      <span class="status">online</span>
     </div>
-  </section>
+    <span class="close-btn" id="closeChat">&times;</span>
+  </div>
 
-  <footer class="footer"><div class="footer-container"><div class="footer-col"><h2 class="footer-brand"><i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL</h2></div></div><div class="footer-bottom"><p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL</p></div></footer>
+  <div class="chat-body">
+    <div class="chat-message">
+      <strong>Mercyda Support</strong>
+      <p>Hi 👋<br>How can I help you?</p>
+    </div>
+  </div>
 
-  <script src="../js/script.js"></script>
-  <script src="../js/telematics.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div class="chat-footer">
+    <a
+      href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+      target="_blank"
+      class="start-chat-btn"
+    >
+      Start Chat
+    </a>
+    <small>⚡ Powered by WhatsApp</small>
+  </div>
+</div>
+
+
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ==========================
+       MOBILE MENU
+    ========================== */
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function toggleMenu() {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+
+     const waBtn = document.getElementById("waBtn");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+
+  waBtn.addEventListener("click", () => {
+    chatWidget.style.display = "block";
+    waBtn.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    waBtn.style.display = "flex";
+  });
+
+
+    const capCards = document.querySelectorAll('.rd-cap-card');
+
+  const capObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          capObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  capCards.forEach(card => {
+    card.style.animationPlayState = 'paused';
+    capObserver.observe(card);
+  });
+
+
+
+  const esItems = document.querySelectorAll('.es-item');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.2});
+
+esItems.forEach(item => {
+  item.style.animationPlayState = 'paused';
+  observer.observe(item);
+});
+
+
+const counters = document.querySelectorAll('.impact-number');
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText.replace(/[^0-9]/g,''); // remove any symbols
+    const speed = 200; // smaller = faster
+
+    const increment = target / speed;
+
+    if(count < target){
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 15);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  // Trigger when in viewport
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        updateCount();
+        observer.unobserve(counter);
+      }
+    });
+  }, {threshold: 0.5});
+
+  observer.observe(counter);
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null, // viewport
+    rootMargin: '0px',
+    threshold: 0.1 // trigger when 10% of element is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards and CTA section
+  const elements = document.querySelectorAll('.rp-card, .testi-card, .cta-section');
+  elements.forEach(el => observer.observe(el));
+});
+  </script>
 </body>
 </html>
