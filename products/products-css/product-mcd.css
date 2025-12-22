@@ -460,10 +460,10 @@ a:hover {
     background-size: cover, 80% auto;
     background-position: center, center;
     color: white;
-    padding: 120px 0;
+    padding: 140px 0;
     position: relative;
     overflow: hidden;
-    height: 540px;
+    height: 520px;
 }
 
 .hero-content {

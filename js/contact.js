@@ -156,4 +156,31 @@ document.addEventListener('DOMContentLoaded', () => {
     chatWidget.style.display = "none";
     waBtn.style.display = "flex";
   });
+
+  // ===== SUB-DROPDOWN TOGGLE =====
+    document.querySelectorAll('.sub-dropbtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const parent = btn.closest('.sub-dropdown');
+
+            // Close others
+            document.querySelectorAll('.sub-dropdown.active').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('active');
+                }
+            });
+
+            parent.classList.toggle('active');
+        });
+    });
+
+    // Close all sub-dropdowns on outside click
+    document.addEventListener('click', (e) => {
+        const isInsideDropdown = e.target.closest('.dropdown');
+        if (!isInsideDropdown) {
+            document.querySelectorAll('.sub-dropdown.active').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    });
 });
