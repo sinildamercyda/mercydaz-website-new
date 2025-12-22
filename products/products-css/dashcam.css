@@ -1,0 +1,1399 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #0066cc;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #004c99;
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -----------------------------------------------------------
+   HEADER
+----------------------------------------------------------- */
+.main-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 15px 30px;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/* -----------------------------------------------------------
+   BRANDING
+----------------------------------------------------------- */
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.brand-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #04034f;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* -----------------------------------------------------------
+   DESKTOP NAVIGATION
+----------------------------------------------------------- */
+.nav-menu {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    padding-bottom: 4px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #1a73e8;
+    border-bottom: 2px solid #1a73e8;
+}
+
+/* Store Icons */
+.nav-store-item i {
+    font-size: 1.3rem;
+    color: #1a73e8;
+    transition: 0.3s ease;
+}
+
+.nav-store-item i:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* -----------------------------------------------------------
+   HAMBURGER BUTTON
+----------------------------------------------------------- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.hamburger-line {
+    width: 28px;
+    height: 3px;
+    background: #333;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+
+/* -----------------------------------------------------------
+   MOBILE OVERLAY (SLIDE PANEL)
+----------------------------------------------------------- */
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 58%;
+    height: 100%;
+    background: #ffffffee;
+    backdrop-filter: blur(8px);
+    padding: 100px 30px;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.18);
+    transition: right 0.4s ease-in-out;
+    z-index: 999;   /* BELOW HEADER */
+}
+
+.mobile-overlay.active {
+    right: 0;
+}
+
+/* Prevent overlay from hiding header */
+.main-header {
+    z-index: 1000 !important;
+}
+
+.mobile-links {
+    list-style: none;
+}
+
+.mobile-links li {
+    margin: 22px 0;
+}
+
+.mobile-links a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #04034f;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s ease;
+}
+
+/* Hover effects */
+.mobile-links a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+
+.mobile-links a i {
+    font-size: 1.35rem;
+    color: #1a73e8;
+}
+
+/* === DROPDOWN STYLES === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #222;
+    transition: color 0.2s ease;
+}
+
+.dropbtn:hover {
+    color: #1a73e8;
+}
+
+.dropbtn::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #666;
+    transition: transform 0.25s ease, border-top-color 0.2s ease;
+}
+
+.dropbtn:hover::after,
+.dropbtn.open::after {
+    border-top-color: #1a73e8;
+}
+
+.dropbtn.open::after {
+    transform: rotate(180deg);
+}
+
+/* === ENHANCED DROPDOWN PANEL === */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 320px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
+                0 4px 8px rgba(0, 0, 0, 0.05);
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 8px 0;
+    z-index: 1001;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    visibility: hidden;
+}
+
+/* Show with animation */
+/* KEEP DROPDOWN OPEN WHEN HOVERING INSIDE */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.98rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Optional: Add subtle icons (using Font Awesome) */
+.dropdown-content a::before {
+    content: '●';
+    color: #1a73e8;
+    font-size: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.dropdown-content a:hover::before {
+    opacity: 1;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f7ff;
+    color: #0d5ab3;
+    transform: translateX(4px);
+}
+
+/* Divider (optional — for "All Products" header) */
+.dropdown-content .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.08), transparent);
+    margin: 6px 0;
+    border: none;
+}
+
+/* Optional: Add small subtle label (e.g., “Featured”) */
+.dropdown-content .tag {
+    font-size: 0.75rem;
+    background: #e6f0ff;
+    color: #1a73e8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: auto;
+    font-weight: 600;
+}
+
+/* === SUB-DROPDOWN (2nd LEVEL) === */
+.sub-dropdown {
+    position: relative;
+}
+
+/* Clickable button */
+.sub-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 20px;
+}
+
+/* Hover only for visual feedback (NOT opening) */
+.sub-dropbtn:hover {
+    background-color: #f0f7ff;
+    color: #0d5ab3;
+}
+
+/* Arrow rotation */
+.sub-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Submenu (hidden by default) */
+.sub-dropdown-content {
+    display: none;
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
+/* Submenu links */
+.sub-dropdown-content li a {
+    display: block;
+    padding: 10px 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sub-dropdown-content li a:hover {
+    background-color: #e6f0ff;
+    color: #1a73e8;
+    padding-left: 24px;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+    margin: 8px 0;
+    border: none;
+}
+
+/* -----------------------------------------------------------
+   RESPONSIVE
+----------------------------------------------------------- */
+@media (max-width: 991px) {
+    .brand-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .brand-title {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo {
+        width: 45px;
+    }
+
+    .brand-title {
+        font-size: 0.9rem;
+    }
+}
+/* Product Page Styles */
+
+.product-page {
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../../assets/dashcam-bg.png');
+    background-size: cover, 80% auto;
+    background-position: center, top;
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    height: 540px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    animation: fadeInUp 1s ease;
+}
+
+.animated-title {
+    font-size: 2.0rem;
+    margin-bottom: 10px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.product-name {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.4s forwards;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.product-3d-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: transform 0.5s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.product-image:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #04034f;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #0066cc;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #04034f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    background-color: #004c99;
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    color: #04034f;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Details Section */
+.details-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.details-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.details-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-images-wrapper {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;              
+    align-items: center;    
+}
+
+.details-image-main {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.details-image-main:hover {
+    transform: scale(1.02);
+}
+
+.details-text {
+    flex: 1;
+}
+
+.details-text h2 {
+    color: #04034f;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.details-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.tech-specs {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.tech-specs h3 {
+    color: #04034f;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.tech-specs ul {
+    list-style: none;
+}
+
+.tech-specs li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tech-specs li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #04034f;
+    font-weight: bold;
+}
+
+/* Specifications Section */
+.specifications-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.specs-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.specs-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.specs-table th,
+.specs-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.specs-table th {
+    background-color: #04034f;
+    color: white;
+    font-weight: 600;
+}
+
+.specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.specs-table tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.specs-table tr:hover {
+    background-color: #e6f2ff;
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #0066cc;
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #04034f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 32px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    background-color: #004c99;
+    transform: scale(1.1);
+}
+
+.benefit-card h3 {
+    color: #04034f;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 10px 0;
+    background: white;
+    color: #04034f;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #04034f;
+  color: #ffffff;
+  padding: 50px 20px 20px;
+  margin-top: 60px;
+  border-top: 3px solid #04034f;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-brand {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #3a7afe;
+  transform: translateX(5px);
+}
+
+/* ------ Social Icons ------ */
+.social-icons {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #3a7afe;
+  transform: scale(1.2);
+}
+
+/* ------ Bottom Text ------ */
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  color: #bbbbbb;
+}
+
+.footer-bottom p {
+  margin-top: 10px;
+}
+.footer-catalogue {
+  margin: 20px 0;
+}
+
+.catalogue-btn {
+  display: inline-flex;
+  gap: 10px;
+  padding: 12px 22px;
+  background: #1c69ff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.catalogue-btn i {
+  font-size: 16px;
+}
+
+.catalogue-btn:hover {
+  background: #04034f;
+  transform: translateY(-2px);
+}
+
+/* WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    z-index: 998;
+    display: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #0066cc;
+    color: white;
+}
+
+.chat-header div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status {
+    font-size: 0.8rem;
+    color: #80ff80;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #80ff80;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #80ff80;
+    border-radius: 50%;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #e6f2ff;
+}
+
+.chat-body {
+    padding: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message strong {
+    display: block;
+    color: #0066cc;
+    margin-bottom: 5px;
+}
+
+.chat-footer {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.start-chat-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.start-chat-btn:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+}
+
+.chat-footer small {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #060487;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-to-top:hover {
+    background-color: #004c99;
+    transform: scale(1.1);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: white;
+    color:  #04034f;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #04034f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: white;
+    color:  #04034f;
+    padding: 10px 22px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: #04034f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        order: 2;
+    }
+    
+    .hero-image {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    .details-content {
+        flex-direction: column;
+    }
+    
+    .details-image {
+        order: 2;
+        margin-top: 30px;
+    }
+    
+    .details-text {
+        order: 1;
+    }
+    
+    .product-name {
+        font-size: 2.5rem;
+    }
+    
+    .animated-title {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-wrapper {
+        padding: 10px 0;
+    }
+    
+    .brand-logo {
+        height: 50px;
+    }
+    
+    .brand-title {
+        font-size: 1rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero-section {
+        padding: 60px 0;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .product-name {
+        font-size: 2rem;
+    }
+    
+    .animated-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    .features-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .specs-table {
+        overflow-x: auto;
+    }
+    
+    .chat-widget {
+        width: 300px;
+        right: 10px;
+        bottom: 80px;
+    }
+    
+    .whatsapp-float {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .back-to-top {
+        bottom: 45px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .product-name {
+        font-size: 1.5rem;
+    }
+    
+    .animated-title {
+        font-size: 1.2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-card,
+    .benefit-card {
+        padding: 20px;
+    }
+    
+    .feature-icon,
+    .benefit-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .chat-widget {
+        width: 280px;
+        right: 5px;
+        bottom: 70px;
+    }
+    
+    .whatsapp-float {
+        bottom: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .back-to-top {
+        bottom: 45px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+/* Scroll Animations */
+.scroll-animated {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cursor Effect */
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #04034f;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-outline {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #04034f;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.1s ease;
+}
