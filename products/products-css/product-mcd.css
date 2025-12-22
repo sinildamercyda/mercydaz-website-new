@@ -456,14 +456,14 @@ a:hover {
 /* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../../assets/bg10.jpeg');
+                url('../../assets/bg8.jpeg');
     background-size: cover, 80% auto;
     background-position: center, center;
     color: white;
-    padding: 130px 0;
+    padding: 120px 0;
     position: relative;
     overflow: hidden;
-    height: 500px;
+    height: 540px;
 }
 
 .hero-content {

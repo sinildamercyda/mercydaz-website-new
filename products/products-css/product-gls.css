@@ -455,15 +455,15 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../../assets/bg10.jpeg');
+    background: linear-gradient(rgba(40, 40, 40, 0.5), rgba(40, 40, 40, 0.5)),
+                url('../../assets/bg6.png');
     background-size: cover, 80% auto;
-    background-position: center, center;
+    background-position: center, top;
     color: white;
-    padding: 130px 0;
+    padding: 140px 0;
     position: relative;
     overflow: hidden;
-    height: 500px;
+    height: 640px;
 }
 
 .hero-content {
@@ -481,7 +481,6 @@ a:hover {
     font-size: 2.0rem;
     margin-bottom: 10px;
     opacity: 0;
-    text-align: center;
     transform: translateY(30px);
     animation: fadeInUp 1s ease forwards;
 }
@@ -490,7 +489,6 @@ a:hover {
     font-size: 3.5rem;
     margin-bottom: 20px;
     opacity: 0;
-    text-align: center;
     transform: translateY(30px);
     animation: fadeInUp 1s ease 0.2s forwards;
 }
@@ -499,7 +497,6 @@ a:hover {
     font-size: 1.2rem;
     margin-bottom: 30px;
     opacity: 0;
-    text-align: center;
     transform: translateY(30px);
     animation: fadeInUp 1s ease 0.4s forwards;
 }

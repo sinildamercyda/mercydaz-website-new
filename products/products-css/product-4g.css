@@ -455,15 +455,15 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('../../assets/bg10.jpeg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('../../assets/download.jpg');
     background-size: cover, 80% auto;
-    background-position: center, center;
+    background-position: center, top;
     color: white;
-    padding: 130px 0;
+    padding: 140px 0;
     position: relative;
     overflow: hidden;
-    height: 500px;
+    height: 570px;
 }
 
 .hero-content {
@@ -478,13 +478,14 @@ a:hover {
 }
 
 .animated-title {
-    font-size: 2.0rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
     opacity: 0;
     text-align: center;
     transform: translateY(30px);
     animation: fadeInUp 1s ease forwards;
 }
+
 
 .product-name {
     font-size: 3.5rem;

@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-expanded', !isExpanded);
             mobileOverlay.classList.toggle('active');
 
-            // Animate hamburger to X (only if 3 lines exist)
             if (lines.length === 3) {
                 if (!isExpanded) {
                     lines[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close mobile menu
         const closeMobileMenu = () => {
             mobileOverlay.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Close on link click or overlay click
         document.querySelectorAll('.mobile-links a').forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
@@ -44,8 +41,75 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== MODALS (Scroll-friendly: body scroll remains enabled) =====
-    // ✅ No `overflow: hidden` — page stays scrollable
+    // ===== TAB SWITCHING (Modern Product Categories) =====
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Skip if already active
+            if (btn.classList.contains('active')) return;
+
+            const targetTab = btn.dataset.tab;
+
+            // Update buttons
+            tabBtns.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+
+            // Hide all panes FIRST (prevents layout jump)
+            tabPanes.forEach(pane => {
+                pane.classList.remove('active');
+                pane.setAttribute('aria-hidden', 'true');
+            });
+
+            // Show target pane after tiny delay (ensures display:none applied)
+            setTimeout(() => {
+                const targetPane = document.getElementById(`panel-${targetTab}`);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                    targetPane.setAttribute('aria-hidden', 'false');
+
+                    // Trigger staggered product reveal
+                    const cards = targetPane.querySelectorAll('.stagger-item');
+                    cards.forEach((card, i) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50 + i * 100);
+                    });
+                }
+            }, 10);
+        });
+    });
+
+    // ===== INITIAL STAGGERED ANIMATION (First Tab: Telematics) =====
+    const initStagger = () => {
+        const firstPane = document.querySelector('.tab-pane.active');
+        if (!firstPane) return;
+
+        const cards = firstPane.querySelectorAll('.stagger-item');
+        cards.forEach((card, i) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 300 + i * 100);
+        });
+    };
+
+    // Trigger after slight delay for smoother UX
+    setTimeout(initStagger, 400);
+
+    // ===== MODAL HANDLING =====
     document.querySelectorAll('[data-modal-target]').forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
@@ -53,20 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById(targetId);
             if (modal) {
                 modal.classList.add('active');
-                // ✅ We intentionally DO NOT lock scroll — per your request
             }
         });
     });
 
-    // Close modals
     const closeModal = (modal) => {
         if (modal && modal.classList.contains('active')) {
             modal.classList.remove('active');
-            // ✅ No scroll reset needed
         }
     };
 
-    // Close via close button
     document.querySelectorAll('[data-close-button]').forEach(btn => {
         btn.addEventListener('click', () => {
             const modal = btn.closest('.modal');
@@ -74,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Close via ESC key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             const modal = document.querySelector('.modal.active');
@@ -82,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Close via clicking modal overlay
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
         overlay.addEventListener('click', () => {
             const modal = overlay.closest('.modal');
@@ -90,25 +148,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== PRODUCTS BUTTON → SCROLL + HIGHLIGHT =====
+    // ===== SCROLL TO PRODUCTS BUTTON =====
     const productsBtn = document.querySelector('a[href="#products"].btn');
     const productsSection = document.getElementById('products');
 
     if (productsBtn && productsSection) {
         productsBtn.addEventListener('click', (e) => {
             e.preventDefault();
-
-            // Smooth scroll to section
-            const headerOffset = 80; // height of fixed header
-            const elementPosition = productsSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+            const headerOffset = 80;
+            const offsetPosition = productsSection.offsetTop - headerOffset;
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
             });
 
-            // Highlight animation
             productsSection.classList.add('highlight-target');
             setTimeout(() => {
                 productsSection.classList.remove('highlight-target');
@@ -122,46 +175,30 @@ document.addEventListener('DOMContentLoaded', () => {
         yearEl.textContent = new Date().getFullYear();
     }
 
-    // ===== PRODUCT CARD ANIMATION ON SCROLL =====
-    const productObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('appear');
-                productObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.15
-    });
-
-    document.querySelectorAll('.product-card').forEach(card => {
-        productObserver.observe(card);
-    });
-
-    // ===== SUB-DROPDOWN CLICK TOGGLE (DESKTOP + MOBILE) =====
+    // ===== SUB-DROPDOWN TOGGLE =====
     document.querySelectorAll('.sub-dropbtn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // prevent parent dropdown from closing
-
+            e.stopPropagation();
             const parent = btn.closest('.sub-dropdown');
 
-            // Close other open sub-dropdowns
+            // Close others
             document.querySelectorAll('.sub-dropdown.active').forEach(item => {
                 if (item !== parent) {
                     item.classList.remove('active');
                 }
             });
 
-            // Toggle current
             parent.classList.toggle('active');
         });
     });
 
-    // Close sub-dropdown when clicking outside
-    document.addEventListener('click', () => {
-        document.querySelectorAll('.sub-dropdown.active').forEach(item => {
-            item.classList.remove('active');
-        });
+    // Close all sub-dropdowns on outside click
+    document.addEventListener('click', (e) => {
+        const isInsideDropdown = e.target.closest('.dropdown');
+        if (!isInsideDropdown) {
+            document.querySelectorAll('.sub-dropdown.active').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
     });
-
 });
