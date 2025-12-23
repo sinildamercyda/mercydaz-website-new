@@ -113,4 +113,63 @@
     chatWidget.style.display = "none";
     waBtn.style.display = "flex";
   });
+
+
+
+     document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+  const observerOptions = {
+    root: null,
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  }, observerOptions);
+
+  /* Animate header */
+  const headerEls = document.querySelectorAll(
+    '.navigation-header h2, .navigation-header p'
+  );
+
+  headerEls.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(el);
+  });
+
+  /* Animate cards with stagger */
+  const cards = document.querySelectorAll('.nav-card');
+  cards.forEach((card, i) => {
+    card.style.transitionDelay = `${0.3 + i * 0.12}s`;
+    observer.observe(card);
+  });
+
+});
+
+
 })();
+
+
+

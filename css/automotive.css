@@ -647,6 +647,115 @@ body {
   opacity: 0;
 }
 
+   /* Device Navigation Cards */
+        .device-navigation {
+            padding: 60px 0;
+            background: #f8fafc;
+        }
+        
+        .navigation-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .navigation-header h2 {
+            font-size: 2.5rem;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+        
+        .navigation-header p {
+            color: #64748b;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .navigation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .nav-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .nav-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+        
+        .nav-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 992px) {
+            .device-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .device-info {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .features-container,
+            .extra-features-grid,
+            .navigation-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-header h2 {
+                font-size: 2rem;
+            }
+        }
+/* ================================
+   Device Navigation Animations
+================================ */
+
+/* Initial hidden state */
+.navigation-header h2,
+.navigation-header p,
+.nav-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animate when visible */
+.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+
 
 /* ===============================
    SOLUTIONS SECTION

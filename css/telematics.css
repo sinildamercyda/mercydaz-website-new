@@ -476,7 +476,7 @@ body {
     padding: 0 20px;
 }
 
-/* Hero Section */
+
 
 /* Features Section */
 .features-section {
@@ -579,6 +579,18 @@ body {
             flex: 1;
         }
         
+        .device-info p {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            }
+
+            .device-info .btn {
+            padding: 14px 28px;
+            font-size: 1rem;
+            }
+
         .device-info h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
@@ -670,6 +682,8 @@ body {
             margin-top: 4px;
             font-size: 0.9rem;
         }
+
+        
         
         .extra-features {
             padding: 80px 0;
@@ -719,6 +733,66 @@ body {
             line-height: 1.6;
         }
         
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+
+/* Device Showcase Animation */
+.device-showcase .device-image {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.8s forwards;
+}
+
+.device-showcase .device-info {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: fadeInRight 0.8s forwards;
+    animation-delay: 0.3s;
+}
+
+/* Features Section Animation */
+.features-container .feature-category {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+/* Staggered animation for features */
+.features-container .feature-category:nth-child(1) { animation-delay: 0.1s; }
+.features-container .feature-category:nth-child(2) { animation-delay: 0.3s; }
+.features-container .feature-category:nth-child(3) { animation-delay: 0.5s; }
+.features-container .feature-category:nth-child(4) { animation-delay: 0.7s; }
+.features-container .feature-category:nth-child(5) { animation-delay: 0.9s; }
+.features-container .feature-category:nth-child(6) { animation-delay: 1.1s; }
+
+/* Extra Features Animation */
+.extra-features-grid .extra-feature-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.extra-features-grid .extra-feature-card:nth-child(1) { animation-delay: 0.1s; }
+.extra-features-grid .extra-feature-card:nth-child(2) { animation-delay: 0.3s; }
+.extra-features-grid .extra-feature-card:nth-child(3) { animation-delay: 0.5s; }
+.extra-features-grid .extra-feature-card:nth-child(4) { animation-delay: 0.7s; }
+
+
+
         /* Device Navigation Cards */
         .device-navigation {
             padding: 60px 0;
@@ -807,6 +881,27 @@ body {
                 font-size: 2rem;
             }
         }
+/* ================================
+   Device Navigation Animations
+================================ */
+
+/* Initial hidden state */
+.navigation-header h2,
+.navigation-header p,
+.nav-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animate when visible */
+.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+
 
 
 /* Benefits Section */
@@ -1010,13 +1105,12 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
-    .hero-content,
     .benefits-content {
         flex-direction: column;
         text-align: center;
     }
 
-    .hero-text,
+
     .benefits-text {
         max-width: 100%;
         margin-bottom: 40px;
@@ -1032,14 +1126,14 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hero-text h1,
+    
     .section-title,
     .benefits-text h2,
     .cta-section h2 {
         font-size: 2.2rem;
     }
 
-    .hero-text .lead,
+   
     .section-subtitle,
     .cta-section p {
         font-size: 1.1rem;
@@ -1056,7 +1150,7 @@ body {
 }
 
 @media (max-width: 576px) {
-    .hero-text h1,
+   
     .section-title,
     .benefits-text h2,
     .cta-section h2 {
@@ -1284,6 +1378,71 @@ body {
     .hero-text h1 { font-size: 1.8rem; }
     .hero-text .lead { font-size: 0.98rem; }
     .telematics-hero { min-height: 56vh; }
+}
+@media (max-width: 600px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 16px;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+
+    .telematics-hero {
+        margin-top: 64px;
+        padding-top: 64px;
+        min-height: auto;
+        overflow-x: hidden;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 32px 16px;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 1.9rem;
+        line-height: 1.2;
+    }
+
+    .hero-text .lead {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* 🔑 CRITICAL IMAGE FIX */
+    .device-mock {
+        width: 100%;
+    }
+
+    .device-mock img {
+        width: 260px;
+        height: 260px;
+        max-width: 100%;
+    }
+
+    /* Disable floating badges on mobile */
+    .badge-1,
+    .badge-2,
+    .badge-3 {
+        display: none;
+    }
 }
 
 /* SECTIONS */

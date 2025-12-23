@@ -410,7 +410,7 @@ body {
   overflow: hidden;
   margin-top: 80px;
 
-  background-image: url('https://via.placeholder.com/1920x1080/0d3b66/ffffff');
+  background-image: url('../assets/ev-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -489,7 +489,7 @@ body {
   z-index: 2;
   width: 100%;
   max-width: 400px;
-  min-height: 260px;
+  min-height: 250px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.25);
@@ -498,7 +498,7 @@ body {
 /* Image */
 .card-image {
   width: 100%;
-  height: 100%;
+  height: 400px;
   object-fit: cover;
 }
 
