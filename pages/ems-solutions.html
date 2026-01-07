@@ -16,8 +16,7 @@
 <!-- Curtain Overlay -->
 <!-- <div class="curtain-overlay"></div> -->
 
-    <!-- Modern Header -->
-    <!-- Modern Header -->
+   <!-- Modern Header -->
     <header class="main-header">
     <div class="container">
         <div class="header-wrapper">
@@ -32,19 +31,70 @@
             <ul class="nav-links">
             <li><a href="../pages/index.html" class="active">Home</a></li>
             <li><a href="../pages/service.html">Service</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
-                <ul class="dropdown-content" role="menu">
-                    <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
-                    <li><hr class="divider"></li>
-                    <li><a href="../products/product-ecu.html">Electronic Control Unit</a></li>
-                    <li><a href="../products/product-spgset.html">Speed Governor Complete Pack</a></li>
-                    <li><a href="../products/product-spgv.html">Speed Governor (Unit)</a></li>
-                    <li><a href="../products/product-vtsog.html">Vehicle Location Tracking Device</a></li>
-                    <li><a href="../products/product-vtpb.html">VLTS with Panic Button</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+              <ul class="dropdown-content" role="menu">
+                  <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                  <li><hr class="divider"></li>
+                  <li class="sub-dropdown">
+                      <span class="sub-dropbtn" data-toggle="sub">
+                        Telematics
+                        <span class="arrow">▾</span>
+                      </span>
+                      <ul class="sub-dropdown-content">
+                        <li><a href="../products/telematics/product-2g-basic.html">MERCYDA VTS-140 A -2G</a></li>
+                        <li><a href="../products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
+                        <li><a href="../products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-dropdown">
+                    <span class="sub-dropbtn" data-toggle="sub">
+                        Vehicle Safety
+                        <span class="arrow">▾</span>
+                      </span>
+                    <ul class="sub-dropdown-content">
+                      <li><a href="../products/telematics/product-mcd.html">Master Control Device(MCD)</a></li>
+                      <li><a href="../products/telematics/product-vtpb.html">VLTS with Panic Button</a></li>
+                    </ul>
+                  </li>
+                  <li class="sub-dropdown">
+                    <span class="sub-dropbtn" data-toggle="sub">
+                        Automotive Electronics
+                        <span class="arrow">▾</span>
+                      </span>
+                    <ul class="sub-dropdown-content">
+                      <li><a href="../products/telematics/product-ecu.html">Electronic Control Unit</a></li>
+                      <li><a href="../products/telematics/product-obd.html">OBD Tracker</a></li>
+                    </ul>
+                  </li>
+                  <li class="sub-dropdown">
+                    <span class="sub-dropbtn" data-toggle="sub">
+                        CCTV
+                        <span class="arrow">▾</span>
+                      </span>
+                    <ul class="sub-dropdown-content">
+                        <li><a href="../products/cctv/dashcam.html">Dashcams</a></li>
+                        <li><a href="../products/cctv/cctvcam.html">4G DOME Camera</a></li>
+                        <li><a href="../products/cctv/cctv-wifi-cam.html">4G Wifi Camera</a></li>
+                        <li><a href="../products/cctv/cctvdvr.html">CCTV DVR Monitor</a></li>
+                    </ul>
+                  </li>
                 </ul>
             </li>
-             <li><a href="solutions.html" >Solutions</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/solutions.html">ALL SOLUTIONS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../pages/telematics.html">Telematics Solutions</a></li>
+                    <li><a href="../pages/automotive-electronics.html">Automotive Electronic Solutions</a></li>
+                    <li><a href="../pages/ems-solutions.html">EMS Solutions</a></li>
+                    <li><a href="../pages/ev-solutions.html">EV Solutions</a></li>
+                    <li><a href="../pages/rnd-solutions.html">R&D Solutions</a></li>
+                    <li><a href="../pages/cctv-solutions.html">CCTV Solutions</a></li>
+                </ul>
+            </li>
             <li><a href="../pages/contact.html">Contact</a></li>
 
             <!-- Store Icons -->
@@ -85,18 +135,90 @@
             </a>
         </li>
 
-        <li>
-            <a href="../pages/product.html">
-                <i class="fas fa-box-open"></i> Product
-            </a>
+          <li class="mobile-dropdown">
+       <button class="mobile-dropbtn">
+  <span class="left">
+    <i class="fas fa-box-open"></i>
+    Products
+  </span>
+  <span class="arrow">▾</span>
+</button>
+
+      <ul class="mobile-submenu">
+
+        <li><a href="../pages/product.html">All Products</a></li>
+
+        <!-- Telematics -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Telematics <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-2g-basic.html">VTS-140 A – 2G</a></li>
+            <li><a href="../products/telematics/product-4g.html">VTS-140 A – 4G</a></li>
+            <li><a href="../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
+            <li><a href="../products/telematics/product-gls.html">GLS-4G+ Rugged</a></li>
+          </ul>
         </li>
 
-        <li>
-            <a href="../pages/solutions.html">
-                <i class="fas fa-lightbulb"></i> Solutions
-            </a>
+        <!-- Vehicle Safety -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Vehicle Safety <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-mcd.html">Master Control Device</a></li>
+            <li><a href="../products/telematics/product-vtpb.html">VLTS with Panic Button</a></li>
+          </ul>
+        </li>
 
-        <li>
+        <!-- Automotive Electronics -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Automotive Electronics <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-ecu.html">Electronic Control Unit</a></li>
+            <li><a href="../products/telematics/product-obd.html">OBD Tracker</a></li>
+          </ul>
+        </li>
+
+        <!-- CCTV -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            CCTV <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/cctv/dashcam.html">Dashcams</a></li>
+            <li><a href="../products/cctv/cctvcam.html">4G Dome Camera</a></li>
+            <li><a href="../products/cctv/cctv-wifi-cam.html">4G WiFi Camera</a></li>
+            <li><a href="../products/cctv/cctvdvr.html">CCTV DVR Monitor</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- SOLUTIONS -->
+    <li class="mobile-dropdown">
+         <button class="mobile-dropbtn">
+  <span class="left">
+    <i class="fas fa-lightbulb"></i>
+    Solutions
+  </span>
+  <span class="arrow">▾</span>
+</button>
+
+      <ul class="mobile-submenu">
+        <li><a href="../pages/solutions.html">All Solutions</a></li>
+        <li><a href="../pages/telematics.html">Telematics</a></li>
+        <li><a href="../pages/automotive-electronics.html">Automotive Electronics</a></li>
+        <li><a href="../pages/ems-solutions.html">EMS</a></li>
+        <li><a href="../pages/ev-solutions.html">EV</a></li>
+        <li><a href="../pages/rnd-solutions.html">R&D</a></li>
+        <li><a href="../pages/cctv-solutions.html">CCTV</a></li>
+      </ul>
+    </li>
             <a href="../pages/contact.html">
                 <i class="fas fa-envelope"></i> Contact
             </a>
@@ -116,7 +238,6 @@
 
     </ul>
 </div>
-
 
   <section class="rd-hero">
   <div class="rd-container">
@@ -586,6 +707,61 @@ document.addEventListener('DOMContentLoaded', () => {
   cards.forEach((el, i) => {
     el.style.transitionDelay = `${0.3 + i * 0.15}s`;
     observer.observe(el);
+  });
+});
+
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'none';
+        });
+    });
+
+    document.querySelectorAll('.sub-dropdown').forEach(sub => {
+        const btn = sub.querySelector('.sub-dropbtn');
+        const content = sub.querySelector('.sub-dropdown-content');
+
+        if (btn && content) {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.sub-dropdown-content')
+                    .forEach(c => c.style.display = 'none');
+                content.style.display =
+                    content.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+    });
+
+
+
+
+
+
+ function isMobile() {
+  return window.innerWidth <= 991;
+}
+
+// MAIN DROPDOWN (Products / Solutions)
+document.querySelectorAll(".mobile-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
+});
+
+// SUB-DROPDOWN
+document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
   });
 });
   </script>

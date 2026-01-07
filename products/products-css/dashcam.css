@@ -1,4 +1,6 @@
-/* Reset and Base Styles */
+/* -----------------------------------------------------------
+   GLOBAL RESET
+----------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +8,9 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
-    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
 }
-
 /* Typography */
 h1, h2, h3, h4 {
     font-weight: 700;
@@ -52,6 +50,31 @@ a:hover {
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+.curtain-overlay {
+    background: #3a7afe;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    animation: curtainSlideFade 1.5s ease forwards;
+}
+
+@keyframes curtainSlideFade {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
 }
 
 /* -----------------------------------------------------------
@@ -176,6 +199,8 @@ a:hover {
 
 .mobile-overlay {
     position: fixed;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     top: 0;
     right: -100%;
     width: 58%;
@@ -226,12 +251,89 @@ a:hover {
     font-size: 1.35rem;
     color: #1a73e8;
 }
+/* ===============================
+   MOBILE DROPDOWN – FONT MATCH FIX
+================================ */
+
+/* Main dropdown button (Products, Solutions) */
+.mobile-dropbtn,
+.mobile-sub-dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;          /* SAME as .mobile-links a */
+    font-weight: 600;
+    color: #04034f;              /* SAME navy color */
+    padding: 1px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover effect – same as links */
+.mobile-dropbtn:hover,
+.mobile-sub-dropbtn:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropbtn .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Arrow color */
+.mobile-dropdown .arrow,
+.mobile-sub-dropdown .arrow {
+    color: #1a73e8;
+    font-size: 0.9rem;
+}
+
+/* Submenu links */
+.mobile-submenu a {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #04034f;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn i {
+    color: #1a73e8; /* icon always blue */
+}
+.mobile-dropbtn span.left {
+    color: #04034f; /* text navy */
+}
+
 
 /* === DROPDOWN STYLES === */
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .dropbtn {
     cursor: pointer;
@@ -281,7 +383,7 @@ a:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
                 0 4px 8px rgba(0, 0, 0, 0.05);
     list-style: none;
-    margin: 10px 0 0;
+    margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
     overflow: hidden;
@@ -290,15 +392,35 @@ a:hover {
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+.dropdown:hover > .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
 
 /* Show with animation */
 /* KEEP DROPDOWN OPEN WHEN HOVERING INSIDE */
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+/* ===============================
+   MOBILE DROPDOWN DEFAULT STATE
+================================ */
+
+/* Hide all mobile submenus by default */
+.mobile-submenu {
+    display: none;
 }
+
+/* Show only when active */
+.mobile-dropdown.active > .mobile-submenu,
+.mobile-sub-dropdown.active > .mobile-submenu {
+    display: block;
+}
+
 
 .dropdown-content li {
     margin: 0;
@@ -407,14 +529,6 @@ a:hover {
     padding-left: 24px;
 }
 
-/* Divider */
-.divider {
-    height: 1px;
-    background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-    margin: 8px 0;
-    border: none;
-}
-
 /* -----------------------------------------------------------
    RESPONSIVE
 ----------------------------------------------------------- */
@@ -424,7 +538,7 @@ a:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 813px) {
     .nav-menu {
         display: none;
     }
@@ -447,6 +561,8 @@ a:hover {
         font-size: 0.9rem;
     }
 }
+
+
 /* Product Page Styles */
 
 .product-page {
@@ -461,6 +577,7 @@ a:hover {
     background-position: center, top;
     color: white;
     padding: 130px 0;
+    margin-top: 80px;
     position: relative;
     overflow: hidden;
     height: 500px;

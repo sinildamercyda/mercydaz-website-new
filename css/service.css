@@ -161,6 +161,8 @@ body {
 
 .mobile-overlay {
     position: fixed;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     top: 0;
     right: -100%;
     width: 58%;
@@ -211,12 +213,89 @@ body {
     font-size: 1.35rem;
     color: #1a73e8;
 }
+/* ===============================
+   MOBILE DROPDOWN – FONT MATCH FIX
+================================ */
+
+/* Main dropdown button (Products, Solutions) */
+.mobile-dropbtn,
+.mobile-sub-dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;          /* SAME as .mobile-links a */
+    font-weight: 600;
+    color: #04034f;              /* SAME navy color */
+    padding: 1px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover effect – same as links */
+.mobile-dropbtn:hover,
+.mobile-sub-dropbtn:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropbtn .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Arrow color */
+.mobile-dropdown .arrow,
+.mobile-sub-dropdown .arrow {
+    color: #1a73e8;
+    font-size: 0.9rem;
+}
+
+/* Submenu links */
+.mobile-submenu a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #04034f;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn i {
+    color: #1a73e8; /* icon always blue */
+}
+.mobile-dropbtn span.left {
+    color: #04034f; /* text navy */
+}
+
 
 /* === DROPDOWN STYLES === */
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .dropbtn {
     cursor: pointer;
@@ -266,26 +345,44 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
                 0 4px 8px rgba(0, 0, 0, 0.05);
     list-style: none;
-    margin: 10px 0 0;
+    margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
     overflow: hidden;
-    /* Smooth appear animation */
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+.dropdown:hover > .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
 
 /* Show with animation */
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content,
-.dropdown.active .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
+/* KEEP DROPDOWN OPEN WHEN HOVERING INSIDE */
+/* ===============================
+   MOBILE DROPDOWN DEFAULT STATE
+================================ */
+
+/* Hide all mobile submenus by default */
+.mobile-submenu {
+    display: none;
 }
+
+/* Show only when active */
+.mobile-dropdown.active > .mobile-submenu,
+.mobile-sub-dropdown.active > .mobile-submenu {
+    display: block;
+}
+
 
 .dropdown-content li {
     margin: 0;
@@ -340,6 +437,58 @@ body {
     border-radius: 4px;
     margin-left: auto;
     font-weight: 600;
+}
+
+/* === SUB-DROPDOWN (2nd LEVEL) === */
+.sub-dropdown {
+    position: relative;
+}
+
+/* Clickable button */
+.sub-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 20px;
+}
+
+/* Hover only for visual feedback (NOT opening) */
+.sub-dropbtn:hover {
+    background-color: #f0f7ff;
+    color: #0d5ab3;
+}
+
+/* Arrow rotation */
+.sub-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Submenu (hidden by default) */
+.sub-dropdown-content {
+    display: none;
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
+/* Submenu links */
+.sub-dropdown-content li a {
+    display: block;
+    padding: 10px 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sub-dropdown-content li a:hover {
+    background-color: #e6f0ff;
+    color: #1a73e8;
+    padding-left: 24px;
 }
 
 /* -----------------------------------------------------------

@@ -68,9 +68,8 @@ body {
     z-index: 1000;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
 .main-header .container {
@@ -85,7 +84,11 @@ body {
     justify-content: space-between;
 }
 
-/* BRANDING */
+
+
+/* -----------------------------------------------------------
+   BRANDING
+----------------------------------------------------------- */
 .branding {
     display: flex;
     align-items: center;
@@ -101,11 +104,15 @@ body {
 .brand-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--secondary);
+    color: #04034f;
     letter-spacing: 0.5px;
 }
 
-/* DESKTOP NAVIGATION */
+
+
+/* -----------------------------------------------------------
+   DESKTOP NAVIGATION
+----------------------------------------------------------- */
 .nav-menu {
     display: flex;
 }
@@ -122,51 +129,32 @@ body {
     color: #222;
     font-weight: 500;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: 0.3s ease;
     padding-bottom: 4px;
-    position: relative;
-}
-
-.nav-links li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s, left 0.3s;
-    border-radius: 1px;
 }
 
 .nav-links li a:hover,
 .nav-links li a.active {
-    color: var(--primary);
-}
-
-.nav-links li a:hover::after,
-.nav-links li a.active::after {
-    width: 70%;
-    left: 15%;
+    color: #1a73e8;
+    border-bottom: 2px solid #1a73e8;
 }
 
 /* Store Icons */
-.nav-store-item {
-    display: flex;
-    align-items: center;
-}
-
 .nav-store-item i {
     font-size: 1.3rem;
-    color: var(--primary);
-    transition: var(--transition);
+    color: #1a73e8;
+    transition: 0.3s ease;
 }
 
 .nav-store-item i:hover {
-    transform: scale(1.2) rotate(10deg);
+    transform: scale(1.2);
 }
 
-/* HAMBURGER BUTTON */
+
+
+/* -----------------------------------------------------------
+   HAMBURGER BUTTON
+----------------------------------------------------------- */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -174,7 +162,6 @@ body {
     cursor: pointer;
     border: none;
     background: transparent;
-    z-index: 1001;
 }
 
 .hamburger-line {
@@ -185,25 +172,35 @@ body {
     transition: 0.3s;
 }
 
-/* MOBILE OVERLAY */
+
+
+/* -----------------------------------------------------------
+   MOBILE OVERLAY (SLIDE PANEL)
+----------------------------------------------------------- */
+
 .mobile-overlay {
     position: fixed;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     top: 0;
     right: -100%;
     width: 58%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-left: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 100px 30px 30px;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.18);
-    transition: right 0.4s cubic-bezier(0.2, 0, 0.2, 1);
-    z-index: 999;
+    background: #ffffffee;
+    backdrop-filter: blur(8px);
+    padding: 100px 30px;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.18);
+    transition: right 0.4s ease-in-out;
+    z-index: 999;   /* BELOW HEADER */
 }
 
 .mobile-overlay.active {
     right: 0;
+}
+
+/* Prevent overlay from hiding header */
+.main-header {
+    z-index: 1000 !important;
 }
 
 .mobile-links {
@@ -218,28 +215,106 @@ body {
     text-decoration: none;
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--secondary);
+    color: #04034f;
     display: flex;
     align-items: center;
     gap: 12px;
-    transition: var(--transition);
+    transition: 0.3s ease;
 }
 
+/* Hover effects */
 .mobile-links a:hover {
-    color: var(--primary);
+    color: #1a73e8;
     transform: translateX(6px);
 }
 
 .mobile-links a i {
     font-size: 1.35rem;
-    color: var(--primary);
+    color: #1a73e8;
 }
+/* ===============================
+   MOBILE DROPDOWN – FONT MATCH FIX
+================================ */
+
+/* Main dropdown button (Products, Solutions) */
+.mobile-dropbtn,
+.mobile-sub-dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;          /* SAME as .mobile-links a */
+    font-weight: 600;
+    color: #04034f;              /* SAME navy color */
+    padding: 1px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover effect – same as links */
+.mobile-dropbtn:hover,
+.mobile-sub-dropbtn:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropbtn .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Arrow color */
+.mobile-dropdown .arrow,
+.mobile-sub-dropdown .arrow {
+    color: #1a73e8;
+    font-size: 0.9rem;
+}
+
+/* Submenu links */
+.mobile-submenu a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #04034f;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn i {
+    color: #1a73e8; /* icon always blue */
+}
+.mobile-dropbtn span.left {
+    color: #04034f; /* text navy */
+}
+
 
 /* === DROPDOWN STYLES === */
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 
 .dropbtn {
     cursor: pointer;
@@ -289,7 +364,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
                 0 4px 8px rgba(0, 0, 0, 0.05);
     list-style: none;
-    margin: 10px 0 0;
+    margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
     overflow: hidden;
@@ -298,15 +373,35 @@ body {
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+.dropdown:hover > .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
 
 /* Show with animation */
 /* KEEP DROPDOWN OPEN WHEN HOVERING INSIDE */
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+/* ===============================
+   MOBILE DROPDOWN DEFAULT STATE
+================================ */
+
+/* Hide all mobile submenus by default */
+.mobile-submenu {
+    display: none;
 }
+
+/* Show only when active */
+.mobile-dropdown.active > .mobile-submenu,
+.mobile-sub-dropdown.active > .mobile-submenu {
+    display: block;
+}
+
 
 .dropdown-content li {
     margin: 0;
@@ -363,11 +458,12 @@ body {
     font-weight: 600;
 }
 
-/* SUB-DROPDOWN */
+/* === SUB-DROPDOWN (2nd LEVEL) === */
 .sub-dropdown {
     position: relative;
 }
 
+/* Clickable button */
 .sub-dropbtn {
     display: flex;
     justify-content: space-between;
@@ -376,19 +472,18 @@ body {
     padding: 12px 20px;
 }
 
+/* Hover only for visual feedback (NOT opening) */
 .sub-dropbtn:hover {
     background-color: #f0f7ff;
     color: #0d5ab3;
 }
 
-.arrow {
-    transition: transform 0.3s ease;
-}
-
+/* Arrow rotation */
 .sub-dropdown.active .arrow {
     transform: rotate(180deg);
 }
 
+/* Submenu (hidden by default) */
 .sub-dropdown-content {
     display: none;
     margin-left: 12px;
@@ -399,17 +494,7 @@ body {
     display: block;
 }
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Submenu links */
 .sub-dropdown-content li a {
     display: block;
     padding: 10px 20px;
@@ -1032,7 +1117,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 835px) {
     .nav-menu {
         display: none;
     }
@@ -1085,4 +1170,100 @@ body {
     .section-title h2 {
         font-size: 2rem;
     }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Chat Widget */
+.chat-widget {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 320px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: none;
+  z-index: 1001;
+}
+
+/* Header */
+.chat-header {
+  background: #0b3c52;
+  color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chat-header .status {
+  font-size: 12px;
+  color: #9effc4;
+}
+
+.close-btn {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Body */
+.chat-body {
+  padding: 15px;
+  background: #f4efe8;
+}
+
+.chat-message {
+  background: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Footer */
+.chat-footer {
+  padding: 15px;
+  text-align: center;
+}
+
+.start-chat-btn {
+  display: block;
+  background: #25d366;
+  color: #fff;
+  padding: 12px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.start-chat-btn:hover {
+  background: #1ebe5d;
+}
+
+.chat-footer small {
+  color: #777;
 }

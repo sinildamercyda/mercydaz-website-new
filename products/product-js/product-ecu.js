@@ -99,30 +99,23 @@ function initAnimations() {
 
 // Initialize mobile menu
 function initMobileMenu() {
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    
-    if (hamburgerBtn && mobileOverlay) {
-        hamburgerBtn.addEventListener('click', () => {
-            mobileOverlay.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        });
-        
-        mobileOverlay.addEventListener('click', e => {
-            if (e.target === mobileOverlay) {
-                mobileOverlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
 
-        document.querySelectorAll('.mobile-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileOverlay.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-        });
+    function toggleMenu() {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
     }
 
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
     document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.addEventListener('mouseenter', () => {
             const content = dropdown.querySelector('.dropdown-content');
@@ -149,6 +142,33 @@ function initMobileMenu() {
             });
         }
     });
+
+
+
+
+
+
+ function isMobile() {
+  return window.innerWidth <= 991;
+}
+
+// MAIN DROPDOWN (Products / Solutions)
+document.querySelectorAll(".mobile-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
+});
+
+// SUB-DROPDOWN
+document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
+});
 }
 
 // Initialize WhatsApp chat widget

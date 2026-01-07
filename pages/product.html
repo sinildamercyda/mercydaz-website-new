@@ -17,6 +17,7 @@
 <!-- <div class="curtain-overlay"></div> -->
 
     <!-- Modern Header -->
+      <!-- Modern Header -->
     <header class="main-header">
     <div class="container">
         <div class="header-wrapper">
@@ -29,9 +30,9 @@
         <!-- Desktop Navigation -->
         <nav class="nav-menu" id="navMenu">
             <ul class="nav-links">
-            <li><a href="../pages/index.html" >Home</a></li>
-            <li><a href="../pages/service.html" >Service</a></li>
-            <li class="dropdown">
+            <li><a href="../pages/index.html" class="active">Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+          <li class="dropdown">
               <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
               <ul class="dropdown-content" role="menu">
                   <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
@@ -46,7 +47,6 @@
                         <li><a href="../products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
                         <li><a href="../products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
                         <li><a href="../products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
-                        <li><a href="../products/telematics/product-vtsog.html">Vehicle Location Tracking Device</a></li>
                       </ul>
                   </li>
                   <li class="sub-dropdown">
@@ -121,47 +121,124 @@
         </div>
     </div>
     </header>
-    <div class="mobile-overlay" id="mobileOverlay">
-      <ul class="mobile-links">
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
 
-          <li>
-              <a href="../pages/index.html">
-                  <i class="fas fa-home"></i> Home
-              </a>
-          </li>
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
 
-          <li>
-              <a href="../pages/service.html">
-                  <i class="fa-solid fa-gear"></i> Service
-              </a>
-          </li>
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
 
-          <li>
-              <a href="../pages/product.html">
-                  <i class="fas fa-box-open"></i> Product
-              </a>
-          </li>
+          <li class="mobile-dropdown">
+       <button class="mobile-dropbtn">
+  <span class="left">
+    <i class="fas fa-box-open"></i>
+    Products
+  </span>
+  <span class="arrow">▾</span>
+</button>
 
-          <li>
-              <a href="../pages/contact.html">
-                  <i class="fas fa-envelope"></i> Contact
-              </a>
-          </li>
+      <ul class="mobile-submenu">
 
-          <li class="nav-store-item">
-              <a href="https://play.google.com/store" target="_blank">
-                  <i class="fab fa-google-play"></i> Google Play
-              </a>
-          </li>
+        <li><a href="../pages/product.html">All Products</a></li>
 
-          <li class="nav-store-item">
-              <a href="https://www.apple.com/app-store" target="_blank">
-                  <i class="fab fa-apple"></i> App Store
-              </a>
-          </li>
+        <!-- Telematics -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Telematics <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-2g-basic.html">VTS-140 A – 2G</a></li>
+            <li><a href="../products/telematics/product-4g.html">VTS-140 A – 4G</a></li>
+            <li><a href="../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
+            <li><a href="../products/telematics/product-gls.html">GLS-4G+ Rugged</a></li>
+          </ul>
+        </li>
+
+        <!-- Vehicle Safety -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Vehicle Safety <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-mcd.html">Master Control Device</a></li>
+            <li><a href="../products/telematics/product-vtpb.html">VLTS with Panic Button</a></li>
+          </ul>
+        </li>
+
+        <!-- Automotive Electronics -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Automotive Electronics <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-ecu.html">Electronic Control Unit</a></li>
+            <li><a href="../products/telematics/product-obd.html">OBD Tracker</a></li>
+          </ul>
+        </li>
+
+        <!-- CCTV -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            CCTV <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/cctv/dashcam.html">Dashcams</a></li>
+            <li><a href="../products/cctv/cctvcam.html">4G Dome Camera</a></li>
+            <li><a href="../products/cctv/cctv-wifi-cam.html">4G WiFi Camera</a></li>
+            <li><a href="../products/cctv/cctvdvr.html">CCTV DVR Monitor</a></li>
+          </ul>
+        </li>
 
       </ul>
-    </div>
+    </li>
+
+    <!-- SOLUTIONS -->
+    <li class="mobile-dropdown">
+         <button class="mobile-dropbtn">
+  <span class="left">
+    <i class="fas fa-lightbulb"></i>
+    Solutions
+  </span>
+  <span class="arrow">▾</span>
+</button>
+
+      <ul class="mobile-submenu">
+        <li><a href="../pages/solutions.html">All Solutions</a></li>
+        <li><a href="../pages/telematics.html">Telematics</a></li>
+        <li><a href="../pages/automotive-electronics.html">Automotive Electronics</a></li>
+        <li><a href="../pages/ems-solutions.html">EMS</a></li>
+        <li><a href="../pages/ev-solutions.html">EV</a></li>
+        <li><a href="../pages/rnd-solutions.html">R&D</a></li>
+        <li><a href="../pages/cctv-solutions.html">CCTV</a></li>
+      </ul>
+    </li>
+            <a href="../pages/contact.html">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
 
     <!-- Hero -->
     <section class="hero" id="home">
@@ -425,7 +502,9 @@
     </section>
 
     <!-- Footer -->
-   <footer class="footer">
+   
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
   <div class="footer-container">
 
     <!-- --------- COLUMN 1: Brand & Links --------- -->
@@ -435,7 +514,7 @@
       </h2>
 
       <ul>
-        <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
         <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
         <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
         <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
@@ -448,6 +527,8 @@
       <ul>
         <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
         <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+        <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link"><i class="fas fa-download"></i> IOS App Usermanual</a></li>
+        <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link"><i class="fas fa-download"></i> Android App Usermanual</a></li>
       </ul>
     </div>
 <!-- --------- COLUMN: Quick Links --------- -->
@@ -467,7 +548,7 @@
     </li>
 
     <li>
-      <a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en" target="_blank">
+      <a href="https://rajmargyatra.nhai.gov.in/" target="_blank">
         <i class="fas fa-road"></i> Check Tolls
       </a>
     </li>
@@ -496,7 +577,7 @@
     <div class="footer-col">
       <h3>Legal</h3>
       <ul>
-        <li><a href="#privacy"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+        <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
         <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
         
       </ul>
@@ -537,6 +618,40 @@
 </div>
 
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-float" id="waBtn">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Chat Popup -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div>
+      <h4>Mercyda Support</h4>
+      <span class="status">online</span>
+    </div>
+    <span class="close-btn" id="closeChat">&times;</span>
+  </div>
+
+  <div class="chat-body">
+    <div class="chat-message">
+      <strong>Mercyda Support</strong>
+      <p>Hi 👋<br>How can I help you?</p>
+    </div>
+  </div>
+
+  <div class="chat-footer">
+    <a
+      href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+      target="_blank"
+      class="start-chat-btn"
+    >
+      Start Chat
+    </a>
+    <small>⚡ Powered by WhatsApp</small>
+  </div>
+</div>
 
     <!-- JS -->
     <script src="../js/product.js"></script>
