@@ -846,7 +846,7 @@ body {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #04034f;
+    color: #fff;
     display: flex;
     align-items: flex-start; /* Align icon at the top */
     gap: 10px;
@@ -855,7 +855,7 @@ body {
 
 .feature-box h3 i {
     font-size: 22px;
-    color: #3a7afe;
+    color: #fff;
     margin-top: 3px; /* fine-tune vertical alignment */
 }
 
@@ -864,8 +864,35 @@ body {
 .feature-box p {
     font-size: 15px;
     line-height: 1.6;
-    color: #444;
+    color: #fff;
 }
+
+.feature-box {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.feature-box:nth-child(1) {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.15)),
+        url("../assets/feature-bg.jpg");
+}
+
+.feature-box:nth-child(2) {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.15)),
+        url("../assets/feature-section-1.jpeg");
+}
+
+.feature-box:nth-child(3) {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.15)),
+        url("../assets/feature-section-2.jpeg");
+}
+
+
 
 /* Mobile adjustments */
 @media(max-width: 768px) {
@@ -890,15 +917,61 @@ body {
 }
 
 
+/* -----------------------------------------------------------
+   FEATURE BUTTON
+----------------------------------------------------------- */
+
+.feature-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.feature-btn:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
 /* ===================== WHAT WE DO ===================== */
 .what-we-do {
     padding: 80px 20px;
-    background: #f9f9ff;
     text-align: center;
-    color: #04034f;
+    position: relative;
+    z-index: 1;
+
+    /* Responsive cover image with overlay */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.019)),
+        url("../assets/what-we-do.avif") center / cover no-repeat;
+
+    color: #fff;
+}
+.what-we-do::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2); /* slightly dark overlay */
+    z-index: 0;
+}
+
+.what-we-do * {
     position: relative;
     z-index: 1;
 }
+
+
 /* ===================== WHAT WE DO — ANIMATION ===================== */
 
 /* Initial hidden state */
@@ -918,7 +991,7 @@ body {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 25px;
-    color: #04034f; /* accent color */
+    color: #fff; /* accent color */
 }
 
 .what-we-do-text {
@@ -926,8 +999,53 @@ body {
     line-height: 1.8;
     max-width: 900px;
     margin: auto;
-    color: #444;
+    color: #fff;
 }
+
+/* ----------------------------------------
+   WHAT WE DO BUTTON
+---------------------------------------- */
+
+.what-we-do-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 42px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+    transition: all 0.35s ease;
+}
+
+/* Hover */
+.what-we-do-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    filter: brightness(1.05);
+}
+
+
+.what-we-do-btn {
+    opacity: 0;
+    animation: whatBtnReveal 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.what-we-do.active .what-we-do-btn {
+    opacity: 1;
+}
+
+@keyframes whatBtnReveal {
+    to { opacity: 1; }
+}
+
+
 /* initial (hidden) state for any element we want to animate on scroll */
 .animate-on-scroll {
   opacity: 0;
@@ -971,6 +1089,7 @@ body {
     width: 100%;
     padding: 80px 0;
     background: #ffffff;
+    
 }
 
 .services-container {
@@ -992,7 +1111,9 @@ body {
     padding: 35px 25px;
     border-radius: 18px;
     background: #ffffff;
-
+ background: 
+        linear-gradient(rgba(0, 0, 0, 0.068), rgba(0, 0, 0, 0.019)),
+        url("../assets/service-section.jpg") center / 90% no-repeat;
     transition:
         transform 0.35s ease,
         box-shadow 0.35s ease,
@@ -1071,6 +1192,38 @@ body {
     font-size: 15px;
     line-height: 1.6;
     color: #475569;
+}
+
+
+/* ----------------------------------------
+   SERVICE CARD BUTTON
+---------------------------------------- */
+
+.service-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 26px;
+    border-radius: 30px;
+    background: transparent;
+    color: #04034f;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #04034f;
+    transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+    background: #04034f;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+@media (max-width: 480px) {
+    .service-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* ----------------------------------------
@@ -1404,6 +1557,7 @@ body {
   position: relative;
   padding: 70px 20px;
   background: #f5f8fb;
+  margin-top: 50px;
   overflow: hidden;
 }
 
@@ -1483,6 +1637,30 @@ body {
     transform: scale(1.2);
 }
 
+
+/* ---------------- Scroll Reveal Animation ---------------- */
+
+.leader-item {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: transform, opacity;
+}
+
+.leader-item.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Stagger delay */
+.leader-item:nth-child(1) { transition-delay: 0.1s; }
+.leader-item:nth-child(2) { transition-delay: 0.25s; }
+.leader-item:nth-child(3) { transition-delay: 0.4s; }
+.leader-item:nth-child(4) { transition-delay: 0.55s; }
+.leader-item:nth-child(5) { transition-delay: 0.7s; }
+.leader-item:nth-child(6) { transition-delay: 0.85s; }
+
+
 /* ---------------- Responsive ---------------- */
 @media (max-width: 768px) {
     .leader-grid {
@@ -1497,6 +1675,89 @@ body {
 }
 
 
+
+.testimonial-section {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../assets/client-say.jpeg") center / cover no-repeat;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.testimonial-section h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.testimonial-card {
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    padding: 30px 25px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: black;
+}
+
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.client-info img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+}
+
+.client-info h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.client-info span {
+    font-size: 14px;
+    color: #000;
+}
+
+/* Swiper pagination */
+.swiper-pagination-bullet {
+    background: #000;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+
+/* Mobile adjustments */
+@media(max-width:768px){
+    .testimonial-section h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+}
 
 
 /* Section Layout */
@@ -1649,6 +1910,28 @@ body {
     max-height: 48px;
   }
 }
+/* ----------------------------------------
+   PARTNER CARD REVEAL ANIMATION
+---------------------------------------- */
+
+.partner-logo {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.partner-logo.reveal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger delay */
+.partner-logo:nth-child(1) { transition-delay: 0.1s; }
+.partner-logo:nth-child(2) { transition-delay: 0.25s; }
+.partner-logo:nth-child(3) { transition-delay: 0.4s; }
+.partner-logo:nth-child(4) { transition-delay: 0.55s; }
+.partner-logo:nth-child(5) { transition-delay: 0.7s; }
+.partner-logo:nth-child(6) { transition-delay: 0.85s; }
 
 /* Mobile */
 @media (max-width: 480px) {
@@ -1728,6 +2011,78 @@ body {
 @media(max-width: 768px) {
     .cert-track img {
         height: 80px;
+    }
+}
+
+
+/* ----------------------------------------
+   CONTACT CTA SECTION
+---------------------------------------- */
+
+.contact-cta {
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #fff;
+}
+
+.contact-cta-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-cta-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contact-cta-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 520px;
+}
+
+.contact-cta-btn {
+    display: inline-block;
+    padding: 16px 42px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+}
+
+.contact-cta-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.5);
+    filter: brightness(1.05);
+}
+
+
+@media (max-width: 768px) {
+    .contact-cta-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-cta-text h2 {
+        font-size: 30px;
+    }
+
+    .contact-cta-text p {
+        font-size: 16px;
     }
 }
 

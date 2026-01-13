@@ -141,39 +141,6 @@ items.forEach(item => observer.observe(item));
 document.querySelectorAll('.feature-item, .features-center img')
     .forEach(el => featureObserver.observe(el));
 
-const video = document.getElementById('routeVideo');
-  const controlBtn = document.getElementById('videoControl');
-  const icon = controlBtn.querySelector('i');
-
-  // Single click handler to toggle play/pause
-  controlBtn.addEventListener('click', () => {
-    if (video.paused) {
-      video.play();
-      icon.classList.remove('fa-play');
-      icon.classList.add('fa-pause');
-      controlBtn.style.opacity = 0; // hide button after play
-    } else {
-      video.pause();
-      icon.classList.remove('fa-pause');
-      icon.classList.add('fa-play');
-      controlBtn.style.opacity = 1; // show play button again
-    }
-  });
-
-  // Show pause button on hover if video is playing
-  video.parentElement.addEventListener('mouseenter', () => {
-    if (!video.paused) {
-      controlBtn.style.opacity = 1;
-      icon.classList.remove('fa-play');
-      icon.classList.add('fa-pause');
-    }
-  });
-
-  video.parentElement.addEventListener('mouseleave', () => {
-    if (!video.paused) {
-      controlBtn.style.opacity = 0;
-    }
-  });
 
   const waBtn = document.getElementById("waBtn");
   const chatWidget = document.getElementById("chatWidget");
@@ -278,8 +245,61 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
 });
 
 
+
+
+const swiper = new Swiper('.testimonial-swiper', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        320: { slidesPerView: 1, spaceBetween: 20 },
+        768: { slidesPerView: 2, spaceBetween: 25 },
+        1024: { slidesPerView: 3, spaceBetween: 30 },
+    }
 });
 
 
 
 
+
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".leader-item");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target); // animate once
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    items.forEach(item => observer.observe(item));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logos = document.querySelectorAll(".partner-logo");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  logos.forEach(logo => observer.observe(logo));
+});

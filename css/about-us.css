@@ -742,14 +742,28 @@ body {
     position: relative;
     width: 100%;
     height: 90vh;
-    min-height: 420px;
+    min-height: 520px;
     margin-top: 80px;
     overflow: hidden;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 }
+ 
+.about-hero-layout {
+    position: relative;
+    z-index: 3;
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+    padding: 0 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
 
 /* Background Image */
 .about-hero-img {
@@ -780,29 +794,98 @@ body {
 
 /* Content */
 .about-hero-content {
-    position: relative;
-    z-index: 3;
-    text-align: center;
-    color: #ffffff;
-    max-width: 800px;
-    padding: 0 20px;
+    max-width: 520px;
+    color: #fff;
+    text-align: left;
 }
 
 .about-hero-content h1 {
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .about-hero-content p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.7;
     opacity: 0.95;
 }
+
+
+/* ----------------------------------------
+   RIGHT CIRCLE IMAGE
+---------------------------------------- */
+
+.about-hero-circle {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 50px;
+    border: 8px solid rgba(255,255,255,0.7);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+    background: #fff;
+
+    flex-shrink: 0;
+}
+
+.about-hero-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ----------------------------------------
+   HERO BUTTON
+---------------------------------------- */
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 38px;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #008cff, #310bb0);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.45);
+    filter: brightness(1.05);
+}
+.hero-btn {
+    opacity: 0;
+    animation: heroBtnReveal 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes heroBtnReveal {
+    to {
+        opacity: 1;
+    }
+}
+
 
 /* ----------------------------------------
    RESPONSIVE
 ---------------------------------------- */
+@media (max-width: 768px) {
+    .about-hero-circle {
+        width: 160px;
+        height: 160px;
+        right: 50%;
+        transform: translate(50%, -50%);
+        opacity: 0.85;
+    }
+}
+
 @media (max-width: 768px) {
     .about-hero {
         height: 55vh;
@@ -841,6 +924,15 @@ body {
     }
 }
 
+.about-hero-circle {
+    animation: floatCircle 6s ease-in-out infinite;
+}
+
+@keyframes floatCircle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
 
 
 /* ----------------------------------------
@@ -848,9 +940,17 @@ body {
 ---------------------------------------- */
 .about-company {
     padding: 90px 20px;
-    background: #f8fafc;
-    
+    position: relative;
+    overflow: hidden;
+
+    /* Background image with overlay */
+    background:
+        linear-gradient(rgba(251, 247, 247, 0.003), rgba(250, 248, 248, 0)),
+        url("../assets/aboutus.jpg") center / cover no-repeat;
+
+    color: #fff;
 }
+
 
 .about-company-container {
     max-width: 1200px;
@@ -1133,6 +1233,20 @@ body {
         margin-bottom: 30px;
     }
 }
+@media (max-width: 500px) {
+    .mv-card {
+        min-height: 320px;   /* adjust if needed */
+    }
+}
+@media (max-width: 500px) {
+    .mv-overlay h3 {
+        font-size: 18px;
+    }
+
+    .mv-overlay p {
+        font-size: 14px;
+    }
+}
 
 
 /* ----------------------------------------
@@ -1143,8 +1257,19 @@ body {
 ---------------------------------------- */
 .core-values {
     padding: 90px 20px;
-    background: #f0f4f8;
+
+    /* Background image with overlay */
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../assets/core-values-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #fff;
 }
+
 
 .core-values-container {
     max-width: 1200px;
@@ -1166,15 +1291,15 @@ body {
 }
 
 .cv-header h2 {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 700;
-    color: #0f172a;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .cv-header p {
     font-size: 16px;
-    color: #475569;
+    color: #fff;
 }
 
 /* Values List */
@@ -1186,7 +1311,7 @@ body {
 }
 
 .cv-item {
-    background: #ffffff;
+    background: #ffffff26;
     flex: 1 1 280px;
     border-radius: 20px;
     padding: 30px 20px;
@@ -1196,25 +1321,35 @@ body {
     transform: translateY(40px);
 }
 
-/* Show animation */
-.core-values.show .cv-item {
-    opacity: 1;
-    transform: translateY(0);
+/* ===== CORE VALUES ANIMATIONS ===== */
+
+.core-values .animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-/* Stagger each card */
-.core-values.show .cv-item:nth-child(1) { transition-delay: 0.1s; }
-.core-values.show .cv-item:nth-child(2) { transition-delay: 0.3s; }
-.core-values.show .cv-item:nth-child(3) { transition-delay: 0.5s; }
-.core-values.show .cv-item:nth-child(4) { transition-delay: 0.7s; }
-.core-values.show .cv-item:nth-child(5) { transition-delay: 0.9s; }
-
-
-/* Hover card effect */
-.cv-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+.core-values .animate.show {
+  opacity: 1;
+  transform: translateY(0);
 }
+
+/* Icon bounce */
+.cv-item-icon {
+  transition: transform 0.6s ease;
+}
+
+.cv-item.show .cv-item-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Stagger animation for items */
+.cv-item.animate:nth-child(1) { transition-delay: 0.1s; }
+.cv-item.animate:nth-child(2) { transition-delay: 0.2s; }
+.cv-item.animate:nth-child(3) { transition-delay: 0.3s; }
+.cv-item.animate:nth-child(4) { transition-delay: 0.4s; }
+.cv-item.animate:nth-child(5) { transition-delay: 0.5s; }
+
 
 /* ----------------------------------------
    ICONS
@@ -1227,7 +1362,7 @@ body {
     height: 70px;
     margin: 0 auto 15px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(28,105,255,0.2) 0%, rgba(28,105,255,0.05) 70%);
+    background: radial-gradient(circle at center, rgba(28, 104, 255, 0.012) 0%, rgba(28,105,255,0.05) 70%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1251,10 +1386,13 @@ body {
 }
 
 .cv-item-icon i {
-    font-size: 28px;
-    color: #1c69ff;
+    font-size: 38px;
+    color: #fff;
 }
-
+.cv-icon i {
+    font-size: 38px;
+    color: #fff;
+}
 /* -----------------------------
    KEYFRAMES
 ----------------------------- */
@@ -1293,13 +1431,13 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #0f172a;
+    color: #fff;
 }
 
 .cv-item p {
     font-size: 15px;
     line-height: 1.6;
-    color: #334155;
+    color: #fff;
 }
 
 /* Responsive */
@@ -1318,10 +1456,11 @@ body {
 ---------------------------------------- */
 .mind-success {
     padding: 90px 20px;
-    background: #f8fafc;
-     background: url('../assets/about-us-img-bg1.jpg') no-repeat center center; /* your bg image */
-  background-size: cover; /* cover entire section */
+    background: url('../assets/about-us-img-bg1.jpg') no-repeat center center;
+    background-size: cover;
+    overflow: visible;
 }
+
 
 .mind-container {
     max-width: 1200px;
@@ -1451,13 +1590,52 @@ body {
     100% { transform: scale(1); }
 }
 
-/* SHOW ANIMATION */
-.mind-success.show .founder-card,
-.mind-success.show .story-point,
-.mind-success.show .point {
-    opacity: 1;
-    transform: translateY(0);
+/* ===== MIND SUCCESS ANIMATIONS ===== */
+
+/* Default hidden state */
+.mind-success .animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
+
+/* When visible */
+.mind-success .animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Founder image special zoom effect */
+.founder-image img {
+  transform: scale(0.9);
+  transition: transform 1s ease;
+}
+
+.founder-image img.show {
+  transform: scale(1);
+}
+
+/* Stagger delay for story points */
+.story-point.animate:nth-child(1) { transition-delay: 0.1s; }
+.story-point.animate:nth-child(2) { transition-delay: 0.2s; }
+.story-point.animate:nth-child(3) { transition-delay: 0.3s; }
+.story-point.animate:nth-child(4) { transition-delay: 0.4s; }
+.story-point.animate:nth-child(5) { transition-delay: 0.5s; }
+.story-point.animate:nth-child(6) { transition-delay: 0.6s; }
+.story-point.animate:nth-child(7) { transition-delay: 0.7s; }
+
+/* Highlight cards pop effect */
+.mind-points .point {
+  transform: translateY(40px) scale(0.95);
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+.mind-points .point.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {

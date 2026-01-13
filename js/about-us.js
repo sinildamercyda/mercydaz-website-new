@@ -89,27 +89,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  const mindSection = document.querySelector(".mind-success");
-  const founderCard = document.querySelector(".founder-card");
-  const storyPoints = document.querySelectorAll(".story-point");
-  const points = document.querySelectorAll(".point");
 
-  const mindobserver = new IntersectionObserver(
-    ([entry]) => {
+
+  const animatedItems = document.querySelectorAll(".animate");
+
+  const mindobserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        mindSection.classList.add("show");
-
-        founderCard.style.transitionDelay = "0.2s";
-        storyPoints.forEach((p, i) => p.style.transitionDelay = `${0.3 + i*0.2}s`);
-        points.forEach((p, i) => p.style.transitionDelay = `${0.5 + i*0.2}s`);
-
-        mindobserver.unobserve(mindSection);
+        entry.target.classList.add("show");
       }
-    },
-    { threshold: 0.3 }
-  );
+    });
+  }, {
+    threshold: 0.2
+  });
 
-  mindobserver.observe(mindSection);
+  animatedItems.forEach(item => mindobserver.observe(item));
+
 
 
 
