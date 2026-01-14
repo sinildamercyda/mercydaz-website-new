@@ -132,4 +132,25 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
   });
 });
 
+
+
+    const cards = document.querySelectorAll(".benefit-card");
+
+    const observerbenefit = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add delay one by one
+                setTimeout(() => {
+                    entry.target.classList.add("show");
+                }, index * 200); // 200ms gap
+                observerbenefit.unobserve(entry.target); // animate only once
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    cards.forEach(card => observerbenefit.observe(card));
+
+
 });

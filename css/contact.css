@@ -96,8 +96,16 @@ body {
     letter-spacing: 0.5px;
 }
 
-
-
+.brand-title sup {
+    font-size: 34px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+ sup {
+    font-size: 24px;
+    vertical-align: super;
+    margin-left: 2px;
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -875,4 +883,22 @@ button:hover i {
 
 .chat-footer small {
   color: #777;
+}
+
+
+.error {
+    color: #ff4d4f;
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+}
+
+.success {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
 }

@@ -88,8 +88,17 @@ body {
     letter-spacing: 0.5px;
 }
 
+.brand-title sup {
+    font-size: 34px;
+    vertical-align: super;
+    margin-left: 2px;
+}
 
-
+ sup {
+    font-size: 24px;
+    vertical-align: super;
+    margin-left: 2px;
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */

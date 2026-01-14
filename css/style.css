@@ -73,6 +73,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+
 }
 
 .brand-logo {
@@ -88,6 +89,24 @@ body {
     letter-spacing: 0.5px;
 }
 
+.brand-title sup {
+    font-size: 34px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+ sup {
+    font-size: 24px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+.since-text {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    color: #030e43;
+}
 
 
 /* -----------------------------------------------------------

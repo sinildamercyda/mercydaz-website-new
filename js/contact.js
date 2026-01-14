@@ -184,3 +184,99 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    // Inputs
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const date = document.getElementById("date");
+    const message = document.getElementById("message");
+
+    // Error spans
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const dateError = document.getElementById("dateError");
+    const messageError = document.getElementById("messageError");
+
+    // Clear previous errors
+    [nameError, emailError, phoneError, dateError, messageError].forEach(el => el.textContent = "");
+
+    /* -----------------------
+       Name Validation
+    ----------------------- */
+    if (name.value.trim().length < 3) {
+        nameError.textContent = "Name must be at least 3 characters.";
+        isValid = false;
+    }
+
+    /* -----------------------
+       Email Validation
+    ----------------------- */
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email.value.trim())) {
+        emailError.textContent = "Please enter a valid email address.";
+        isValid = false;
+    }
+
+    /* -----------------------
+       Phone Validation
+    ----------------------- */
+    /* -----------------------
+   Phone Validation (Not Null)
+----------------------- */
+if (phone.value.trim() === "") {
+    phoneError.textContent = "Phone number is required.";
+    isValid = false;
+} else {
+    const phonePattern = /^[0-9+\-\s()]{8,15}$/;
+    if (!phonePattern.test(phone.value.trim())) {
+        phoneError.textContent = "Please enter a valid phone number.";
+        isValid = false;
+    }
+}
+
+
+    /* -----------------------
+       Date Validation
+    ----------------------- */
+    const selectedDate = new Date(date.value);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    if (!date.value) {
+        dateError.textContent = "Please select a preferred date.";
+        isValid = false;
+    } else if (selectedDate < today) {
+        dateError.textContent = "Date cannot be in the past.";
+        isValid = false;
+    }
+
+    /* -----------------------
+       Message Validation
+    ----------------------- */
+    if (message.value.trim().length < 10) {
+        messageError.textContent = "Message must be at least 10 characters.";
+        isValid = false;
+    }
+
+    /* -----------------------
+       Success
+    ----------------------- */
+    if (isValid) {
+        document.getElementById("successMessage").classList.remove("hidden");
+        document.getElementById("contactForm").reset();
+
+        // Optional: Auto hide success message after 4 seconds
+        setTimeout(() => {
+            document.getElementById("successMessage").classList.add("hidden");
+        }, 4000);
+    }
+});
