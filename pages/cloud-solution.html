@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercyda International</title>
+    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+
+    <!-- Include Font Awesome (Optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cloud-solution.css">
+
+</head>
+<body>
+<!-- Curtain Overlay -->
+<!-- <div class="curtain-overlay"></div> -->
+
+   <!-- Modern Header -->
+    <header class="main-header">
+      <div class="container">
+        <div class="header-wrapper">
+        <!-- Logo + Company Name -->
+        <div class="branding">
+            <img src="../assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo">
+            <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+            <li><a href="../pages/index.html" class="active">Home</a></li>
+            <li><a href="../pages/service.html">Service</a></li>
+          <li class="dropdown">
+              <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
+              <ul class="dropdown-content" role="menu">
+                  <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                  <li><hr class="divider"></li>
+                  <li class="sub-dropdown">
+                      <span class="sub-dropbtn" data-toggle="sub">
+                        Telematics
+                        <span class="arrow">▾</span>
+                      </span>
+                      <ul class="sub-dropdown-content">
+                        <li><a href="../products/telematics/product-2g-basic.html">MERCYDA VTS-140 A -2G</a></li>
+                        <li><a href="../products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
+                        <li><a href="../products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-dropdown">
+                    <span class="sub-dropbtn" data-toggle="sub">
+                        Vehicle Safety
+                        <span class="arrow">▾</span>
+                      </span>
+                    <ul class="sub-dropdown-content">
+                      <li><a href="../products/telematics/product-mcd.html">Master Control Device(MCD)</a></li>
+                      <li><a href="../products/telematics/product-vtpb.html">VLTS with Panic Button</a></li>
+                    </ul>
+                  </li>
+                  <li class="sub-dropdown">
+                    <span class="sub-dropbtn" data-toggle="sub">
+                        Automotive Electronics
+                        <span class="arrow">▾</span>
+                      </span>
+                    <ul class="sub-dropdown-content">
+                      <li><a href="../products/telematics/product-ecu.html">Electronic Control Unit</a></li>
+                      <li><a href="../products/telematics/product-obd.html">OBD Tracker</a></li>
+                    </ul>
+                  </li>
+                  <li class="sub-dropdown">
+                    <span class="sub-dropbtn" data-toggle="sub">
+                        CCTV
+                        <span class="arrow">▾</span>
+                      </span>
+                    <ul class="sub-dropdown-content">
+                        <li><a href="../products/cctv/dashcam.html">Dashcams</a></li>
+                        <li><a href="../products/cctv/cctvcam.html">4G DOME Camera</a></li>
+                        <li><a href="../products/cctv/cctv-wifi-cam.html">4G Wifi Camera</a></li>
+                        <li><a href="../products/cctv/cctvdvr.html">CCTV DVR Monitor</a></li>
+                    </ul>
+                  </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Solutions</a>
+                <ul class="dropdown-content" role="menu">
+                    <li><a href="../pages/solutions.html">ALL SOLUTIONS</a></li>
+                    <li><hr class="divider"></li>
+                    <li><a href="../pages/telematics.html">Telematics Solutions</a></li>
+                    <li><a href="../pages/cloud-solution.html">Cloud Solutions</a></li>
+                    <li><a href="../pages/automotive-electronics.html">Automotive Electronic Solutions</a></li>
+                    <li><a href="../pages/ems-solutions.html">EMS Solutions</a></li>
+                    <li><a href="../pages/ev-solutions.html">EV Solutions</a></li>
+                    <li><a href="../pages/rnd-solutions.html">R&D Solutions</a></li>
+                    <li><a href="../pages/cctv-solutions.html">CCTV Solutions</a></li>
+                </ul>
+            </li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+
+            <!-- Store Icons -->
+            <li class="nav-store-item">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="nav-store-item">
+                <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store" aria-hidden="true"></i>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger Button (Mobile only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        </div>
+      </div>
+    </header>
+
+ <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
+
+        <li>
+            <a href="../pages/index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </li>
+
+        <li>
+            <a href="../pages/service.html">
+                <i class="fa-solid fa-gear"></i> Service
+            </a>
+        </li>
+        <li class="mobile-dropdown">
+        <button class="mobile-dropbtn">
+        <span class="left">
+          <i class="fas fa-box-open"></i>
+          Products
+        </span>
+        <span class="arrow">▾</span>
+      </button>
+
+      <ul class="mobile-submenu">
+
+        <li><a href="../pages/product.html">All Products</a></li>
+
+        <!-- Telematics -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Telematics <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-2g-basic.html">VTS-140 A – 2G</a></li>
+            <li><a href="../products/telematics/product-4g.html">VTS-140 A – 4G</a></li>
+            <li><a href="../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
+            <li><a href="../products/telematics/product-gls.html">GLS-4G+ Rugged</a></li>
+          </ul>
+        </li>
+
+        <!-- Vehicle Safety -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Vehicle Safety <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-mcd.html">Master Control Device</a></li>
+            <li><a href="../products/telematics/product-vtpb.html">VLTS with Panic Button</a></li>
+          </ul>
+        </li>
+
+        <!-- Automotive Electronics -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            Automotive Electronics <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/telematics/product-ecu.html">Electronic Control Unit</a></li>
+            <li><a href="../products/telematics/product-obd.html">OBD Tracker</a></li>
+          </ul>
+        </li>
+
+        <!-- CCTV -->
+        <li class="mobile-sub-dropdown">
+          <button class="mobile-sub-dropbtn">
+            CCTV <span class="arrow">▾</span>
+          </button>
+          <ul class="mobile-submenu">
+            <li><a href="../products/cctv/dashcam.html">Dashcams</a></li>
+            <li><a href="../products/cctv/cctvcam.html">4G Dome Camera</a></li>
+            <li><a href="../products/cctv/cctv-wifi-cam.html">4G WiFi Camera</a></li>
+            <li><a href="../products/cctv/cctvdvr.html">CCTV DVR Monitor</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </li>
+
+    <!-- SOLUTIONS -->
+    <li class="mobile-dropdown">
+      <button class="mobile-dropbtn">
+        <span class="left">
+          <i class="fas fa-lightbulb"></i>
+          Solutions
+        </span>
+        <span class="arrow">▾</span>
+      </button>
+
+      <ul class="mobile-submenu">
+        <li><a href="../pages/solutions.html">All Solutions</a></li>
+        <li><a href="../pages/telematics.html">Telematics</a></li>
+        <li><a href="../pages/cloud-solution.html">Cloud</a></li>
+        <li><a href="../pages/automotive-electronics.html">Automotive Electronics</a></li>
+        <li><a href="../pages/ems-solutions.html">EMS</a></li>
+        <li><a href="../pages/ev-solutions.html">EV</a></li>
+        <li><a href="../pages/rnd-solutions.html">R&D</a></li>
+        <li><a href="../pages/cctv-solutions.html">CCTV</a></li>
+      </ul>
+    </li>
+    <a href="../pages/contact.html">
+      <i class="fas fa-envelope"></i> Contact
+    </a>
+  </li>
+
+        <li class="nav-store-item">
+            <a href="https://play.google.com/store" target="_blank">
+                <i class="fab fa-google-play"></i> Google Play
+            </a>
+        </li>
+
+        <li class="nav-store-item">
+            <a href="https://www.apple.com/app-store" target="_blank">
+                <i class="fab fa-apple"></i> App Store
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+  <section class="rd-hero">
+  <div class="rd-container">
+
+    <!-- Left Content -->
+    <div class="rd-content">
+      <h1>
+        Smart Choice with Cloud Solutions
+      </h1>
+
+      <p>
+        Scalable, secure, and high-performance cloud platforms powering vehicle tracking, 
+        fleet management, and enterprise mobility solutions.
+      </p>
+
+      <div class="rd-actions">
+        <a href="#" class="btn btn-primary">Request Cloud Consultation</a>
+        <a href="#" class="btn btn-outline">Our Capabilities</a>
+      </div>
+    </div>
+
+    <!-- Right Visual -->
+    <div class="rd-visual">
+      <span class="tag tag-top">Apps</span>
+
+      <div class="image-circle">
+        <img
+          src="../assets/cloud1.jpg"
+          alt="Cloud"
+        />
+      </div>
+      <span class="tag tag-left">Backend</span>
+
+      <span class="tag tag-bottom">Website</span>
+    </div>
+
+  </div>
+</section>
+
+ <!-- ===================== FACILITY OVERVIEW (Modernized) ===================== -->
+<section class="facility-overview" aria-labelledby="fo-heading">
+  <div class="container">
+    <div class="fo-header">
+      <h2 id="fo-heading">Cloud Platform Overview</h2>
+      <p class="subtitle">
+        Robust backend systems, modern web interfaces, and mobile applications designed for real-time vehicle tracking and fleet intelligence.
+      </p>
+      <h3 class="highlight">MERCYDA Cloud & Mobility Infrastructure</h3>
+    </div>
+
+    <div class="fo-content">
+      <!-- Main Visual -->
+      <div class="fo-triple-grid">
+        <div class="fo-triple-card">
+            <img src="../assets/backend.jpg" alt="Cloud Backend Infrastructure" loading="lazy" />
+            <div class="fo-overlay">
+            <span class="pill">Backend Services</span>
+            </div>
+        </div>
+        
+        <div class="fo-triple-card">
+            <img src="../assets/web.jpg" alt="Web Dashboard Interface" loading="lazy" />
+            <div class="fo-overlay">
+            <span class="pill">Web Applications</span>
+            </div>
+        </div>
+        
+        <div class="fo-triple-card">
+            <img src="../assets/mobile.jpg" alt="Mobile Fleet Tracking App" loading="lazy" />
+            <div class="fo-overlay">
+            <span class="pill">Mobile Apps</span>
+        </div>
+      </div>
+    </div>
+
+      <!-- Sub Cards Grid -->
+      <div class="fo-sub-grid">
+        <article class="fo-sub-card">
+          <div class="sub-card-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h4>Backend Development</h4>
+          <p>Scalable microservices with Java & MongoDB for high-throughput telemetry ingestion.</p>
+        </article>
+
+        <article class="fo-sub-card">
+          <div class="sub-card-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h4>Web Applications</h4>
+          <p>Responsive dashboards built with React — real-time fleet analytics & control.</p>
+        </article>
+
+        <article class="fo-sub-card">
+          <div class="sub-card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4>Mobile Applications</h4>
+          <p>Native iOS & Android apps with offline sync and push-based alerts.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TECHNICAL CAPABILITIES (Modernized) ===================== -->
+<section class="technical-capabilities" aria-labelledby="tc-heading">
+  <div class="container">
+    <div class="section-header">
+      <h2 id="tc-heading">Technical Capabilities</h2>
+      <p class="subtitle">
+        Robust cloud-based solutions for scalable applications, real-time tracking, and secure enterprise systems.
+      </p>
+    </div>
+
+    <div class="tc-grid modern-grid">
+      <article class="tc-card modern-card">
+        <div class="tc-icon modern-icon">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <h3>Scalable Backend Development</h3>
+        <p>
+          High-performance backend systems built with Java 21 and Spring Boot,
+          designed for scalability, reliability, and seamless cloud deployment on AWS.
+        </p>
+        <div class="tech-tags">
+          <span>Java 21</span>
+          <span>Spring Boot</span>
+          <span>MongoDB</span>
+          <span>AWS</span>
+        </div>
+      </article>
+
+      <article class="tc-card modern-card">
+        <div class="tc-icon modern-icon">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <h3>Real-Time Maps & Data Processing</h3>
+        <p>
+          Live vehicle tracking and fleet intelligence powered by OpenStreetMap and Google Maps,
+          with Apache Flink enabling real-time stream processing and location analytics.
+        </p>
+        <div class="tech-tags">
+          <span>OpenStreetMap</span>
+          <span>Google Maps</span>
+          <span>Apache Flink</span>
+        </div>
+      </article>
+
+      <article class="tc-card modern-card">
+        <div class="tc-icon modern-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Secure Cloud & Network Architecture</h3>
+        <p>
+          Enterprise-grade security using OAuth 2.1 and Auth0 for authentication,
+          combined with secure communication protocols and hardened AWS infrastructure.
+        </p>
+        <div class="tech-tags">
+          <span>OAuth 2.1</span>
+          <span>Auth0</span>
+          <span>TCP</span>
+          <span>HTTP/HTTPS</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCT SHOWCASE ===================== -->
+<section class="product-showcase" aria-labelledby="ps-heading">
+  <div class="container">
+    <div class="section-header1">
+      <h2 id="ps-heading">Our Product Portfolio</h2>
+      <p class="subtitle">
+        End-to-end solutions from robust backend services to intuitive mobile apps — built for performance, scalability, and real-world utility.
+      </p>
+    </div>
+
+    <!-- Backend Product Card -->
+    <div class="ps-card">
+      <div class="ps-content">
+        <span class="pill">Backend Infrastructure</span>
+        <h3>High-Performance Backend Engine</h3>
+        <p>
+          Designed for enterprise-grade telemetry ingestion and event processing. Built using <strong>Java 21, Spring Boot, and MongoDB</strong>, our backend supports horizontal scaling across AWS infrastructure, handling 50K+ concurrent devices with sub-second latency.
+        </p>
+        <p>
+          Features include real-time alerting, geofencing triggers, historical replay, and seamless integration with third-party ERP/TMS systems via REST & MQTT.
+        </p>
+      </div>
+      <div class="ps-image">
+        <img src="../assets/backend1.jpg" alt="Backend Architecture: Microservices on AWS with telemetry pipeline" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Web Development Product Card -->
+    <div class="ps-card ps-reverse">
+      <div class="ps-content">
+        <span class="pill">Web Applications</span>
+        <h3>Custom Web Solutions</h3>
+        <p>
+          We’ve developed and deployed mission-critical web applications using modern stacks (React, Node.js, PostgreSQL). Our standout projects include:
+        </p>
+        <ul class="ps-list">
+          <li><strong>Hotel Management System</strong> — Full-suite PMS with room booking, billing, housekeeping, and staff management.</li>
+          <li><strong>Smart Bill Manager</strong> — GST-compliant invoicing, inventory sync, client ledger, and real-time reporting dashboard.</li>
+          <li><strong>Fleet Command Center</strong> — Live tracking, driver behavior scoring, maintenance alerts, and analytics for transport enterprises.</li>
+        </ul>
+      </div>
+      <div class="ps-image">
+        <img src="../assets/web1.jpg" alt="Web dashboards: Hotel PMS, Billing, Fleet UI" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Mobile Apps Product Card -->
+    <div class="ps-card">
+      <div class="ps-content">
+        <span class="pill">Mobile Applications</span>
+        <h3>Native iOS & Android Apps</h3>
+        <p>
+          We develop high-performance native apps with platform-specific optimizations:
+        </p>
+        <ul class="ps-list">
+          <li><strong>iOS:</strong> Swift + UIKit/SwiftUI, CoreLocation, PushKit, Background Fetch</li>
+          <li><strong>Android:</strong> Java/Kotlin + XML/Compose, foreground services, WorkManager</li>
+          <li>Shared business logic via modularized architecture; offline-first with SQLite sync.</li>
+        </ul>
+
+        <h4 class="section-subtitle">Flagship Apps</h4>
+        <div class="app-grid">
+          <!-- Mercyda Track -->
+          <div class="app-item" role="region" aria-label="Mercyda Track App">
+            <h5>🔸 Mercyda Track</h5>
+            <p>Real-time vehicle tracking for fleets & personal use. Live alerts, trip history, geofence, and remote immobilization.</p>
+            <div class="app-links">
+              <a href="https://play.google.com/store/apps/details?id=com.mercydaz.mtrack" target="_blank" rel="noopener" class="btn-link" aria-label="Download Mercyda Track on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i> Android
+              </a>
+              <a href="https://apps.apple.com/in/app/mercyda-tracker/id1234567890" target="_blank" rel="noopener" class="btn-link" aria-label="Download Mercyda Tracker on App Store">
+                <i class="fab fa-apple" aria-hidden="true"></i> iOS
+              </a>
+            </div>
+            <!-- Inside each .app-item, replace the single img with: -->
+            <div class="app-screenshots">
+              <div class="screenshot-group">
+                <div class="platform-label">📱 iOS</div>
+                <img src="../assets/dashTrackiOS.jpeg" alt="Mercyda Track on iOS – Dashboard" loading="lazy">
+              </div>
+              <div class="screenshot-group">
+                <div class="platform-label">🤖 Android</div>
+                <img src="../assets/dashTrack.webp" alt="Mercyda Track on Android – Dashboard" loading="lazy">
+              </div>
+            </div>
+            <div class="button-right">
+              <a href="../products/cloud-solutions/mercyda-track.html" class="app-details-btn">
+                App Details
+              </a>
+            </div>
+          </div>
+
+          <!-- Mercyda Track Pro -->
+          <div class="app-item" role="region" aria-label="Mercyda Track Pro App">
+            <h5>🔸 Mercyda Track Pro</h5>
+            <p>Advanced fleet intelligence: driver scoring, fuel analytics, maintenance scheduler, and multi-level admin roles.</p>
+            <div class="app-links">
+              <a href="https://play.google.com/store/apps/details?id=com.mercydaz.mtrackPro" target="_blank" rel="noopener" class="btn-link" aria-label="Download Mercyda Track Pro on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i> Android
+              </a>
+              <a href="https://apps.apple.com/in/app/mercyda-track-pro/id0987654321" target="_blank" rel="noopener" class="btn-link" aria-label="Download Mercyda Track Pro on App Store">
+                <i class="fab fa-apple" aria-hidden="true"></i> iOS
+              </a>
+            </div>
+            <!-- Inside each .app-item, replace the single img with: -->
+            <div class="app-screenshots">
+              <div class="screenshot-group">
+                <div class="platform-label">📱 iOS</div>
+                <img src="../assets/dashProiOS.jpeg" alt="Mercyda Track on iOS – Dashboard" loading="lazy">
+              </div>
+              <div class="screenshot-group">
+                <div class="platform-label">🤖 Android</div>
+                <img src="../assets/dashPro.webp" alt="Mercyda Track on Android – Dashboard" loading="lazy">
+              </div>
+            </div>
+            <div class="button-right">
+              <a href="../products/cloud-solutions/mercyda-track-iOS.html" class="app-details-btn">
+                App Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MERCYDA ADVANTAGE (Modernized) ===================== -->
+<section class="mercyda-advantage" aria-labelledby="ma-heading">
+  <div class="container">
+    <div class="section-header1">
+      <h2 id="ma-heading">The MERCYDA Advantage</h2>
+      <p class="subtitle">Why industry leaders choose us for mission-critical cloud deployments.</p>
+    </div>
+
+    <div class="ma-grid modern-grid">
+      <article class="ma-card modern-card">
+        <div class="ma-icon modern-icon">
+          <i class="fas fa-infinity"></i>
+        </div>
+        <h3>Future-Proof Scalability</h3>
+        <p>Horizontally scalable architecture supporting >50K concurrent devices. Elastic compute on demand.</p>
+      </article>
+
+      <article class="ma-card modern-card">
+        <div class="ma-icon modern-icon">
+          <i class="fas fa-sync-alt"></i>
+        </div>
+        <h3>Seamless Integration</h3>
+        <p>Pre-built adapters for SAP, Oracle, and legacy telematics systems. REST & MQTT dual support.</p>
+      </article>
+
+      <article class="ma-card modern-card">
+        <div class="ma-icon modern-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3>Dedicated Cloud Ops</h3>
+        <p>24/7 monitoring, SRE team, proactive patching, and quarterly performance optimization reports.</p>
+      </article>
+    </div>
+
+    <div class="ma-cta">
+      <p>Ready to transform your fleet with a cloud-native platform?</p>
+      <a href="#" class="btn btn-primary btn-lg">Schedule a Technical Demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- --------- COLUMN 1: Brand & Links --------- -->
+    <div class="footer-col">
+      <h2 class="footer-brand">
+        <i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL
+      </h2>
+
+      <ul>
+        <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href="../pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+        <li><a href="../pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+        <li><a href="../pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- --------- COLUMN 2: Guides --------- -->
+    <div class="footer-col">
+      <h3>Help & Guides</h3>
+      <ul>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+        <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link"><i class="fas fa-download"></i> IOS App Usermanual</a></li>
+        <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link"><i class="fas fa-download"></i> Android App Usermanual</a></li>
+      </ul>
+    </div>
+<!-- --------- COLUMN: Quick Links --------- -->
+<div class="footer-col">
+  <h3>Quick Links</h3>
+  <ul>
+    <li>
+      <a href="https://echallan.parivahan.gov.in/" target="_blank">
+        <i class="fas fa-receipt"></i> e-Challan
+      </a>
+    </li>
+
+    <li>
+      <a href="https://parivahan.gov.in/" target="_blank">
+        <i class="fas fa-id-card"></i> Get / Renew License
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rajmargyatra.nhai.gov.in/" target="_blank">
+        <i class="fas fa-road"></i> Check Tolls
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.policybazaar.com/" target="_blank">
+        <i class="fas fa-shield-alt"></i> Buy Insurance
+      </a>
+    </li>
+
+    <li>
+      <a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en">
+        <i class="fas fa-truck-pickup"></i> Tow Service
+      </a>
+    </li>
+
+    <li>
+      <a href="https://rechargezap.in/fastag" target="_blank">
+        <i class="fas fa-broadcast-tower"></i> FASTag Recharge
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <!-- --------- COLUMN 3: Policies --------- -->
+    <div class="footer-col">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+        <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        
+      </ul>
+      <div class="footer-catalogue">
+        <a href="../assets/Mercydaz_Catalogue.pdf" 
+          class="catalogue-btn" 
+          download>
+          <i class="fas fa-file-pdf"></i> Download Catalogue
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  </div>
+
+
+  <p>© <span id="year"></span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+
+  <div class="footer-contact">
+    <p>
+      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
+    </p>
+    <p>
+      <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+    </p>
+  </div>
+</div>
+
+</footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" id="waBtn">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- Chat Popup -->
+    <div class="chat-widget" id="chatWidget">
+      <div class="chat-header">
+        <div>
+          <h4>Mercyda Support</h4>
+          <span class="status">online</span>
+        </div>
+        <span class="close-btn" id="closeChat">&times;</span>
+      </div>
+
+      <div class="chat-body">
+        <div class="chat-message">
+          <strong>Mercyda Support</strong>
+          <p>Hi 👋<br>How can I help you?</p>
+        </div>
+      </div>
+
+      <div class="chat-footer">
+        <a
+          href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+          target="_blank"
+          class="start-chat-btn"
+        >
+          Start Chat
+        </a>
+        <small>⚡ Powered by WhatsApp</small>
+      </div>
+    </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+      /* ==========================
+       MOBILE MENU
+    ========================== */
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
+
+    function toggleMenu() {
+        overlay.classList.toggle('active');
+        document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-overlay a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+  const waBtn = document.getElementById("waBtn");
+  const chatWidget = document.getElementById("chatWidget");
+  const closeChat = document.getElementById("closeChat");
+
+  waBtn.addEventListener("click", () => {
+    chatWidget.style.display = "block";
+    waBtn.style.display = "none";
+  });
+
+  closeChat.addEventListener("click", () => {
+    chatWidget.style.display = "none";
+    waBtn.style.display = "flex";
+  });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Animate header elements
+    const headerElements = document.querySelectorAll('.fo-header h2, .fo-header p, .fo-header h3');
+    headerElements.forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.15}s`;
+      observer.observe(el);
+    });
+
+    // Animate main image
+    const mainImage = document.querySelector('.fo-main-image');
+    if(mainImage){
+      mainImage.style.transitionDelay = `0.5s`;
+      observer.observe(mainImage);
+    }
+
+    // Animate sub-images with stagger
+    const subImages = document.querySelectorAll('.fo-sub-image');
+    subImages.forEach((el, i) => {
+      el.style.transitionDelay = `${0.6 + i * 0.15}s`;
+      observer.observe(el);
+    });
+  });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Animate header
+  const headerElements = document.querySelectorAll('.tc-header h2, .tc-header p');
+  headerElements.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(el);
+  });
+
+  // Animate cards with stagger
+  const cards = document.querySelectorAll('.tc-card');
+  cards.forEach((el, i) => {
+    el.style.transitionDelay = `${0.3 + i * 0.15}s`;
+    observer.observe(el);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.ps-card').forEach(card => {
+    observer.observe(card);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Animate header
+  const headerElements = document.querySelectorAll('.ma-header h2, .ma-header p');
+  headerElements.forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.15}s`;
+    observer.observe(el);
+  });
+
+  // Animate cards with stagger
+  const cards = document.querySelectorAll('.ma-card');
+  cards.forEach((el, i) => {
+    el.style.transitionDelay = `${0.3 + i * 0.15}s`;
+    observer.observe(el);
+  });
+});
+
+
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'none';
+        });
+    });
+
+    document.querySelectorAll('.sub-dropdown').forEach(sub => {
+        const btn = sub.querySelector('.sub-dropbtn');
+        const content = sub.querySelector('.sub-dropdown-content');
+
+        if (btn && content) {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.sub-dropdown-content')
+                    .forEach(c => c.style.display = 'none');
+                content.style.display =
+                    content.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+    });
+
+ function isMobile() {
+  return window.innerWidth <= 991;
+}
+
+// MAIN DROPDOWN (Products / Solutions)
+document.querySelectorAll(".mobile-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
+});
+
+// SUB-DROPDOWN
+document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
+});
+  </script>
+</body>
+</html>
+

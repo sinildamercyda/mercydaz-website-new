@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mercyda'z International - Telematics & Vehicle Safety Solutions</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="../cloud-solutions/mercyda-track.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="branding">
+          <img src="/assets/new_mercyda_logo.png" class="brand-logo" alt="Mercyda's International Logo" />
+          <h1 class="brand-title">MERCYDA'Z INTERNATIONAL PVT. LTD</h1>
+        </div>
+
+        <nav class="nav-menu" id="navMenu">
+          <ul class="nav-links">
+            <li><a href="/pages/index.html" class="active">Home</a></li>
+            <li><a href="/pages/service.html">Service</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn" aria-haspopup="true">Products</a>
+              <ul class="dropdown-content" role="menu">
+                <li><a href="/pages/product.html">ALL PRODUCTS</a></li>
+                <li><hr class="divider"></li>
+                <li class="sub-dropdown">
+                  <span class="sub-dropbtn">Telematics <span class="arrow">▾</span></span>
+                  <ul class="sub-dropdown-content">
+                    <li><a href="/products/telematics/product-2g-basic.html">MERCYDA VTS-140 A -2G</a></li>
+                    <li><a href="/products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                    <li><a href="/products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
+                    <li><a href="/products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown">
+                  <span class="sub-dropbtn">Vehicle Safety <span class="arrow">▾</span></span>
+                  <ul class="sub-dropdown-content">
+                    <li><a href="/products/telematics/product-mcd.html">Master Control Device(MCD)</a></li>
+                    <li><a href="/products/telematics/product-vtpb.html">VLTS with Panic Button</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown">
+                  <span class="sub-dropbtn">Automotive Electronics <span class="arrow">▾</span></span>
+                  <ul class="sub-dropdown-content">
+                    <li><a href="/products/telematics/product-ecu.html">Electronic Control Unit</a></li>
+                    <li><a href="/products/telematics/product-obd.html">OBD Tracker</a></li>
+                  </ul>
+                </li>
+                <li class="sub-dropdown">
+                  <span class="sub-dropbtn">CCTV <span class="arrow">▾</span></span>
+                  <ul class="sub-dropdown-content">
+                    <li><a href="/products/cctv/dashcam.html">Dashcams</a></li>
+                    <li><a href="/products/cctv/cctvcam.html">4G DOME Camera</a></li>
+                    <li><a href="/products/cctv/cctv-wifi-cam.html">4G Wifi Camera</a></li>
+                    <li><a href="/products/cctv/cctvdvr.html">CCTV DVR Monitor</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn" aria-haspopup="true">Solutions</a>
+              <ul class="dropdown-content" role="menu">
+                <li><a href="/pages/solutions.html">ALL SOLUTIONS</a></li>
+                <li><hr class="divider"></li>
+                <li><a href="/pages/telematics.html">Telematics Solutions</a></li>
+                <li><a href="/pages/cloud-solution.html">Cloud Solutions</a></li>
+                <li><a href="/pages/automotive-electronics.html">Automotive Electronic Solutions</a></li>
+                <li><a href="/pages/ems-solutions.html">EMS Solutions</a></li>
+                <li><a href="/pages/ev-solutions.html">EV Solutions</a></li>
+                <li><a href="/pages/rnd-solutions.html">R&D Solutions</a></li>
+                <li><a href="/pages/cctv-solutions.html">CCTV Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li class="nav-store-item">
+              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="nav-store-item">
+              <a href="https://www.apple.com/app-store" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+                <i class="fab fa-app-store-ios" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- ===================== ANDROID COVERFLOW SLIDER ===================== -->
+  <section class="coverflow-slider-section">
+    <div class="container">
+      <h2 class="slider-title">Our Android Mercyda Track App Experience</h2>
+      <p class="slider-subtitle">Swipe or scroll to explore features</p>
+      <div class="coverflow-slider-container">
+        <div class="coverflow-slider" id="androidSlider"></div>
+        <div class="slider-dots" id="androidDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES GRID ===================== -->
+  <section class="features-grid-section">
+    <div class="container">
+      <h2 class="slider-title" style="color: var(--primary);">Powerful Features Across Platforms</h2>
+      <p style="text-align: center; font-size: 1.25rem; line-height: 1.7; color: #2c3e50; max-width: 750px; margin: 50px auto;">
+        Experience seamless fleet management whether you're on <strong>Android</strong> or <strong>iOS</strong>. Our intuitive mobile apps offer real-time vehicle tracking, instant alerts, detailed trip analytics, geofencing, and more — all optimized for performance, security, and ease of use across both platforms.
+      </p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-map-marked-alt feature-icon"></i>
+          <h3>Live Vehicle Tracking</h3>
+          <p>Real-time GPS location updates with smooth map integration on both Android & iOS.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-route feature-icon"></i>
+          <h3>Trip History & Reports</h3>
+          <p>View detailed trip logs, distance, duration, stops, and driving behavior.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-bell feature-icon"></i>
+          <h3>Instant Notifications</h3>
+          <p>Speeding, ignition on/off, panic alerts, and more—delivered in real time.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chart-line feature-icon"></i>
+          <h3>Fleet Analytics</h3>
+          <p>Monitor fuel usage, idle time, and driver performance from your dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tools feature-icon"></i>
+          <h3>Ticket Raising</h3>
+          <p>Report vehicle faults or schedule maintenance with one tap. Create service tickets from your fleet dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-lock feature-icon"></i>
+          <h3>Secure & Private</h3>
+          <p>End-to-end encryption and role-based access for enterprise-grade security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== iOS COVERFLOW SLIDER ===================== -->
+  <section class="coverflow-slider-section">
+    <div class="container">
+      <h2 class="slider-title">Our iOS Mercyda Tracker App Experience</h2>
+      <p class="slider-subtitle">Swipe or scroll to explore features</p>
+      <div class="coverflow-slider-container">
+        <div class="coverflow-slider" id="iosSlider"></div>
+        <div class="slider-dots" id="iosDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h2 class="footer-brand"><i class="fas fa-building"></i> MERCYDA'Z INTERNATIONAL</h2>
+        <ul>
+          <li><a href="/pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href="/pages/product.html"><i class="fas fa-microchip"></i> Our Technology</a></li>
+          <li><a href="/pages/service.html"><i class="fas fa-briefcase"></i> Service</a></li>
+          <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Help & Guides</h3>
+        <ul>
+          <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+          <li><a href="#install"><i class="fas fa-download"></i> Installation Guide</a></li>
+          <li><a href="https://drive.google.com/file/d/1rDXd4KTOL0QWsLEcVmuW0tS2wCxMKz1i/view?usp=drive_link" target="_blank"><i class="fas fa-download"></i> iOS App User Manual</a></li>
+          <li><a href="https://drive.google.com/file/d/1gQ5dYn_8GchCDZWTywYDwJDadUD1jaRK/view?usp=drive_link" target="_blank"><i class="fas fa-download"></i> Android App User Manual</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://echallan.parivahan.gov.in/" target="_blank"><i class="fas fa-receipt"></i> e-Challan</a></li>
+          <li><a href="https://parivahan.gov.in/" target="_blank"><i class="fas fa-id-card"></i> Get / Renew License</a></li>
+          <li><a href="https://rajmargyatra.nhai.gov.in/" target="_blank"><i class="fas fa-road"></i> Check Tolls</a></li>
+          <li><a href="https://www.policybazaar.com/" target="_blank"><i class="fas fa-shield-alt"></i> Buy Insurance</a></li>
+          <li><a href="https://tis.nhai.gov.in/tollplazasonmap.aspx?language=en" target="_blank"><i class="fas fa-truck-pickup"></i> Tow Service</a></li>
+          <li><a href="https://rechargezap.in/fastag" target="_blank"><i class="fas fa-broadcast-tower"></i> FASTag Recharge</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://www.privacypolicies.com/live/4f088589-a763-4ae8-9f8d-1a87012f93c6" target="_blank"><i class="fas fa-user-secret"></i> Privacy Policy</a></li>
+          <li><a href="#terms"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+        </ul>
+        <div class="footer-catalogue">
+          <a href="/assets/Mercydaz_Catalogue.pdf" class="catalogue-btn" download>
+            <i class="fas fa-file-pdf"></i> Download Catalogue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/pages/Mercydaz%20international%20private%20limited/102744115965709/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@mercydazinternational5050?si=4bdI_87ib6fR39en" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/mercydazinternationalpvtltd/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+
+      <p>© <span id="year">2025</span> MERCYDA'Z INTERNATIONAL PVT. LTD — All Rights Reserved.</p>
+
+      <div class="footer-contact">
+        <p><strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592</p>
+        <p><strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a></p>
+        <p><strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="whatsapp-float" id="waBtn">
+    <i class="fab fa-whatsapp"></i>
+  </div>
+
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <div>
+        <h4>Mercyda Support</h4>
+        <span class="status">online</span>
+      </div>
+      <span class="close-btn" id="closeChat">&times;</span>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message">
+        <strong>Mercyda Support</strong>
+        <p>Hi 👋<br>How can I help you?</p>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <a href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support" target="_blank" class="start-chat-btn">
+        Start Chat
+      </a>
+      <small>⚡ Powered by WhatsApp</small>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburgerBtn');
+    const overlay = document.getElementById('mobileOverlay');
+    if (hamburger && overlay) {
+      hamburger.addEventListener('click', () => {
+        overlay.classList.toggle('active');
+      });
+    }
+
+    const waBtn = document.getElementById('waBtn');
+    const chatWidget = document.getElementById('chatWidget');
+    const closeBtn = document.getElementById('closeChat');
+    if (waBtn) waBtn.addEventListener('click', () => chatWidget.style.display = 'block');
+    if (closeBtn) closeBtn.addEventListener('click', () => chatWidget.style.display = 'none');
+    window.addEventListener('click', (e) => {
+      if (e.target === chatWidget) chatWidget.style.display = 'none';
+    });
+
+    function initCoverflowSlider(sliderId, dotId, images, altTexts) {
+      const slider = document.getElementById(sliderId);
+      const dotsContainer = document.getElementById(dotId);
+      if (!slider || !dotsContainer) return;
+
+      slider.innerHTML = '';
+      dotsContainer.innerHTML = '';
+
+      const total = images.length;
+      let currentIndex = 0;
+
+      images.forEach((img, i) => {
+        const slide = document.createElement('div');
+        slide.className = 'slide-item';
+        if (i === 0) slide.classList.add('active');
+
+        const mockup = document.createElement('div');
+        mockup.className = 'phone-mockup';
+        const image = document.createElement('img');
+        image.src = img;
+        image.alt = altTexts[i] || `App screen ${i + 1}`;
+        mockup.appendChild(image);
+        slide.appendChild(mockup);
+        slider.appendChild(slide);
+
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const slides = slider.querySelectorAll('.slide-item');
+      const dots = dotsContainer.querySelectorAll('.dot');
+
+      function updateSlides() {
+        const spacing = 200;
+        slides.forEach((slide, i) => {
+          const diff = i - currentIndex;
+          const absDiff = Math.abs(diff);
+          const scale = Math.max(0.7, 1 - absDiff * 0.15);
+          const opacity = Math.max(0.3, 1 - absDiff * 0.2);
+          const x = diff * spacing;
+
+          slide.style.transform = `translate(calc(-50% + ${x}px), -50%) scale(${scale})`;
+          slide.style.opacity = opacity;
+          slide.style.zIndex = total - absDiff;
+
+          slide.classList.toggle('active', i === currentIndex);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, total - 1));
+        updateSlides();
+      }
+
+      slides.forEach((slide, i) => {
+        slide.addEventListener('click', () => {
+          if (i !== currentIndex) goToSlide(i);
+        });
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+      });
+
+      updateSlides();
+    }
+
+    const androidImages = [
+      '/assets/dashTrack.webp',
+      '/assets/routeTrack.webp',
+      '/assets/distanceTrack.webp',
+      '/assets/nextTrack.webp',
+      '/assets/lineTrack.webp',
+      '/assets/ticketTrack.webp'
+    ];
+
+    const androidAlts = [
+      'Dashboard', 'Route Map', 'Distance', 'More Page', 'Line Report', 'Ticket'
+    ];
+
+    const iosImages = [
+      '/assets/dashTrackiOS.jpeg',
+      '/assets/listTrackiOS.jpeg',
+      '/assets/routeTrackiOS.jpeg',
+      '/assets/aboutTrackiOS.jpeg',
+      '/assets/renewalTrackiOS.jpeg',
+      '/assets/distanceTrackiOS.jpeg',
+      '/assets/nextTrackiOS.jpeg',
+      '/assets/ticketTrackiOS.jpeg'
+    ];
+
+    const iosAlts = [
+      'Dashboard', 'Vehicle List', 'Route Map', 'About Page', 'Renewal', 'Distance Report', 'More Page', 'Ticket'
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initCoverflowSlider('androidSlider', 'androidDots', androidImages, androidAlts);
+      initCoverflowSlider('iosSlider', 'iosDots', iosImages, iosAlts);
+    });
+  </script>
+</body>
+</html>
