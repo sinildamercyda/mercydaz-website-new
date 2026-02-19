@@ -29,7 +29,7 @@
         <!-- Desktop Navigation -->
         <nav class="nav-menu" id="navMenu">
             <ul class="nav-links">
-            <li><a href="../pages/index.html" class="active">Home</a></li>
+            <li><a href="../pages/index.html">Home</a></li>
             <li><a href="../pages/service.html">Service</a></li>
           <li class="dropdown">
               <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
@@ -43,7 +43,9 @@
                       </span>
                       <ul class="sub-dropdown-content">
                         <li><a href="../products/telematics/product-2g-basic.html">MERCYDA VTS-140 A -2G</a></li>
-                        <li><a href="../products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../products/telematics/product-4g-plus.html">MERCYDA GLS-4G+</a></li>
+                        <li><a href="../products/telematics/4g-lte.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../products/telematics/gls4g-basic.html">MERCYDA GLS 4G BASIC</a></li>
                         <li><a href="../products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
                         <li><a href="../products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
                       </ul>
@@ -156,7 +158,9 @@
           </button>
           <ul class="mobile-submenu">
             <li><a href="../products/telematics/product-2g-basic.html">VTS-140 A – 2G</a></li>
-            <li><a href="../products/telematics/product-4g.html">VTS-140 A – 4G</a></li>
+            <li><a href="../products/telematics/product-4g-plus.html">MERCYDA GLS-4G+</a></li>
+            <li><a href="../products/telematics/4g-lte.html">MERCYDA VTS-140 A -4G LTE</a></li>
+            <li><a href="../products/telematics/gls4g-basic.html">MERCYDA GLS 4G BASIC</a></li>
             <li><a href="../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
             <li><a href="../products/telematics/product-gls.html">GLS-4G+ Rugged</a></li>
           </ul>
@@ -405,12 +409,12 @@
 
     <div class="device-container">
       <!-- Image -->
-      <div class="device-image">
+      <div class="device-image reveal">
         <img src="../assets/ECU-1.png" alt="Mercyda ECU Speed Governor">
       </div>
 
       <!-- Info -->
-      <div class="device-info">
+      <div class="device-info reveal reveal-delay">
         <h2>Revolutionizing Vehicle Management</h2>
         <p>
           Designed as an advanced automotive-grade ECU, the Mercyda Electronic Control Unit combines regulatory compliance, intelligent processing, and rugged hardware into a single powerful platform. Compliant with ARAI, ICAT, AIS-140, PC-TEN, BS-IV (BS4) standards and supports BCU integration, making it suitable for modern commercial and government-regulated vehicles.
@@ -527,12 +531,12 @@
 
     <div class="device-container">
       <!-- Image -->
-      <div class="device-image">
+      <div class="device-image reveal">
         <img src="../assets/OBD.jpeg" alt="Mercyda OBD Tracker">
       </div>
 
       <!-- Info -->
-      <div class="device-info">
+      <div class="device-info reveal reveal-delay">
         <h2>Quick Installation & Fleet Insights</h2>
         <p>
           Plugged directly into the vehicle’s OBD-II port, it enables access to critical vehicle data such as speed, engine status, diagnostics, and driving behaviour without complex wiring. Ideal for cars, taxis, rental vehicles, and light commercial fleets.
@@ -995,9 +999,9 @@
 
     <script>document.getElementById('year').textContent = new Date().getFullYear();
 
-      /* ==========================
-       MOBILE MENU
-    ========================== */
+      /* ==================================
+       MOBILE MENU HAMBURGER TOGGLING
+    ======================================= */
     const hamburger = document.getElementById('hamburgerBtn');
     const overlay = document.getElementById('mobileOverlay');
 
@@ -1017,6 +1021,9 @@
     });
 
 
+/* ======================================FLOATING WHATSAPP ICON======================================= */
+
+
      const waBtn = document.getElementById("waBtn");
   const chatWidget = document.getElementById("chatWidget");
   const closeChat = document.getElementById("closeChat");
@@ -1031,6 +1038,9 @@
     waBtn.style.display = "flex";
   });
 
+
+
+  /* ==================================================CONTENT SHOWING ANIMATION FOR ALL SECTIONS ===========================================*/
     const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -1042,47 +1052,52 @@
     { threshold: 0.15 }
   );
 
+
+/* ================================================  DETAILED CAPABILITIES CARD ANIMATION =================================== */
+
   document.querySelectorAll(
     ".capability-card, .capability-tag, .solution-card"
   ).forEach(el => observer.observe(el));
 
 
-   document.addEventListener('DOMContentLoaded', () => {
+//    document.addEventListener('DOMContentLoaded', () => {
 
-  const observerOptions = {
-    root: null,
-    threshold: 0.15
-  };
+//   const observerOptions = {
+//     root: null,
+//     threshold: 0.15
+//   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target); // animate once
-      }
-    });
-  }, observerOptions);
+//   const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add('animate');
+//         observer.unobserve(entry.target); // animate once
+//       }
+//     });
+//   }, observerOptions);
 
-  /* Animate header */
-  const headerEls = document.querySelectorAll(
-    '.navigation-header h2, .navigation-header p'
-  );
+//   /* Animate header */
+//   const headerEls = document.querySelectorAll(
+//     '.navigation-header h2, .navigation-header p'
+//   );
 
-  headerEls.forEach((el, i) => {
-    el.style.transitionDelay = `${i * 0.15}s`;
-    observer.observe(el);
-  });
+//   headerEls.forEach((el, i) => {
+//     el.style.transitionDelay = `${i * 0.15}s`;
+//     observer.observe(el);
+//   });
 
-  /* Animate cards with stagger */
-  const cards = document.querySelectorAll('.nav-card');
-  cards.forEach((card, i) => {
-    card.style.transitionDelay = `${0.3 + i * 0.12}s`;
-    observer.observe(card);
-  });
+//   /* Animate cards with stagger */
+//   const cards = document.querySelectorAll('.nav-card');
+//   cards.forEach((card, i) => {
+//     card.style.transitionDelay = `${0.3 + i * 0.12}s`;
+//     observer.observe(card);
+//   });
 
-});
+// });
 
 
+
+/* ================================================NAV DROPDOWN======================================================*/
 document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.addEventListener('mouseenter', () => {
             const content = dropdown.querySelector('.dropdown-content');
@@ -1112,7 +1127,7 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
 
 
 
-
+/* ================================================= MOBILE NAV DROPDOWN ================================================== */
 
 
  function isMobile() {
@@ -1136,6 +1151,55 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
     btn.parentElement.classList.toggle("active");
   });
 });
+
+/* ===============================================REVEAL ANIMATION ============================================== */
+
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // trigger on load
+
+
+  /*===========================================FEATURES SECTION ANIMATION =============================================*/
+ 
+  const featureSections = document.querySelectorAll(".features-section");
+
+  function revealSection(section) {
+    section.classList.add("animate");
+  }
+
+  const observerfeature = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        revealSection(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: "0px 0px -100px 0px"
+  });
+
+  featureSections.forEach(section => {
+    observerfeature.observe(section);
+
+    /* 👇 Mobile Fix: force check immediately */
+    if (section.getBoundingClientRect().top < window.innerHeight) {
+      revealSection(section);
+    }
+  });
 
 
     </script>

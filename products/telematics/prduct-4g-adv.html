@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercyda International</title>
-    <link rel="icon" type="image/png" href="../assets/new_mercyda_logo.png">
+    <link rel="icon" type="image/png" href="../../assets/new_mercyda_logo.png">
 
     <!-- Include Font Awesome (Optional) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -34,7 +34,7 @@
           <li class="dropdown">
               <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
               <ul class="dropdown-content" role="menu">
-                  <li><a href="../pages/product.html">ALL PRODUCTS</a></li>
+                  <li><a href="../../pages/product.html">ALL PRODUCTS</a></li>
                   <li><hr class="divider"></li>
                   <li class="sub-dropdown">
                       <span class="sub-dropbtn" data-toggle="sub">
@@ -43,7 +43,9 @@
                       </span>
                       <ul class="sub-dropdown-content">
                         <li><a href="../../products/telematics/product-2g-basic.html">MERCYDA VTS-140 A -2G</a></li>
-                        <li><a href="../../products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../../products/telematics/product-4g-plus.html">MERCYDA GLS-4G+</a></li>
+                        <li><a href="../../products/telematics/gls4g-basic.html">MERCYDA GLS 4G BASIC</a></li>
+                        <li><a href="../../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
                         <li><a href="../../products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
                         <li><a href="../../products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
                       </ul>
@@ -155,7 +157,9 @@
           </button>
           <ul class="mobile-submenu">
             <li><a href="../../products/telematics/product-2g-basic.html">VTS-140 A – 2G</a></li>
-            <li><a href="../../products/telematics/product-4g.html">VTS-140 A – 4G</a></li>
+            <li><a href="../../products/telematics/product-4g-plus.html">MERCYDA GLS-4G+</a></li>
+            <li><a href="../../products/telematics/gls4g-basic.html">MERCYDA GLS 4G BASIC</a></li>
+            <li><a href="../../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
             <li><a href="../../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
             <li><a href="../../products/telematics/product-gls.html">GLS-4G+ Rugged</a></li>
           </ul>
@@ -321,7 +325,7 @@
         <section class="details-section">
             <div class="container">
                 <div class="details-content">
-                    <div class="details-images-wrapper">
+                    <div class="details-images-wrapper animate-left animate-on-scroll">
                         <div class="details-image">
                             <img src="../../assets/GLS-adv-1.png" alt="Mercyda ECU Device Close-up" class="details-image-main">
                         </div>
@@ -329,7 +333,7 @@
                             <img src="../../assets/GLS-adv-2.png" alt="Mercyda ECU Device Close-up" class="details-image-main">
                         </div>
                     </div>
-                    <div class="details-text">
+                    <div class="details-text animate-right animate-on-scroll">
                         <h2>Advanced 4G LTE Tracking & Voice Solution</h2>
                         <p>
                             The MERCYDA GLS-4G+ Advanced combines vehicle tracking with voice communication to provide
@@ -367,7 +371,7 @@
                     <h2>GLS-4G+ Advanced Technical Specifications</h2>
                     <p>Wide voltage, voice-enabled 4G LTE tracking solution</p>
                 </div>
-                <div class="specs-table">
+                <div class="specs-table animate-on-scroll ">
                     <table>
                         <thead>
                             <tr>
@@ -615,44 +619,39 @@
 
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <div class="whatsapp-float" id="waBtn">
-        <i class="fab fa-whatsapp"></i>
+   <!-- WhatsApp Floating Button -->
+<div class="whatsapp-float" id="waBtn">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Chat Popup -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div>
+      <h4>Mercyda Support</h4>
+      <span class="status">online</span>
     </div>
+    <span class="close-btn" id="closeChat">&times;</span>
+  </div>
 
-    <!-- Chat Popup -->
-    <div class="chat-widget" id="chatWidget">
-        <div class="chat-header">
-            <div>
-                <h4>Mercyda Support</h4>
-                <span class="status">online</span>
-            </div>
-            <span class="close-btn" id="closeChat">&times;</span>
-        </div>
-
-        <div class="chat-body">
-            <div class="chat-message">
-                <strong>Mercyda Support</strong>
-                <p>Hi 👋<br>How can I help you?</p>
-            </div>
-        </div>
-
-        <div class="chat-footer">
-            <a
-                href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
-                target="_blank"
-                class="start-chat-btn"
-            >
-                Start Chat
-            </a>
-            <small>⚡ Powered by WhatsApp</small>
-        </div>
+  <div class="chat-body">
+    <div class="chat-message">
+      <strong>Mercyda Support</strong>
+      <p>Hi 👋<br>How can I help you?</p>
     </div>
+  </div>
 
-    <!-- Back to Top Button -->
-    <!-- <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button> -->
+  <div class="chat-footer">
+    <a
+      href="https://wa.me/916235008749?text=Hello%20Mercyda%20Support"
+      target="_blank"
+      class="start-chat-btn"
+    >
+      Start Chat
+    </a>
+    <small>⚡ Powered by WhatsApp</small>
+  </div>
+</div>
 
     <script src="../product-js/product-4g-adv.js"></script>
 </body>

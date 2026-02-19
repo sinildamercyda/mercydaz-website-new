@@ -119,6 +119,13 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -568,7 +575,6 @@ body {
   padding: 80px 120px;
   overflow: hidden;
   margin-top: 80px;
-
   background-image: url('../assets/ev-bg.jpg');
   background-size: cover;
   background-position: center;
@@ -818,7 +824,8 @@ body {
    EV SOLUTIONS
 ========================= */
 .ev-solutions-section {
-  background: #f8fafc;
+  background: url('../assets/ev-bg1.avif') no-repeat center center;
+  background-size: cover;
 }
 
 .ev-solutions-grid {
@@ -828,7 +835,7 @@ body {
 }
 
 .ev-solution-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.593);
   padding: 30px 20px;
   border-radius: 12px;
   text-align: center;
@@ -1025,6 +1032,47 @@ body {
   border-radius: 50%;
 }
 
+/* ===================== CONTACT US SECTION ===================== */
+.contact-us-section {
+  background: url('../assets/get-in-touch.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+.contact-us-section p{
+  color: #fff;
+  text-align: center;
+
+}
+.contact-us-section .section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contact-us-section .section-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.contact-us-section .contact-btn {
+  display: inline-block;
+  background-color: #050972; /* orange button */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-us-section .contact-btn:hover {
+  background-color: #0038e0;
+  transform: translateY(-2px);
+}
 
 
 /* ------------------- FOOTER ------------------- */

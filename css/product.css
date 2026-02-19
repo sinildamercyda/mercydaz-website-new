@@ -119,6 +119,13 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -694,6 +701,21 @@ body {
     animation: fadeInUp 0.5s ease forwards;
 }
 
+
+/* Initial hidden state */
+.scroll-pop {
+    opacity: 0;
+    transform: scale(0.92) translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Visible state */
+.scroll-pop.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+
 /* Product Grid */
 .product-grid {
     display: grid;
@@ -869,6 +891,22 @@ body {
         box-shadow: 0 0 0 0 rgba(58, 122, 254, 0);
     }
 }
+
+
+/* Initial hidden state */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+/* Visible */
+.stagger-item.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 
 /* -----------------------------------------------------------
    FOOTER

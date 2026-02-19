@@ -29,7 +29,7 @@
         <!-- Desktop Navigation -->
         <nav class="nav-menu" id="navMenu">
             <ul class="nav-links">
-            <li><a href="../pages/index.html" class="active">Home</a></li>
+            <li><a href="../pages/index.html" >Home</a></li>
             <li><a href="../pages/service.html">Service</a></li>
           <li class="dropdown">
               <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false">Products</a>
@@ -43,7 +43,9 @@
                       </span>
                       <ul class="sub-dropdown-content">
                         <li><a href="../products/telematics/product-2g-basic.html">MERCYDA VTS-140 A -2G</a></li>
-                        <li><a href="../products/telematics/product-4g.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../products/telematics/product-4g-plus.html">MERCYDA GLS-4G+</a></li>
+                        <li><a href="../products/telematics/4g-lte.html">MERCYDA VTS-140 A -4G LTE</a></li>
+                        <li><a href="../products/telematics/gls4g-basic.html">MERCYDA GLS 4G BASIC</a></li>
                         <li><a href="../products/telematics/prduct-4g-adv.html">MERCYDA GLS-4G+ Advanced</a></li>
                         <li><a href="../products/telematics/product-gls.html">MERCYDA GLS-4G+ Rugged</a></li>
                       </ul>
@@ -156,7 +158,9 @@
           </button>
           <ul class="mobile-submenu">
             <li><a href="../products/telematics/product-2g-basic.html">VTS-140 A – 2G</a></li>
-            <li><a href="../products/telematics/product-4g.html">VTS-140 A – 4G</a></li>
+            <li><a href="../products/telematics/product-4g-plus.html">MERCYDA GLS-4G+</a></li>
+            <li><a href="../products/telematics/4g-lte.html">MERCYDA VTS-140 A -4G LTE</a></li>
+            <li><a href="../products/telematics/gls4g-basic.html">MERCYDA GLS 4G BASIC</a></li>
             <li><a href="../products/telematics/prduct-4g-adv.html">GLS-4G+ Advanced</a></li>
             <li><a href="../products/telematics/product-gls.html">GLS-4G+ Rugged</a></li>
           </ul>
@@ -521,7 +525,7 @@
               </div>
               <div class="screenshot-group">
                 <div class="platform-label">🤖 Android</div>
-                <img src="../assets/dashPro.webp" alt="Mercyda Track on Android – Dashboard" loading="lazy">
+                <img src="../assets/dashboard_pro.png" alt="Mercyda Track on Android – Dashboard" loading="lazy">
               </div>
             </div>
             <div class="button-right">
@@ -683,10 +687,10 @@
       <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, Wayanad, Kerala - 673592
     </p>
     <p>
-      <strong>Phone:</strong> <a href="tel:04936224480">04936-224480</a> / <a href="tel:04936224481">224481</a>
+      <strong>Phone:</strong> <a href="tel:+91 96562 98199">+91 96562 98199</a>
     </p>
     <p>
-      <strong>Email:</strong> <a href="mailto:mercydainternational@gmail.com">mercydainternational@gmail.com</a>
+      <strong>Email:</strong> <a href="mailto:mercyda@mercydaz.com">mercyda@mercydaz.com</a>
     </p>
   </div>
 </div>
@@ -944,6 +948,67 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
     btn.parentElement.classList.toggle("active");
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".fo-triple-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 200); // delay between cards
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  cards.forEach(card => observer.observe(card));
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedItems = document.querySelectorAll(
+    ".fo-triple-card, .fo-sub-card"
+  );
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 150); // stagger delay
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  animatedItems.forEach(el => observer.observe(el));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".ps-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  cards.forEach(card => observer.observe(card));
+});
+
   </script>
 </body>
 </html>

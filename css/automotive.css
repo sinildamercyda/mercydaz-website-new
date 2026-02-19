@@ -99,6 +99,13 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -386,7 +393,7 @@ body {
 
 
 /* ===============================
-   HERO BASE
+   AUTOMOTIVE HERO BASE
 ================================ */
 .auto-hero {
   position: relative;
@@ -656,7 +663,7 @@ body {
   opacity: 0;
 }
 
-   /* Device Navigation Cards */
+   /*************************************************** Device Navigation Cards section **********************************************************/
         .device-navigation {
             padding: 60px 0;
             background: #f8fafc;
@@ -766,9 +773,9 @@ body {
 
 
 
-/* ===============================
-   SOLUTIONS SECTION
-================================ */
+/* =====================================================================================================
+                                          SOLUTIONS SECTION
+======================================================================================================== */
 .solutions-section {
   background: #ffffff;
   padding: 90px 20px;
@@ -1008,7 +1015,7 @@ body {
   }
 }
 
-
+/* ======================================== DETAILED CAPABILITIES SECTION ================================================= */
 
 .capabilities-section {
   padding: 80px 20px;
@@ -1173,14 +1180,7 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
+/* ====================================== WHY CHOOSE US SECTION ==================================== */
 
 .why-choose {
   background: #f6f8fc;
@@ -1290,7 +1290,7 @@ body {
   }
 }
 
-/* ------------------- FOOTER ------------------- */
+/* -------------------------------------------------------------- FOOTER ---------------------------------------------------------------- */
 .footer {
   background: #04034f;
   color: #ffffff;
@@ -1397,7 +1397,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Floating WhatsApp Button */
+/* ====================================================== Floating WhatsApp Button ================================================= */
 .whatsapp-float {
   position: fixed;
   bottom: 25px;

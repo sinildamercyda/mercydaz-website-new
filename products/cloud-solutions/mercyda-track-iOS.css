@@ -99,6 +99,13 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 965px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 .since-text {
     display: block;
     font-size: 14px;
@@ -518,7 +525,7 @@ body {
     }
 }
 
-@media (max-width: 813px) {
+@media (max-width: 950px) {
     .nav-menu {
         display: none;
     }
@@ -670,10 +677,11 @@ body {
 
     /* FEATURES GRID */
     .features-grid-section {
-      background: #fff;
-      padding: 60px 0;
-      height: 780px;
-    }
+  background: #fff;
+  padding: 60px 0;
+  min-height: auto;   /* or remove height completely */
+}
+
 
     .features-grid {
       display: grid;

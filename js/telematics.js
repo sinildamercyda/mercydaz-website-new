@@ -224,6 +224,54 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
   });
 });
 
+
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // trigger on load
+
+
+
+  const featureSections = document.querySelectorAll(".features-section");
+
+  function revealSection(section) {
+    section.classList.add("animate");
+  }
+
+  const observerfeature = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        revealSection(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: "0px 0px -100px 0px"
+  });
+
+  featureSections.forEach(section => {
+    observerfeature.observe(section);
+
+    /* 👇 Mobile Fix: force check immediately */
+    if (section.getBoundingClientRect().top < window.innerHeight) {
+      revealSection(section);
+    }
+  });
+
+
 })();
 
 

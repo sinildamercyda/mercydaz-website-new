@@ -99,6 +99,13 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -535,6 +542,122 @@ body {
 
 /* ************************************************************************************************************************ */
 
+/* ================= CONTACT CTA WITH IMAGE ================= */
+
+.contact-cta {
+  background: linear-gradient(135deg, #042a63, #092d60);
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.contact-cta-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Content */
+
+.contact-cta-content {
+  flex: 1;
+  color: #fff;
+}
+
+.contact-cta-content h2 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contact-cta-content p {
+  font-size: 18px;
+  margin-bottom: 35px;
+  opacity: 0.95;
+}
+
+/* Button */
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: #0b5ed7;
+  padding: 14px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Right Image */
+
+.contact-cta-image {
+  flex: 1;
+  text-align: right;
+}
+
+.contact-cta-image img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 1.2s ease-out;
+}
+
+/* When visible */
+.contact-cta-image img.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Optional floating after entry */
+.contact-cta-image img.float {
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Floating Animation */
+
+@keyframes floatImage {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .contact-cta-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-cta-image {
+    text-align: center;
+  }
+
+  .contact-cta-image img {
+    max-width: 300px;
+  }
+}
 
 
 /* ------------------- FOOTER ------------------- */
@@ -654,6 +777,21 @@ body {
     margin-top: 80px;
 }
 
+
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;   /* makes it fill like background */
+  z-index: -1;         /* behind content */
+}
+
+
 .hero-bg-img {
     width: 100%;
     height: 100%;
@@ -663,7 +801,7 @@ body {
 .service-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(4, 3, 79, 0.204);
+    background: rgba(4, 3, 79, 0);
 }
 
 .service-hero-content {
@@ -915,6 +1053,127 @@ body {
 .service-btn:hover {
   background: #0f4dc4;
 }
+
+
+
+/* ================= SOLUTIONS NAV SECTION ================= */
+
+.solutions-nav-section {
+  padding: 110px 20px;
+  background: url('../assets/service-solution-bg.webp')no-repeat center center/cover;
+  background-size: cover;
+}
+
+.solutions-nav-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.solutions-nav-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #0c2d57;
+}
+
+.solutions-nav-content p {
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.solutions-nav-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.solutions-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.solutions-btn.primary {
+  background: #1a5edd;
+  color: white;
+}
+
+.solutions-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(26, 94, 221, 0.25);
+}
+
+.solutions-btn.outline {
+  border: 2px solid #1a5edd;
+  color: #1a5edd;
+}
+
+.solutions-btn.outline:hover {
+  background: #1a5edd;
+  color: white;
+}
+
+.solutions-nav-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .solutions-nav-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .solutions-nav-buttons {
+    justify-content: center;
+  }
+}
+
+
+/* ---------- SOLUTIONS ANIMATION ---------- */
+
+.sol-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  filter: blur(6px);
+  transition: all 1s cubic-bezier(.22,.61,.36,1);
+}
+
+/* stagger delays */
+.sol-title { transition-delay: 0.1s; }
+.sol-desc { transition-delay: 0.25s; }
+.sol-buttons { transition-delay: 0.4s; }
+
+/* image special effect */
+.sol-img {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+/* when visible */
+.solutions-visible .sol-animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.solutions-visible .sol-img {
+  opacity: 1;
+  transform: scale(1);
+}
+  
+
+
+/* ================= PROCESS SECTION ================= */
+
 
 
 

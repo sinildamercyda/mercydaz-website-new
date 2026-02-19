@@ -9,10 +9,14 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+   font-family: "Poppins", sans-serif;
     background: #ffffff;
 }
+
 
 .curtain-overlay {
     background: #3a7afe;
@@ -100,6 +104,13 @@ body {
     font-size: 24px;
     vertical-align: super;
     margin-left: 2px;
+}
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
 }
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
@@ -625,8 +636,14 @@ body {
 }
 
 .btn-outline {
-  border: 1px solid rgba(165, 162, 162, 0.3);
-  color: #888181;
+  border: 1px solid rgba(26, 94, 221, 0.785);
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline-cnct {
+  border: 1px solid rgba(26, 94, 221, 0.785);
+  color: #150b62;
   background: transparent;
 }
 
@@ -659,8 +676,7 @@ body {
   object-fit: cover;
 }
 .device-image img {
-  width: 70%;
-  max-width: 70%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -684,6 +700,19 @@ body {
   }
 }
 
+@media (max-width: 500px) {
+  .device-image img {
+    width: 100%;
+    max-width: 100%;   /* 🔥 must override */
+  }
+}
+
+
+  .device-image.two-images img {
+    height: 180px;   /* fixed height if needed */
+    object-fit: cover;
+  }
+
 
 
 .container {
@@ -697,9 +726,11 @@ body {
 
 /* Features Section */
 .features-section {
-    padding: 100px 0;
-    background-color: #ffffff;
+  padding: 100px 0;
+  background: url("../assets/cctcv-bg2.avif") no-repeat center center;
+  background-size: cover;
 }
+
 
 .section-header {
     text-align: center;
@@ -766,6 +797,21 @@ body {
     margin: 0;
 }
 
+
+/* ================= Feature Card Scroll Animation ================= */
+
+.feature-category {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: all 0.7s ease;
+}
+
+/* When visible */
+.feature-category.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* Device Showcase Section */
 
   .device-showcase {
             padding: 80px 0;
@@ -843,10 +889,37 @@ body {
             margin-top: 4px;
             font-size: 1.1rem;
         }
+
+
+        /* ================= Scroll Animations ================= */
+
+        .device-image,
+        .device-info {
+          opacity: 0;
+          transition: all 0.9s ease;
+        }
+
+        /* Image from Left */
+        .device-image {
+          transform: translateX(-80px);
+        }
+
+        /* Text from Right */
+        .device-info {
+          transform: translateX(80px);
+        }
+
+        /* Active State */
+        .device-container.animate .device-image,
+        .device-container.animate .device-info {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
         
         .features-section {
             padding: 80px 0;
-            background: white;
+            
         }
         
         .section-divider {
@@ -866,14 +939,14 @@ body {
         }
         
         .feature-category {
-            background: #f8fafc;
+            background: url('../assets/about-us-img-bg1.jpg') no-repeat center center/cover;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .feature-category h3 {
-            color: var(--primary);
+            color: #04034f;
             margin-bottom: 20px;
             font-size: 1.4rem;
             display: flex;
@@ -953,7 +1026,8 @@ body {
     /* Solutions Section */
     .solutions-section {
       padding: 100px 0;
-      background: #f7f7f7;
+      background: url('../assets/cctv-bg1.webp') no-repeat center center;
+      background-size: cover;
     }
 
     .section-header {
@@ -989,7 +1063,7 @@ body {
 
 
     .solution-card {
-      background: var(--white);
+      background: white;
       border-radius: var(--border-radius);
       padding: 30px;
       box-shadow: var(--shadow);
@@ -1093,6 +1167,51 @@ body {
       margin-bottom: 10px;
     }
 
+
+    /* ================= Steps Scroll Animation ================= */
+
+.step {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+/* When visible */
+.step.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+    /* ============================
+   SOLUTION CARD SCROLL ANIMATION
+============================ */
+
+/* Initial hidden state */
+.solution-card {
+  opacity: 0;
+  transform: translateX(0);
+  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* First 2 cards come from LEFT */
+.solution-card.from-left {
+  transform: translateX(-80px);
+}
+
+/* Last 2 cards come from RIGHT */
+.solution-card.from-right {
+  transform: translateX(80px);
+}
+
+/* When visible */
+.solution-card.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
     /* Detail Sections */
     .detail-section {
       padding: 80px 0;
@@ -1127,6 +1246,48 @@ body {
       color: var(--gray-dark);
       margin-bottom: 25px;
     }
+
+/* Detail Animation */
+
+.detail-image {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s ease;
+}
+
+.detail-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.detail-section.animate .detail-image,
+.detail-section.animate .detail-content {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger boxes */
+.benefit-box,
+.approach-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.detail-section.animate .benefit-box {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.detail-section.animate .approach-box {
+  transition-delay: 0.5s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
     .benefit-box, .approach-box {
       background: var(--white);
@@ -1176,6 +1337,43 @@ body {
     .trust-item p {
       opacity: 0.9;
     }
+
+      .trust-outline {
+      border: 1px solid rgba(26, 94, 221, 0.785);
+      background: transparent;
+      padding: 25px 20px;
+      min-height: 240px;       /* keeps nice card height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertical centering */
+      box-sizing: border-box;
+    }
+
+    /* ================= Trust Grid Animation ================= */
+
+      .trust-item {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        transition: all 0.6s ease;
+      }
+
+      /* Icon animation */
+      .trust-item i {
+        transform: scale(0.6);
+        transition: transform 0.5s ease 0.2s;
+      }
+
+      /* Visible state */
+      .trust-item.animate {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .trust-item.animate i {
+        transform: scale(1);
+      }
+
+
 
     /* CTA Section */
     .cta-section {

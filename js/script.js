@@ -63,8 +63,52 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".animate-on-scroll").forEach(el => scrollObserver.observe(el));
   document.querySelectorAll(".animate-stagger").forEach(el => scrollObserver.observe(el));
   document.querySelectorAll(".feature-box").forEach(el => scrollObserver.observe(el));
-  const whatWeDo = document.querySelector(".what-we-do");
-  if (whatWeDo) scrollObserver.observe(whatWeDo);
+
+
+  const animatedItems = document.querySelectorAll('.animate-left, .animate-right');
+
+  const observertracking = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  animatedItems.forEach(item => observertracking.observe(item));
+
+
+/* ==========================
+   WORD BY WORD TEXT REVEAL
+========================== */
+
+const revealTexts = document.querySelectorAll(".reveal-text");
+
+revealTexts.forEach(el => {
+  const words = el.innerHTML.split(/(\s+)/);
+  el.innerHTML = words.map(word => {
+    if (word.trim() === "") return word;
+    return `<span class="word">${word}</span>`;
+  }).join("");
+});
+
+/* Observe reveal text */
+const textRevealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const spans = entry.target.querySelectorAll(".word");
+
+      spans.forEach((span, index) => {
+        span.style.animationDelay = `${index * 0.035}s`;
+      });
+
+      entry.target.classList.add("active");
+      textRevealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+revealTexts.forEach(el => textRevealObserver.observe(el));
 
 
 
@@ -303,3 +347,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   logos.forEach(logo => observer.observe(logo));
 });
+
+
+
+/* ===== Solutions cards reveal animation ===== */
+
+const solutionCards = document.querySelectorAll(".solution-card");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+solutionCards.forEach(card => observer.observe(card));
+
+

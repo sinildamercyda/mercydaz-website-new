@@ -154,3 +154,41 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
 
 
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const image = document.querySelector(".contact-cta-image img");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        image.classList.add("show");
+
+        // Start floating after slide animation
+        setTimeout(() => {
+          image.classList.add("float");
+        }, 1200);
+
+        observer.unobserve(image);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(image);
+});
+
+
+
+/* NAVIGATE TO SOLUTIONS SCROLL ANIMATION */
+const solSection = document.querySelector(".animate-solutions");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      solSection.classList.add("solutions-visible");
+    }
+  });
+}, { threshold: 0.25 });
+
+observer.observe(solSection);

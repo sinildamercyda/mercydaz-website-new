@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 10);
         });
+
+        
     });
 
     // ===== INITIAL STAGGERED ANIMATION (First Tab: Telematics) =====
@@ -269,4 +271,49 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
     btn.parentElement.classList.toggle("active");
   });
 });
+});
+
+
+// ****************************************category-tabs animation****************************************************
+const scrollElements = document.querySelectorAll(".scroll-pop");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target); // animate once
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+scrollElements.forEach(el => observer.observe(el));
+
+
+
+// ***************************************animate product cards****************************************************
+function animateStagger(container) {
+  const items = container.querySelectorAll(".stagger-item");
+
+  items.forEach((item, index) => {
+    item.classList.remove("show"); // reset
+    setTimeout(() => {
+      item.classList.add("show");
+    }, index * 120); // stagger delay
+  });
+}
+
+/* Scroll Observer */
+const staggerObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateStagger(entry.target);
+      staggerObserver.unobserve(entry.target); // run once on scroll
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".stagger-container").forEach(container => {
+  staggerObserver.observe(container);
 });

@@ -72,6 +72,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mvObserver.observe(mvSection);
 
+const timeline = document.querySelector(".animate-timeline");
+
+const timelineObserver = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("in-view");
+      timelineObserver.unobserve(entry.target);
+    }
+  },
+  { threshold: 0.3 }
+);
+
+if (timeline) timelineObserver.observe(timeline);
+
+
+
 
      const coreValues = document.querySelector(".core-values");
 
@@ -90,20 +106,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+const animatedItems = document.querySelectorAll(".animate");
 
-  const animatedItems = document.querySelectorAll(".animate");
+function splitLines(element) {
+  const paragraph = element.querySelector("p");
+  if (!paragraph || paragraph.dataset.split) return;
 
-  const mindobserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, {
-    threshold: 0.2
+  paragraph.dataset.split = "true";
+
+  const words = paragraph.innerHTML.split(" ");
+  paragraph.innerHTML = "";
+
+  let delay = 0;
+
+  words.forEach(word => {
+    const span = document.createElement("span");
+    span.className = "line";
+    span.innerHTML = word + " ";
+    span.style.animationDelay = `${delay}s`;
+    paragraph.appendChild(span);
+    delay += 0.12;   // control speed here
   });
+}
 
-  animatedItems.forEach(item => mindobserver.observe(item));
+const mindobserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+
+      // ✅ Animate text line-by-line only for story points
+      if (entry.target.classList.contains("story-point")) {
+        splitLines(entry.target);
+      }
+
+      mindobserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+animatedItems.forEach(item => mindobserver.observe(item));
 
 
 

@@ -137,6 +137,13 @@ a:hover {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -798,6 +805,31 @@ a:hover {
     font-size: 1.1rem;
 }
 
+
+/* Scroll Reveal Base */
+.animate-on-scroll {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: all 0.8s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Direction */
+.animate-left {
+    transform: translateX(-60px) scale(0.92);
+}
+
+.animate-right {
+    transform: translateX(60px) scale(0.92);
+}
+
+/* Visible State */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+
+
 .tech-specs {
     background-color: #fff;
     padding: 25px;
@@ -874,6 +906,34 @@ a:hover {
 .specs-table tr:hover {
     background-color: #e6f2ff;
 }
+
+
+/* Specs Table Animation */
+.specs-table tbody tr {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* When visible */
+.specs-table.visible tbody tr {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* Stagger delay for rows */
+.specs-table.visible tbody tr:nth-child(1)  { transition-delay: 0.05s; }
+.specs-table.visible tbody tr:nth-child(2)  { transition-delay: 0.10s; }
+.specs-table.visible tbody tr:nth-child(3)  { transition-delay: 0.15s; }
+.specs-table.visible tbody tr:nth-child(4)  { transition-delay: 0.20s; }
+.specs-table.visible tbody tr:nth-child(5)  { transition-delay: 0.25s; }
+.specs-table.visible tbody tr:nth-child(6)  { transition-delay: 0.30s; }
+.specs-table.visible tbody tr:nth-child(7)  { transition-delay: 0.35s; }
+.specs-table.visible tbody tr:nth-child(8)  { transition-delay: 0.40s; }
+.specs-table.visible tbody tr:nth-child(9)  { transition-delay: 0.45s; }
+.specs-table.visible tbody tr:nth-child(10) { transition-delay: 0.50s; }
+
+
+
 
 /* Benefits Section */
 .benefits-section {

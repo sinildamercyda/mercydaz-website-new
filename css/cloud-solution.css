@@ -87,7 +87,23 @@ body {
     color: #04034f;
     letter-spacing: 0.5px;
 }
-
+.brand-title sup {
+    font-size: 34px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+ sup {
+    font-size: 24px;
+    vertical-align: super;
+    margin-left: 2px;
+}
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 
 
 /* -----------------------------------------------------------
@@ -961,7 +977,7 @@ body {
 ================================ */
 .facility-overview {
   padding: 90px 20px;
-  background: #f8fafc;
+  background: url('../assets/cloud-solution-bg2.png') no-repeat center center/cover;
   text-align: center;
 }
 
@@ -1450,6 +1466,21 @@ body {
   right: 16px;
 }
 
+/* Scroll animation base state */
+.fo-triple-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: all 0.7s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* When visible */
+.fo-triple-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+
 .fo-overlay .pill {
   background: rgba(37, 99, 235, 0.92);
   color: white;
@@ -1516,6 +1547,27 @@ body {
   color: #475569;
   line-height: 1.6;
 }
+
+
+/* Scroll animation base */
+.fo-sub-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: all 0.7s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Visible state */
+.fo-sub-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Keep hover effect */
+.fo-sub-card.show:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+
 
 /* ——— TECH CAPABILITIES ——— */
 .tc-grid.modern-grid {
@@ -1629,6 +1681,7 @@ body {
 }
 
 /* ——— Product Cards ——— */
+/* ——— Product Cards ——— */
 .ps-card {
   display: flex;
   align-items: center;
@@ -1636,26 +1689,94 @@ body {
   margin: 90px 0;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Card visible */
 .ps-card.appear {
   opacity: 1;
   transform: translateY(0);
-  color: #581c87;
 }
 
-.ps-card:nth-child(2) { 
-  transition-delay: 0.15s; 
+/* Text animation (from left) */
+.ps-content {
+  flex: 1;
+  padding: 0 10px;
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ps-card:nth-child(3) { 
-  transition-delay: 0.3s; 
+/* Image animation (from right) */
+.ps-image {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* When card appears */
+.ps-card.appear .ps-content,
+.ps-card.appear .ps-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Optional stagger for multiple cards */
+.ps-card:nth-child(2) { transition-delay: 0.15s; }
+.ps-card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Reverse layout support */
 .ps-card.ps-reverse {
   flex-direction: row-reverse;
 }
+/* ================= PREMIUM ENTER ANIMATION ================= */
+
+/* Trigger animation when visible */
+.ps-card.appear .ps-content {
+  animation: textReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.ps-card.appear .ps-image {
+  animation: imageReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* TEXT from LEFT */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.92);
+    filter: blur(6px);
+  }
+  70% {
+    transform: translateX(8px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* IMAGE from RIGHT */
+@keyframes imageReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(120px) scale(1.08);
+    filter: blur(8px);
+  }
+  70% {
+    transform: translateX(-6px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+
+
 
 .ps-content {
   flex: 1;

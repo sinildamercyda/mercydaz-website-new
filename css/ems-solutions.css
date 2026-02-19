@@ -98,6 +98,13 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
+@media (max-width: 480px) {
+    .brand-title sup {
+        font-size: 20px;     /* reduce superscript size */
+        top: -0.4em;         /* fine adjustment */
+        position: relative;
+    }
+}
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -1141,14 +1148,15 @@ body {
 ================================ */
 .mercyda-advantage {
   padding: 90px 20px;
-  background: #f8fafc;
+  background: url('../assets/about-us-values.avif') no-repeat center center;
+  background-size: cover;
   text-align: center;
 }
 
 .ma-header h2 {
   font-size: 36px;
   font-weight: 800;
-  color: #0f172a;
+  color: #fff;
   margin-bottom: 15px;
   opacity: 0;
   transform: translateY(30px);
@@ -1157,7 +1165,7 @@ body {
 
 .ma-header p {
   font-size: 18px;
-  color: #475569;
+  color: #fff;
   margin-bottom: 60px;
   opacity: 0;
   transform: translateY(30px);
