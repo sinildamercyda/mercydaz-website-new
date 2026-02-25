@@ -192,3 +192,16 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.25 });
 
 observer.observe(solSection);
+
+
+const cards = document.querySelectorAll('.industry-card');
+
+const observerIndus = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.25});
+
+cards.forEach(card=>observerIndus.observe(card));

@@ -315,12 +315,7 @@ body {
     display: inline-block;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+
 
 
 .dropbtn {
@@ -374,22 +369,19 @@ body {
     margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
-    overflow: hidden;
+    overflow: visible;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
-.dropdown:hover > .dropdown-content,
-.dropdown-content:hover {
+.dropdown:hover > .dropdown-content {
   display: block;
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
 }
-.sub-dropdown.active .sub-dropdown-content {
-    display: block;
-}
+
 
 
 /* Show with animation */
@@ -2265,7 +2257,10 @@ body {
     opacity: 1;
 }
 
-
+.swiper-slide {
+  width: 100%;
+  height: auto;
+}
 /* Mobile adjustments */
 @media(max-width:768px){
     .testimonial-section h2 {

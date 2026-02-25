@@ -292,9 +292,8 @@ document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
 
 
 const swiper = new Swiper('.testimonial-swiper', {
-    slidesPerView: 3,
-    spaceBetween: 30,
     loop: true,
+    spaceBetween: 20,
     autoplay: {
         delay: 4000,
         disableOnInteraction: false,
@@ -303,10 +302,21 @@ const swiper = new Swiper('.testimonial-swiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
+
+    // ONLY here
     breakpoints: {
-        320: { slidesPerView: 1, spaceBetween: 20 },
-        768: { slidesPerView: 2, spaceBetween: 25 },
-        1024: { slidesPerView: 3, spaceBetween: 30 },
+        0: {
+            slidesPerView: 1,
+            spaceBetween: 15
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 25
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        }
     }
 });
 

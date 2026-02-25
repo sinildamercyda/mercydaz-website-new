@@ -76,46 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Desktop dropdowns: show on hover, hide on leave
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        const content = dropdown.querySelector('.dropdown-content');
-        if (!content) return;
+   // Desktop dropdowns (hover only)
 
-        let hideTimeout;
-
-        dropdown.addEventListener('mouseenter', () => {
-            if (isMobile()) return;
-            clearTimeout(hideTimeout);
-            content.style.display = 'block';
-            // Trigger reflow for animation
-            void content.offsetWidth;
-            content.style.opacity = '1';
-            content.style.transform = 'translateY(0)';
-            content.style.visibility = 'visible';
-        });
-
-        dropdown.addEventListener('mouseleave', () => {
-            if (isMobile()) return;
-            hideTimeout = setTimeout(() => {
-                content.style.opacity = '0';
-                content.style.transform = 'translateY(-8px)';
-                content.style.visibility = 'hidden';
-                setTimeout(() => {
-                    if (!dropdown.matches(':hover')) {
-                        content.style.display = 'none';
-                    }
-                }, 200);
-            }, 150);
-        });
-
-        // Keep dropdown open when hovering over content
-        content.addEventListener('mouseenter', () => {
-            clearTimeout(hideTimeout);
-        });
-
-        content.addEventListener('mouseleave', () => {
-            dropdown.dispatchEvent(new Event('mouseleave'));
-        });
-    });
 
     /* =====================================================
        📱 4. MOBILE DROPDOWN MENUS (Click-Based)
@@ -175,30 +137,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Desktop sub-dropdowns (click to toggle)
-    document.querySelectorAll('.sub-dropdown').forEach(sub => {
-        const btn = sub.querySelector('.sub-dropbtn');
-        const content = sub.querySelector('.sub-dropdown-content');
+  document.querySelectorAll('.sub-dropdown').forEach(sub => {
+    const btn = sub.querySelector('.sub-dropbtn');
+    if (!btn) return;
 
-        if (btn && content) {
-            btn.addEventListener('click', (e) => {
-                if (isMobile()) return; // Handled by mobile logic
-                e.preventDefault();
-                
-                // Toggle this one
-                const isActive = sub.classList.toggle('active');
-                content.style.display = isActive ? 'block' : 'none';
-                
-                // Close siblings at same level
-                sub.parentElement.querySelectorAll('.sub-dropdown').forEach(sibling => {
-                    if (sibling !== sub) {
-                        sibling.classList.remove('active');
-                        const siblingContent = sibling.querySelector('.sub-dropdown-content');
-                        if (siblingContent) siblingContent.style.display = 'none';
-                    }
-                });
-            });
-        }
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // close siblings
+        document.querySelectorAll('.sub-dropdown.active').forEach(s => {
+            if (s !== sub) s.classList.remove('active');
+        });
+
+        sub.classList.toggle('active');
     });
+});
 
     /* =====================================================
        💬 5. WHATSAPP CHAT WIDGET
@@ -392,24 +345,20 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        📐 11. RESIZE HANDLER FOR RESPONSIVE BEHAVIOR
        ===================================================== */
-    let resizeTimeout;
-    
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            // Close mobile menu if switching to desktop
-            if (!isMobile() && overlay?.classList.contains('active')) {
-                toggleMenu();
-            }
-            
-            // Reset any inline styles that might interfere with CSS
-            document.querySelectorAll('.dropdown-content').forEach(content => {
-                if (!isMobile()) {
-                    content.style.cssText = '';
-                }
-            });
-        }, 250);
-    }, { passive: true });
+document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const content = dropdown.querySelector('.dropdown-content');
+    if (!content) return;
+
+    dropdown.addEventListener('mouseenter', () => {
+        if (isMobile()) return;
+        dropdown.classList.add('open');
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+        if (isMobile()) return;
+        dropdown.classList.remove('open');
+    });
+});
 
     /* =====================================================
        🎯 12. LAZY LOAD IMAGES (Optional Enhancement)
