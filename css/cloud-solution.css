@@ -7,10 +7,11 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    overflow-x: hidden;
     font-family: "Poppins", sans-serif;
-    background: #ffffff;
 }
+
 
 .curtain-overlay {
     background: #3a7afe;
@@ -362,12 +363,47 @@ body {
     margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
-    overflow: hidden;
+    max-height: 320px; 
+    overflow-y: auto;
+    overflow-x: hidden;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+
+
+/* ---------------------------
+   Slim Modern Scrollbar
+--------------------------- */
+
+/* Chrome, Edge, Safari */
+.dropdown-content::-webkit-scrollbar {
+    width: 6px;              /* thinner width */
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent; /* clean look */
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* Firefox */
+.dropdown-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.25) transparent;
+}
+
+
 .dropdown:hover > .dropdown-content,
 .dropdown-content:hover {
   display: block;
@@ -2095,4 +2131,21 @@ body {
   .ma-cta p {
     font-size: 1.125rem;
   }
+}
+
+.btn-demo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;   /* NEVER wrap */
+    width: auto;           /* override mobile 100% */
+    max-width: 100%;
+}
+@media (max-width: 576px) {
+    .btn-demo {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
 }

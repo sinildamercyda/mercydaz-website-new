@@ -401,7 +401,9 @@ a:hover {
     margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
-    overflow: hidden;
+    max-height: 320px; 
+    overflow-y: auto;
+    overflow-x: hidden;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;

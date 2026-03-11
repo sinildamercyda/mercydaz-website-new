@@ -369,12 +369,46 @@ html, body {
     margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
-    overflow: hidden;
+    max-height: 320px; 
+    overflow-y: auto;
+    overflow-x: hidden;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+
+
+/* ---------------------------
+   Slim Modern Scrollbar
+--------------------------- */
+
+/* Chrome, Edge, Safari */
+.dropdown-content::-webkit-scrollbar {
+    width: 6px;              /* thinner width */
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent; /* clean look */
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* Firefox */
+.dropdown-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.25) transparent;
+}
+
 .dropdown:hover > .dropdown-content,
 .dropdown-content:hover {
   display: block;
@@ -831,11 +865,28 @@ html, body {
         }
         
         .device-image img {
-            max-width: 850px;
+            width: 100%;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border: 3px solid #e2e8f0;
+            object-fit: contain;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .device-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .device-image,
+            .device-info {
+                width: 100%;
+            }
+
+            .device-image img {
+                width: 100%;
+                max-width: 100%;
+            }
         }
         
         .device-info {
@@ -1643,7 +1694,7 @@ html, body {
       }
       
       .btn {
-        width: 100%;
+        width: 80%;
       }
       
       .step {

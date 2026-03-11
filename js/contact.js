@@ -1,130 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const successMessage = document.getElementById('successMessage');
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileOverlay = document.getElementById('mobileOverlay');
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Set year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Set min date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('date').min = today;
-
-    // Mobile menu toggle
-    hamburgerBtn.addEventListener('click', () => {
-        mobileOverlay.classList.toggle('active');
-        hamburgerBtn.setAttribute('aria-expanded', mobileOverlay.classList.contains('active'));
-    });
-
-    // Close overlay when clicking link
-    document.querySelectorAll('.mobile-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileOverlay.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-        });
-    });
-
-    // Close overlay on ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) {
-            mobileOverlay.classList.remove('active');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    // Form submission
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        clearErrors();
-
-        let isValid = true;
-
-        // Name
-        const name = document.getElementById('name').value.trim();
-        if (!name) {
-            showError('name', 'Name is required.');
-            isValid = false;
-        }
-
-        // Email
-        const email = document.getElementById('email').value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email) {
-            showError('email', 'Email is required.');
-            isValid = false;
-        } else if (!emailRegex.test(email)) {
-            showError('email', 'Please enter a valid email address.');
-            isValid = false;
-        }
-
-        // Phone (optional but validated if present)
-        const phone = document.getElementById('phone').value.trim();
-        if (phone && !/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phone.replace(/\D/g, ''))) {
-            showError('phone', 'Please enter a valid phone number (e.g., 123-456-7890).');
-            isValid = false;
-        }
-
-        // Date
-        const dateInput = document.getElementById('date').value;
-        if (!dateInput) {
-            showError('date', 'Please select a contact date.');
-            isValid = false;
-        }
-
-        // Message
-        const message = document.getElementById('message').value.trim();
-        if (!message) {
-            showError('message', 'Message is required.');
-            isValid = false;
-        } else if (message.length < 10) {
-            showError('message', 'Message must be at least 10 characters.');
-            isValid = false;
-        }
-
-        if (isValid) {
-            submitBtn.disabled = true;
-            const originalText = submitBtn.querySelector('span').textContent;
-            submitBtn.querySelector('span').textContent = 'Sending...';
-
-            // Simulate API call
-            setTimeout(() => {
-                form.reset();
-                successMessage.classList.remove('hidden');
-                submitBtn.disabled = false;
-                submitBtn.querySelector('span').textContent = originalText;
-
-                // Auto-hide success
-                setTimeout(() => {
-                    successMessage.classList.add('hidden');
-                }, 5000);
-            }, 800);
-        }
-    });
-
-    // Focus/blur animations
-    document.querySelectorAll('input, textarea').forEach(el => {
-        el.addEventListener('focus', () => {
-            el.parentElement.style.transform = 'translateY(-3px)';
-        });
-        el.addEventListener('blur', () => {
-            el.parentElement.style.transform = '';
-        });
-    });
-
-    // Helper functions
-    function showError(fieldId, message) {
-        const errorSpan = document.getElementById(`${fieldId}Error`);
-        errorSpan.textContent = message;
-    }
-
-    function clearErrors() {
-        document.querySelectorAll('.error').forEach(el => el.textContent = '');
-    }
-
-
-      const hamburger = document.getElementById('hamburgerBtn');
+    /* ==========================
+       MOBILE MENU
+    ========================== */
+    const hamburger = document.getElementById('hamburgerBtn');
     const overlay = document.getElementById('mobileOverlay');
 
     function toggleMenu() {
@@ -141,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         });
     });
+});
 
 
-    const waBtn = document.getElementById("waBtn");
+
+const waBtn = document.getElementById("waBtn");
   const chatWidget = document.getElementById("chatWidget");
   const closeChat = document.getElementById("closeChat");
 
@@ -157,113 +38,140 @@ document.addEventListener('DOMContentLoaded', () => {
     waBtn.style.display = "flex";
   });
 
-  // ===== SUB-DROPDOWN TOGGLE =====
-    document.querySelectorAll('.sub-dropbtn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const parent = btn.closest('.sub-dropdown');
 
-            // Close others
-            document.querySelectorAll('.sub-dropdown.active').forEach(item => {
-                if (item !== parent) {
-                    item.classList.remove('active');
-                }
-            });
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'block';
+        });
 
-            parent.classList.toggle('active');
+        dropdown.addEventListener('mouseleave', () => {
+            const content = dropdown.querySelector('.dropdown-content');
+            if (content) content.style.display = 'none';
         });
     });
 
-    // Close all sub-dropdowns on outside click
-    document.addEventListener('click', (e) => {
-        const isInsideDropdown = e.target.closest('.dropdown');
-        if (!isInsideDropdown) {
-            document.querySelectorAll('.sub-dropdown.active').forEach(item => {
-                item.classList.remove('active');
+    document.querySelectorAll('.sub-dropdown').forEach(sub => {
+        const btn = sub.querySelector('.sub-dropbtn');
+        const content = sub.querySelector('.sub-dropdown-content');
+
+        if (btn && content) {
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelectorAll('.sub-dropdown-content')
+                    .forEach(c => c.style.display = 'none');
+                content.style.display =
+                    content.style.display === 'block' ? 'none' : 'block';
             });
         }
     });
+
+
+
+
+
+
+ function isMobile() {
+  return window.innerWidth <= 991;
+}
+
+// MAIN DROPDOWN (Products / Solutions)
+document.querySelectorAll(".mobile-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
+});
+
+// SUB-DROPDOWN
+document.querySelectorAll(".mobile-sub-dropbtn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    if (!isMobile()) return;   // 🚫 desktop safety
+    e.stopPropagation();
+    btn.parentElement.classList.toggle("active");
+  });
 });
 
 
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+const form = document.getElementById("contactForm");
+const successBox = document.getElementById("successMessage");
+
+form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     let isValid = true;
 
-    // Inputs
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const date = document.getElementById("date");
-    const message = document.getElementById("message");
+    // Inputs map
+    const inputs = {
+        name: document.getElementById("name"),
+        email: document.getElementById("email"),
+        phone: document.getElementById("phone"),
+        date: document.getElementById("date"),
+        message: document.getElementById("message")
+    };
 
-    // Error spans
-    const nameError = document.getElementById("nameError");
-    const emailError = document.getElementById("emailError");
-    const phoneError = document.getElementById("phoneError");
-    const dateError = document.getElementById("dateError");
-    const messageError = document.getElementById("messageError");
+    const errors = {
+        name: document.getElementById("nameError"),
+        email: document.getElementById("emailError"),
+        phone: document.getElementById("phoneError"),
+        date: document.getElementById("dateError"),
+        message: document.getElementById("messageError")
+    };
 
-    // Clear previous errors
-    [nameError, emailError, phoneError, dateError, messageError].forEach(el => el.textContent = "");
+    // Clear old errors
+    Object.values(errors).forEach(el => el.textContent = "");
 
     /* -----------------------
-       Name Validation
+       Name
     ----------------------- */
-    if (name.value.trim().length < 3) {
-        nameError.textContent = "Name must be at least 3 characters.";
+    if (inputs.name.value.trim().length < 3) {
+        errors.name.textContent = "Name must be at least 3 characters.";
         isValid = false;
     }
 
     /* -----------------------
-       Email Validation
+       Email
     ----------------------- */
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value.trim())) {
-        emailError.textContent = "Please enter a valid email address.";
+    if (!emailPattern.test(inputs.email.value.trim())) {
+        errors.email.textContent = "Please enter a valid email address.";
         isValid = false;
     }
 
     /* -----------------------
-       Phone Validation
+       Phone
     ----------------------- */
-    /* -----------------------
-   Phone Validation (Not Null)
------------------------ */
-if (phone.value.trim() === "") {
-    phoneError.textContent = "Phone number is required.";
-    isValid = false;
-} else {
     const phonePattern = /^[0-9+\-\s()]{8,15}$/;
-    if (!phonePattern.test(phone.value.trim())) {
-        phoneError.textContent = "Please enter a valid phone number.";
-        isValid = false;
-    }
-}
-
-
-    /* -----------------------
-       Date Validation
-    ----------------------- */
-    const selectedDate = new Date(date.value);
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    if (!date.value) {
-        dateError.textContent = "Please select a preferred date.";
-        isValid = false;
-    } else if (selectedDate < today) {
-        dateError.textContent = "Date cannot be in the past.";
+    if (!phonePattern.test(inputs.phone.value.trim())) {
+        errors.phone.textContent = "Please enter a valid phone number.";
         isValid = false;
     }
 
     /* -----------------------
-       Message Validation
+       Date (safe compare)
     ----------------------- */
-    if (message.value.trim().length < 10) {
-        messageError.textContent = "Message must be at least 10 characters.";
+    if (!inputs.date.value) {
+        errors.date.textContent = "Please select a preferred date.";
+        isValid = false;
+    } else {
+        const selected = new Date(inputs.date.value + "T00:00:00");
+        const today = new Date();
+        today.setHours(0,0,0,0);
+
+        if (selected < today) {
+            errors.date.textContent = "Date cannot be in the past.";
+            isValid = false;
+        }
+    }
+
+    /* -----------------------
+       Message
+    ----------------------- */
+    if (inputs.message.value.trim().length < 10) {
+        errors.message.textContent = "Message must be at least 10 characters.";
         isValid = false;
     }
 
@@ -271,12 +179,25 @@ if (phone.value.trim() === "") {
        Success
     ----------------------- */
     if (isValid) {
-        document.getElementById("successMessage").classList.remove("hidden");
-        document.getElementById("contactForm").reset();
+        successBox.classList.remove("hidden");
 
-        // Optional: Auto hide success message after 4 seconds
+        form.reset();
+
         setTimeout(() => {
-            document.getElementById("successMessage").classList.add("hidden");
+            successBox.classList.add("hidden");
         }, 4000);
     }
+});
+
+
+/* =================================
+   BONUS: live validation (better UX)
+================================= */
+
+document.querySelectorAll("#contactForm input, #contactForm textarea")
+.forEach(field => {
+    field.addEventListener("input", () => {
+        const err = document.getElementById(field.id + "Error");
+        if (err) err.textContent = "";
+    });
 });

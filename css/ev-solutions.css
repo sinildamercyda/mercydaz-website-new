@@ -383,12 +383,46 @@ body {
     margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
-    overflow: hidden;
+    max-height: 320px; 
+    overflow-y: auto;
+    overflow-x: hidden;
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+
+
+/* ---------------------------
+   Slim Modern Scrollbar
+--------------------------- */
+
+/* Chrome, Edge, Safari */
+.dropdown-content::-webkit-scrollbar {
+    width: 6px;              /* thinner width */
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: transparent; /* clean look */
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* Firefox */
+.dropdown-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.25) transparent;
+}
+
 .dropdown:hover > .dropdown-content,
 .dropdown-content:hover {
   display: block;
@@ -806,13 +840,14 @@ body {
   text-align: center;
   font-size: 2.2rem;
   font-weight: 700;
+  color: black;
   margin-bottom: 10px;
 }
 
 .section-subtitle {
   text-align: center;
   font-size: 1rem;
-  color: #6b7280;
+  color: #0b0d11;
   margin-bottom: 40px;
 }
 
@@ -1041,7 +1076,7 @@ body {
   padding: 80px 20px;
 }
 .contact-us-section p{
-  color: #fff;
+  color: #171616;
   text-align: center;
 
 }
