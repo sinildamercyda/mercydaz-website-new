@@ -344,6 +344,41 @@
             ✅ Thank you! Your message has been sent.
         </div>
     </div>
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          const formData = {
+              name: document.getElementById("name").value,
+              address: document.getElementById("address").value,
+              phone: document.getElementById("phone").value,
+              email: document.getElementById("email").value,
+              preferredDateMeeting: document.getElementById("date").value
+          };
+
+          fetch("http://mercydapro.mercydatrack.com/summitAcc/queries", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify(formData)
+          })
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error("Failed to send message");
+              }
+              return response.text();
+          })
+          .then(() => {
+              document.getElementById("successMessage").classList.remove("hidden");
+              document.getElementById("contactForm").reset();
+          })
+          .catch(error => {
+              console.error(error);
+              alert("Something went wrong. Please try again.");
+          });
+      });
+      </script>
 
     <!-- Footer -->
    <footer class="footer">
