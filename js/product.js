@@ -42,54 +42,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ===== TAB SWITCHING (Modern Product Categories) =====
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Skip if already active
-            if (btn.classList.contains('active')) return;
-
-            const targetTab = btn.dataset.tab;
-
-            // Update buttons
-            tabBtns.forEach(b => {
-                b.classList.remove('active');
-                b.setAttribute('aria-selected', 'false');
-            });
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-
-            // Hide all panes FIRST (prevents layout jump)
-            tabPanes.forEach(pane => {
-                pane.classList.remove('active');
-                pane.setAttribute('aria-hidden', 'true');
-            });
-
-            // Show target pane after tiny delay (ensures display:none applied)
-            setTimeout(() => {
-                const targetPane = document.getElementById(`panel-${targetTab}`);
-                if (targetPane) {
-                    targetPane.classList.add('active');
-                    targetPane.setAttribute('aria-hidden', 'false');
-
-                    // Trigger staggered product reveal
-                    const cards = targetPane.querySelectorAll('.stagger-item');
-                    cards.forEach((card, i) => {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 50 + i * 100);
-                    });
-                }
-            }, 10);
-        });
-
-        
+   // Tab switching with accessibility
+document.querySelectorAll('.category-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    // Update active states
+    document.querySelectorAll('.category-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
     });
+    this.classList.add('active');
+    this.setAttribute('aria-selected', 'true');
+    
+    // Show corresponding panel
+    const target = this.dataset.tab;
+    document.querySelectorAll('.tab-pane').forEach(panel => {
+      panel.classList.remove('active');
+    });
+    document.getElementById(`panel-${target}`).classList.add('active');
+    
+    // Optional: Scroll to products on mobile
+    if (window.innerWidth < 992) {
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 
     // ===== INITIAL STAGGERED ANIMATION (First Tab: Telematics) =====
     const initStagger = () => {
@@ -245,11 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-
-
-
-
  function isMobile() {
   return window.innerWidth <= 991;
 }
@@ -289,7 +260,6 @@ const observer = new IntersectionObserver(entries => {
 });
 
 scrollElements.forEach(el => observer.observe(el));
-
 
 
 // ***************************************animate product cards****************************************************
