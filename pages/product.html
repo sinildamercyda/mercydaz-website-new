@@ -265,31 +265,62 @@
           <!-- Professional Sidebar -->
           <aside class="category-sidebar" aria-label="Product Categories">
             <nav class="category-nav">
-              <button class="category-btn active" data-tab="telematics" aria-selected="true">
-                <span class="btn-icon"><i class="fas fa-satellite-dish"></i></span>
-                <span class="btn-text">Telematics</span>
-                <span class="btn-count">6</span>
-              </button>
+              <!-- Consumer Electronics -->
+              <div class="category-group">
+                <button class="category-btn active" data-category="consumer">
+                  <span class="btn-icon"><i class="fas fa-video"></i></span>
+                  <span class="btn-text">Consumer Electronics</span>
+                  <span class="btn-toggle"><i class="fas fa-chevron-down"></i></span>
+                </button>
 
-              <button class="category-btn" data-tab="safety" aria-selected="false">
-                <span class="btn-icon"><i class="fas fa-shield-halved"></i></span>
-                <span class="btn-text">Vehicle Safety</span>
-                <span class="btn-count">2</span>
-              </button>
+                <ul class="category-submenu expanded">
+                  <li>
+                    <a href="#panel-security" class="submenu-link">
+                      Security & Surveillance <span class="sub-count">3</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-              <button class="category-btn" data-tab="automotive" aria-selected="false">
-                <span class="btn-icon"><i class="fas fa-microchip"></i></span>
-                <span class="btn-text">Automotive Electronics</span>
-                <span class="btn-count">2</span>
-              </button>
+              <!-- Industrial Electronics -->
+              <div class="category-group">
+                <button class="category-btn" data-category="industrial">
+                  <span class="btn-icon"><i class="fas fa-microchip"></i></span>
+                  <span class="btn-text">Industrial Electronics</span>
+                  <span class="btn-toggle"><i class="fas fa-chevron-down"></i></span>
+                </button>
 
-              <button class="category-btn" data-tab="cctv" aria-selected="false">
-                <span class="btn-icon"><i class="fas fa-video"></i></span>
-                <span class="btn-text">CCTV & Surveillance</span>
-                <span class="btn-count">5</span>
-              </button>
+                <ul class="category-submenu">
+                  <li>
+                    <a href="#panel-mcu" class="submenu-link">
+                      MCU Control Boards <span class="sub-count">2</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Automotive Electronics -->
+              <div class="category-group">
+                <button class="category-btn active" data-category="automotive">
+                  <span class="btn-icon"><i class="fas fa-car"></i></span>
+                  <span class="btn-text">Automotive Electronics</span>
+                  <span class="btn-toggle"><i class="fas fa-chevron-down"></i></span>
+                </button>
+
+                <ul class="category-submenu expanded">
+                  <li>
+                    <a href="#panel-safety" class="submenu-link">
+                      Vehicle Safety <span class="sub-count">5</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#panel-telematics" class="submenu-link">
+                      Telematics <span class="sub-count">7</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </nav>
-            
             <!-- Optional: Sidebar Footer -->
             <div class="sidebar-footer">
               <small>Need help choosing?</small>
@@ -318,9 +349,8 @@
                 <!-- Product Card -->
                 <article class="product-card" data-aos="fade-up">
                   <div class="card-media">
-                    <img src="../assets/vtsog.jpg" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
+                    <img src="../assets/2G-1(1).png" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
                     <span class="badge badge-2g">2G</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Telematics</span>
@@ -334,13 +364,27 @@
 
                 <article class="product-card" data-aos="fade-up">
                   <div class="card-media">
-                    <img src="../assets/4G-LTE-1.jpg" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
-                    <span class="badge badge-2g">2G</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <img src="../assets/2G-1(1).png" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
+                    <span class="badge badge-2g">4G</span>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Telematics</span>
-                    <h4 class="card-title">MERCYDA VTS-140 A -2G Tracker</h4>
+                    <h4 class="card-title">MERCYDA NEW VTS-140 A -4G</h4>
+                    <p class="card-excerpt">Compact GPS tracker with real-time location, geo-fencing & remote immobilization.</p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/new-vts-140a-4g.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/4G-LTE-1(1).png" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
+                    <span class="badge badge-2g">4G</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Telematics</span>
+                    <h4 class="card-title">MERCYDA VTS-140 A -4G Tracker</h4>
                     <p class="card-excerpt">
                       Entry-level GPS tracking device designed for reliable real-time location monitoring,
                       geo-fencing alerts, and fleet tracking for small and medium vehicle fleets.
@@ -355,7 +399,6 @@
                   <div class="card-media">
                     <img src="../assets/GLS-4G+.jpg" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
                     <span class="badge badge-2g">4G+</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Telematics</span>
@@ -374,7 +417,6 @@
                   <div class="card-media">
                     <img src="../assets/gls_4g_basic.png" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
                     <span class="badge badge-2g">4G</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Telematics</span>
@@ -393,7 +435,6 @@
                   <div class="card-media">
                     <img src="../assets/GLS-adv-1.png" alt="MERCYDA VTS-140 A -2G Tracker" loading="lazy" />
                     <span class="badge badge-2g">Advanced</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Telematics</span>
@@ -410,9 +451,8 @@
 
                 <article class="product-card" data-aos="fade-up">
                   <div class="card-media">
-                    <img src="../assets/GLS-rugged-1.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <img src="../assets/Rugged-1.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
                     <span class="badge badge-2g">Rugged</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Telematics</span>
@@ -426,6 +466,25 @@
                     </div>
                   </div>
                 </article>
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/obd.jpeg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">OBD</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Telematics</span>
+                    <h4 class="card-title">OBD Tracker</h4>
+                    <p class="card-excerpt">
+                    Plug-and-play OBD tracking device that connects directly to the
+                    vehicle’s diagnostic port for instant GPS tracking and performance monitoring.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/product-obd.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+                
               </div>
             </div>
 
@@ -444,19 +503,70 @@
               <div class="product-grid">
                 <article class="product-card" data-aos="fade-up">
                   <div class="card-media">
-                    <img src="../assets/spgset.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
-                    <span class="badge badge-2g">MCD</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
+                    <img src="../assets/ecu.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">MCU</span>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Vehicle Safety</span>
-                    <h4 class="card-title">Master Control Device (MCD)</h4>
+                    <h4 class="card-title">Mercyda ECU Speed Limiter</h4>
                     <p class="card-excerpt">
-                    Centralized safety controller designed to manage vehicle monitoring
-                    systems and integrate panic alerts, GPS tracking, and driver safety features.
+                    High-precision ECU designed to control and optimize vehicle systems,
+                    ensuring efficient engine management and improved vehicle performance.
                     </p>
                     <div class="card-actions">
-                      <a href="../products/telematics/product-mcd.html" class="btn btn-primary btn-sm">View Details</a>
+                      <a href="../products/telematics/product-ecu.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/spgset.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">ECU</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Vehicle Safety</span>
+                    <h4 class="card-title">Mercyda Fuel Speed Limiter</h4>
+                    <p class="card-excerpt">
+                    Advanced fuel-controlled speed limiter system that regulates vehicle speed through fuel management, improving safety while maintaining engine efficiency.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/product-ecu.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/adas.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">ECU</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Vehicle Safety</span>
+                    <h4 class="card-title">ADAS</h4>
+                    <p class="card-excerpt">
+                    Advanced Driver Assistance System designed to enhance road safety through intelligent monitoring features such as collision alerts, lane detection, and driver assistance technologies.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/product-ecu.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/dashcam-1.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">HD</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">CCTV</span>
+                    <h4 class="card-title">Dashcams Mirror Mount</h4>
+                    <p class="card-excerpt">
+                    Mirror-mounted HD dashcam providing front-view recording,
+                    accident evidence capture, and improved driver safety monitoring.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/cctv/dashcam.html" class="btn btn-primary btn-sm">View Details</a>
                     </div>
                   </div>
                 </article>
@@ -465,7 +575,6 @@
                   <div class="card-media">
                     <img src="../assets/productsdetail.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
                     <span class="badge badge-2g">Panic</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Safety Compliance</span>
@@ -476,6 +585,74 @@
                     </p>
                     <div class="card-actions">
                       <a href="../products/telematics/product-vtpb.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+                
+              </div>
+            </div>
+
+            <!-- MCU Panel -->
+            <div id="panel-mcu" class="tab-pane" role="tabpanel">
+              <div class="category-hero">
+                <h3>MCU Control Boards</h3>
+                <p>
+                  Mercyda vehicle safety solutions are designed to protect drivers,
+                  passengers, and fleet assets through intelligent monitoring and
+                  emergency alert systems. Our products support government safety
+                  regulations and provide panic alerts, control systems, and
+                  emergency communication features for public and commercial vehicles.
+                </p>
+              </div>
+              <div class="product-grid">
+                <!-- <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/spgset.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">MCD</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Industrial Electronic</span>
+                    <h4 class="card-title">Master Control Device (MCD)</h4>
+                    <p class="card-excerpt">
+                    Centralized safety controller designed to manage vehicle monitoring
+                    systems and integrate panic alerts, GPS tracking, and driver safety features.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/product-mcd.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article> -->
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/door-keycard-sensor.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">ECU</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Industrial Electronic</span>
+                    <h4 class="card-title">Door Keycard Sensor</h4>
+                    <p class="card-excerpt">
+                    Smart access control sensor that enables secure door entry using RFID or keycard authentication, designed for modern access management and security systems.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/door-keycard.html" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="product-card" data-aos="fade-up">
+                  <div class="card-media">
+                    <img src="../assets/touch-sensing-panel.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
+                    <span class="badge badge-2g">MCU</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-category">Industrial Electronic</span>
+                    <h4 class="card-title">Touch Sensing Panel Board</h4>
+                    <p class="card-excerpt">
+                    Modern touch-enabled control panel board designed for intuitive user interaction, offering reliable touch sensing for smart control systems and industrial applications.
+                    </p>
+                    <div class="card-actions">
+                      <a href="../products/telematics/touch-sensing-panel.html" class="btn btn-primary btn-sm">View Details</a>
                     </div>
                   </div>
                 </article>
@@ -499,7 +676,6 @@
                   <div class="card-media">
                     <img src="../assets/ecu.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
                     <span class="badge badge-2g">ECU</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">Automotive Electronics</span>
@@ -514,29 +690,12 @@
                   </div>
                 </article>
 
-                <article class="product-card" data-aos="fade-up">
-                  <div class="card-media">
-                    <img src="../assets/obd.jpeg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
-                    <span class="badge badge-2g">OBD</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-category">Automotive Electronics</span>
-                    <h4 class="card-title">OBD Tracker</h4>
-                    <p class="card-excerpt">
-                    Plug-and-play OBD tracking device that connects directly to the
-                    vehicle’s diagnostic port for instant GPS tracking and performance monitoring.
-                    </p>
-                    <div class="card-actions">
-                      <a href="../products/telematics/product-obd.html" class="btn btn-primary btn-sm">View Details</a>
-                    </div>
-                  </div>
-                </article>
+                
               </div>
             </div>
 
             <!-- CCTV Panel -->
-            <div id="panel-cctv" class="tab-pane" role="tabpanel">
+            <div id="panel-security" class="tab-pane" role="tabpanel">
               <div class="category-hero">
                 <h3>CCTV & Surveillance</h3>
                 <p>
@@ -549,47 +708,8 @@
               <div class="product-grid">
                 <article class="product-card" data-aos="fade-up">
                   <div class="card-media">
-                    <img src="../assets/dashcam-1.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
-                    <span class="badge badge-2g">HD</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-category">CCTV</span>
-                    <h4 class="card-title">Dashcams Mirror Mount</h4>
-                    <p class="card-excerpt">
-                    Mirror-mounted HD dashcam providing front-view recording,
-                    accident evidence capture, and improved driver safety monitoring.
-                    </p>
-                    <div class="card-actions">
-                      <a href="../products/cctv/dashcam.html" class="btn btn-primary btn-sm">View Details</a>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="product-card" data-aos="fade-up">
-                  <div class="card-media">
-                    <img src="../assets/dashcam-2.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
-                    <span class="badge badge-2g">HD</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-category">CCTV</span>
-                    <h4 class="card-title">Dashcams</h4>
-                    <p class="card-excerpt">
-                    High-definition dashboard camera designed for continuous driving
-                    recording and incident documentation.
-                    </p>
-                    <div class="card-actions">
-                      <a href="../products/cctv/dashcam.html" class="btn btn-primary btn-sm">View Details</a>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="product-card" data-aos="fade-up">
-                  <div class="card-media">
                     <img src="../assets/cctv-dom-2.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
                     <span class="badge badge-2g">DOME</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">CCTV</span>
@@ -608,7 +728,6 @@
                   <div class="card-media">
                     <img src="../assets/cctv-wifi-2.jpg" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
                     <span class="badge badge-2g">WiFi</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">CCTV</span>
@@ -627,7 +746,6 @@
                   <div class="card-media">
                     <img src="../assets/cam-dvr-with-logo.png" alt="MERCYDA GLS-4G+ Rugged Tracker" loading="lazy" />
                     <span class="badge badge-2g">DVR</span>
-                    <button class="card-wishlist" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
                   </div>
                   <div class="card-body">
                     <span class="card-category">CCTV</span>
@@ -641,6 +759,7 @@
                     </div>
                   </div>
                 </article>
+                
               </div>
             </div>
           </div>
