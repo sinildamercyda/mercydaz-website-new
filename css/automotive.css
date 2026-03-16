@@ -5,17 +5,20 @@
 }
 
 
+/* -----------------------------------------------------------
+   GLOBAL RESET
+----------------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    overflow-x: hidden;
     font-family: "Poppins", sans-serif;
     background: #ffffff;
 }
-
 .curtain-overlay {
     background: #3a7afe;
     position: fixed;
@@ -41,6 +44,10 @@ body {
         opacity: 0;
     }
 }
+
+/* -----------------------------------------------------------
+   HEADER
+----------------------------------------------------------- */
 .main-header {
     width: 100%;
     position: fixed;
@@ -73,6 +80,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+
 }
 
 .brand-logo {
@@ -85,6 +93,9 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     color: #04034f;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 20px;
+    font-size: 30px;
     letter-spacing: 0.5px;
 }
 
@@ -93,12 +104,20 @@ body {
     vertical-align: super;
     margin-left: 2px;
 }
-
  sup {
     font-size: 24px;
     vertical-align: super;
     margin-left: 2px;
 }
+.since-text {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    color: #030e43;
+}
+
 @media (max-width: 480px) {
     .brand-title sup {
         font-size: 20px;     /* reduce superscript size */
@@ -106,6 +125,8 @@ body {
         position: relative;
     }
 }
+
+
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -176,6 +197,8 @@ body {
 
 .mobile-overlay {
     position: fixed;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     top: 0;
     right: -100%;
     width: 58%;
@@ -227,11 +250,150 @@ body {
     color: #1a73e8;
 }
 
+.store-dropdown {
+    position: relative;
+}
+
+.store-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.store-menu {
+    position: absolute;
+    top: 130%;
+    right: 0;
+    background: white;
+    min-width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 6px 0;
+    display: none;
+}
+
+
+
+.store-menu li a:hover {
+    background: #f3f6ff;
+    color: #1a73e8;
+}
+
+.store-dropdown.active .store-menu {
+    display: block;
+}
+.store-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    color: #04034f;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.app-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+/* ===============================
+   MOBILE DROPDOWN – FONT MATCH FIX
+================================ */
+
+/* Main dropdown button (Products, Solutions) */
+/* MAIN DROPDOWN (Products, Solutions etc.) */
+.mobile-dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 700;                 /* Stronger */
+    color: #04034f;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* SUB DROPDOWN (Automotive, Consumer etc.) */
+.mobile-sub-dropbtn {
+    width: 100%;
+    background: #f7f9ff;              /* light background */
+    border: none;
+    font-size: 1.15rem;               /* slightly smaller */
+    font-weight: 600;
+    color: #04034f;
+    padding: 8px 0 8px 14px;          /* indentation */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* deeper levels */
+.mobile-submenu .mobile-sub-dropdown .mobile-sub-dropbtn {
+    padding-left: 28px;               /* deeper indent */
+    font-size: 1.05rem;
+    background: #ffffff;
+}
+
+/* Hover effect */
+.mobile-dropbtn:hover,
+.mobile-sub-dropbtn:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+
+/* Arrow style difference */
+.mobile-dropdown .arrow {
+    font-size: 1rem;
+}
+
+.mobile-sub-dropdown .arrow {
+    font-size: 0.8rem;
+}
+
+/* Submenu links */
+.mobile-submenu a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #04034f;
+    padding: 8px 0 8px 40px;   /* align with deeper level */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+
+/* icon color */
+.mobile-dropbtn i {
+    color: #1a73e8;
+}
+
+.mobile-dropbtn span.left {
+    color: #04034f;
+}
+
 /* === DROPDOWN STYLES === */
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
+
+
 
 .dropbtn {
     cursor: pointer;
@@ -281,19 +443,18 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
                 0 4px 8px rgba(0, 0, 0, 0.05);
     list-style: none;
-    margin: 10px 0 0;
+    margin-top: 0; 
     padding: 8px 0;
     z-index: 1001;
      max-height: 320px; 
-    
     overflow-y: auto;
     overflow-x: hidden;
-    /* Smooth appear animation */
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     visibility: hidden;
 }
+
 
 /* ---------------------------
    Slim Modern Scrollbar
@@ -325,15 +486,32 @@ body {
     scrollbar-color: rgba(0,0,0,0.25) transparent;
 }
 
-/* Show with animation */
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content,
-.dropdown.active .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
+.dropdown:hover > .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
+
+
+
+/* Show with animation */
+/* KEEP DROPDOWN OPEN WHEN HOVERING INSIDE */
+/* ===============================
+   MOBILE DROPDOWN DEFAULT STATE
+================================ */
+
+/* Hide all mobile submenus by default */
+.mobile-submenu {
+    display: none;
+}
+
+/* Show only when active */
+.mobile-dropdown.active > .mobile-submenu,
+.mobile-sub-dropdown.active > .mobile-submenu {
+    display: block;
+}
+
 
 .dropdown-content li {
     margin: 0;
@@ -390,6 +568,58 @@ body {
     font-weight: 600;
 }
 
+/* === SUB-DROPDOWN (2nd LEVEL) === */
+.sub-dropdown {
+    position: relative;
+}
+
+/* Clickable button */
+.sub-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 12px 20px;
+}
+
+/* Hover only for visual feedback (NOT opening) */
+.sub-dropbtn:hover {
+    background-color: #f0f7ff;
+    color: #0d5ab3;
+}
+
+/* Arrow rotation */
+.sub-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Submenu (hidden by default) */
+.sub-dropdown-content {
+    display: none;
+    margin-left: 12px;
+    padding-left: 12px;
+}
+
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
+
+/* Submenu links */
+.sub-dropdown-content li a {
+    display: block;
+    padding: 10px 20px;
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.sub-dropdown-content li a:hover {
+    background-color: #e6f0ff;
+    color: #1a73e8;
+    padding-left: 24px;
+}
+
 /* -----------------------------------------------------------
    RESPONSIVE
 ----------------------------------------------------------- */
@@ -422,8 +652,6 @@ body {
         font-size: 0.9rem;
     }
 }
-
-
 
 /* ===============================
    AUTOMOTIVE HERO BASE

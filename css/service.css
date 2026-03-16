@@ -376,6 +376,137 @@ html, body {
 }
 
 
+.store-dropdown {
+    position: relative;
+}
+
+.store-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.store-menu {
+    position: absolute;
+    top: 130%;
+    right: 0;
+    background: white;
+    min-width: 180px;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 6px 0;
+    display: none;
+}
+
+
+
+.store-menu li a:hover {
+    background: #f3f6ff;
+    color: #1a73e8;
+}
+
+.store-dropdown.active .store-menu {
+    display: block;
+}
+.store-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    color: #04034f;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.app-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+/* MAIN DROPDOWN (Products, Solutions etc.) */
+.mobile-dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 700;                 /* Stronger */
+    color: #04034f;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* SUB DROPDOWN (Automotive, Consumer etc.) */
+.mobile-sub-dropbtn {
+    width: 100%;
+    background: #f7f9ff;              /* light background */
+    border: none;
+    font-size: 1.15rem;               /* slightly smaller */
+    font-weight: 600;
+    color: #04034f;
+    padding: 8px 0 8px 14px;          /* indentation */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* deeper levels */
+.mobile-submenu .mobile-sub-dropdown .mobile-sub-dropbtn {
+    padding-left: 28px;               /* deeper indent */
+    font-size: 1.05rem;
+    background: #ffffff;
+}
+
+/* Hover effect */
+.mobile-dropbtn:hover,
+.mobile-sub-dropbtn:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+
+/* Arrow style difference */
+.mobile-dropdown .arrow {
+    font-size: 1rem;
+}
+
+.mobile-sub-dropdown .arrow {
+    font-size: 0.8rem;
+}
+
+/* Submenu links */
+.mobile-submenu a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #04034f;
+    padding: 8px 0 8px 40px;   /* align with deeper level */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+
+/* icon color */
+.mobile-dropbtn i {
+    color: #1a73e8;
+}
+
+.mobile-dropbtn span.left {
+    color: #04034f;
+}
+
 /* ---------------------------
    Slim Modern Scrollbar
 --------------------------- */
