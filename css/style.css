@@ -38,6 +38,7 @@ html, body {
     }
 }
 
+
 /* -----------------------------------------------------------
    HEADER
 ----------------------------------------------------------- */
@@ -52,6 +53,24 @@ html, body {
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
 }
 
+/* -----------------------------------------------------------
+   TOLL FREE MARQUEE STRIP
+----------------------------------------------------------- */
+
+.tollfree-strip{
+    width:100%;
+    background:#fff;
+    color:#04034f;
+    font-size:13px;
+    padding:4px 0;
+    border-top:1px solid rgba(255,255,255,0.15);
+}
+
+.tollfree-strip marquee{
+    font-weight:500;
+    letter-spacing:0.4px;
+}
+
 .main-header .container {
     max-width: 1400px;
     margin: auto;
@@ -64,8 +83,40 @@ html, body {
     justify-content: space-between;
 }
 
+/* Toll Free Marquee Strip */
 
+.tollfree-strip{
+    width:100%;
+    background:#fff;
+    color:#04034f;
+    font-size:13px;
+    padding:4px 0;
+    overflow:hidden;
+    position:relative;
+}
 
+.tollfree-strip marquee{
+    display:block;
+    width:100%;
+}
+
+.scroll-text{
+    white-space: nowrap;
+    display:inline-block;
+    padding-left:100%;
+    font-weight:500;
+    letter-spacing:0.4px;
+    animation: scrollText 15s linear infinite;
+}
+
+@keyframes scrollText{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
 /* -----------------------------------------------------------
    BRANDING
 ----------------------------------------------------------- */
@@ -661,7 +712,7 @@ html, body {
   color: #ffffff;
   padding: 50px 20px 20px;
   background-color: #04034f;
-  margin-top: 60px;
+  margin-top: 100px;
   border-top: 3px solid #3a7afe;
   font-family: 'Poppins', sans-serif;
 }
@@ -799,7 +850,7 @@ html, body {
     width: 100%;
     height: 70vh;
     overflow: hidden;
-    margin-top: 90px; /* push video below header */
+    margin-top: 120px; /* push video below header */
     z-index: 1;        /* keep whole section under header */
 }
 
