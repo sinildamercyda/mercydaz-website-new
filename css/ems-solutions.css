@@ -7,11 +7,11 @@
     box-sizing: border-box;
 }
 
-html, body {
-    overflow-x: hidden;
+body {
     font-family: "Poppins", sans-serif;
     background: #ffffff;
 }
+
 .curtain-overlay {
     background: #3a7afe;
     position: fixed;
@@ -73,7 +73,6 @@ html, body {
     display: flex;
     align-items: center;
     gap: 12px;
-
 }
 
 .brand-logo {
@@ -86,9 +85,6 @@ html, body {
     font-size: 1.4rem;
     font-weight: 700;
     color: #04034f;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-bottom: 20px;
-    font-size: 30px;
     letter-spacing: 0.5px;
 }
 
@@ -102,15 +98,6 @@ html, body {
     vertical-align: super;
     margin-left: 2px;
 }
-.since-text {
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-top: 4px;
-    color: #030e43;
-}
-
 @media (max-width: 480px) {
     .brand-title sup {
         font-size: 20px;     /* reduce superscript size */
@@ -118,8 +105,6 @@ html, body {
         position: relative;
     }
 }
-
-
 /* -----------------------------------------------------------
    DESKTOP NAVIGATION
 ----------------------------------------------------------- */
@@ -242,6 +227,149 @@ html, body {
     font-size: 1.35rem;
     color: #1a73e8;
 }
+/* ===============================
+   MOBILE DROPDOWN – FONT MATCH FIX
+================================ */
+
+/* Main dropdown button (Products, Solutions) */
+.mobile-dropbtn,
+.mobile-sub-dropbtn {
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: 1.25rem;          /* SAME as .mobile-links a */
+    font-weight: 600;
+    color: #04034f;              /* SAME navy color */
+    padding: 1px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover effect – same as links */
+.mobile-dropbtn:hover,
+.mobile-sub-dropbtn:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-dropbtn .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Arrow color */
+.mobile-dropdown .arrow,
+.mobile-sub-dropdown .arrow {
+    color: #1a73e8;
+    font-size: 0.9rem;
+}
+
+/* Submenu links */
+.mobile-submenu a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #04034f;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.mobile-submenu a:hover {
+    color: #1a73e8;
+    transform: translateX(6px);
+}
+.mobile-dropbtn i {
+    color: #1a73e8; /* icon always blue */
+}
+.mobile-dropbtn span.left {
+    color: #04034f; /* text navy */
+}
+
+
+/* === DROPDOWN STYLES === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+.dropbtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #222;
+    transition: color 0.2s ease;
+}
+
+.dropbtn:hover {
+    color: #1a73e8;
+}
+
+.dropbtn::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #666;
+    transition: transform 0.25s ease, border-top-color 0.2s ease;
+}
+
+.dropbtn:hover::after,
+.dropbtn.open::after {
+    border-top-color: #1a73e8;
+}
+
+.dropbtn.open::after {
+    transform: rotate(180deg);
+}
+
+/* === ENHANCED DROPDOWN PANEL === */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 320px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
+                0 4px 8px rgba(0, 0, 0, 0.05);
+    list-style: none;
+    margin-top: 0; 
+    padding: 8px 0;
+    z-index: 1001;
+    max-height: 320px; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    visibility: hidden;
+}
 
 .store-dropdown {
     position: relative;
@@ -293,11 +421,6 @@ html, body {
     border-radius: 4px;
     object-fit: cover;
 }
-/* ===============================
-   MOBILE DROPDOWN – FONT MATCH FIX
-================================ */
-
-/* Main dropdown button (Products, Solutions) */
 /* MAIN DROPDOWN (Products, Solutions etc.) */
 .mobile-dropbtn {
     width: 100%;
@@ -378,77 +501,6 @@ html, body {
 .mobile-dropbtn span.left {
     color: #04034f;
 }
-
-/* === DROPDOWN STYLES === */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-
-
-
-.dropbtn {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    color: #222;
-    transition: color 0.2s ease;
-}
-
-.dropbtn:hover {
-    color: #1a73e8;
-}
-
-.dropbtn::after {
-    content: '';
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-left: 6px;
-    vertical-align: middle;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 5px solid #666;
-    transition: transform 0.25s ease, border-top-color 0.2s ease;
-}
-
-.dropbtn:hover::after,
-.dropbtn.open::after {
-    border-top-color: #1a73e8;
-}
-
-.dropbtn.open::after {
-    transform: rotate(180deg);
-}
-
-/* === ENHANCED DROPDOWN PANEL === */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff;
-    min-width: 320px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08),
-                0 4px 8px rgba(0, 0, 0, 0.05);
-    list-style: none;
-    margin-top: 0; 
-    padding: 8px 0;
-    z-index: 1001;
-     max-height: 320px; 
-    overflow-y: auto;
-    overflow-x: hidden;
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-    visibility: hidden;
-}
-
-
 /* ---------------------------
    Slim Modern Scrollbar
 --------------------------- */
@@ -479,13 +531,16 @@ html, body {
     scrollbar-color: rgba(0,0,0,0.25) transparent;
 }
 
-.dropdown:hover > .dropdown-content {
+.dropdown:hover > .dropdown-content,
+.dropdown-content:hover {
   display: block;
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
 }
-
+.sub-dropdown.active .sub-dropdown-content {
+    display: block;
+}
 
 
 /* Show with animation */
@@ -645,6 +700,7 @@ html, body {
         font-size: 0.9rem;
     }
 }
+
 
 
 
