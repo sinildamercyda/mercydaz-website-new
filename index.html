@@ -1256,14 +1256,26 @@
         
       </ul>
      <div class="footer-catalogue">
-        <a href="../assets/Mercydaz_Catalogue.pdf" 
-          class="catalogue-btn" 
-          download>
+        <button class="catalogue-btn" onclick="openCatalogueForm()">
           <i class="fas fa-file-pdf"></i> Download Catalogue
-        </a>
-      </div> 
+        </button>
+      </div>
     </div>
 
+
+   <div id="catalogueModal" class="catalogue-modal">
+  <div class="catalogue-modal-content">
+    <span class="close-btn" onclick="closeCatalogueForm()">&times;</span>
+
+    <h3>Get Your Catalogue</h3>
+    <p>Enter your email to receive the catalogue</p>
+
+    <form id="catalogueForm">
+      <input type="email" id="userEmail" placeholder="Enter your email" required>
+      <button type="submit">Submit & Download</button>
+    </form>
+  </div>
+</div>
   </div>
 
   <div class="footer-bottom">
@@ -1352,9 +1364,10 @@
 </div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./js/script.js"></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
 </body>
 </html>

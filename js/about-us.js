@@ -152,7 +152,7 @@ animatedItems.forEach(item => mindobserver.observe(item));
 
 
 
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
+     document.querySelectorAll('.dropdown').forEach(dropdown => {
     dropdown.addEventListener('mouseenter', () => {
         const content = dropdown.querySelector('.dropdown-content');
         if (content) content.style.display = 'block';
@@ -205,6 +205,7 @@ document.addEventListener("click", () => {
   document.querySelectorAll(".store-dropdown")
     .forEach(drop => drop.classList.remove("active"));
 });
+
 
 
 

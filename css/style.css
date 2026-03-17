@@ -3155,3 +3155,118 @@ html, body {
 #cookie-overlay {
   display: none;
 }
+
+
+/* ===== MODAL BACKDROP ===== */
+.catalogue-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* SHOW MODAL */
+.catalogue-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== MODAL BOX ===== */
+.catalogue-modal-content {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* ANIMATION WHEN OPEN */
+.catalogue-modal.active .catalogue-modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #000;
+  transform: rotate(90deg);
+}
+
+/* ===== TEXT ===== */
+.catalogue-modal h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #222;
+}
+
+.catalogue-modal p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* ===== INPUT ===== */
+#catalogueForm input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+#catalogueForm input:focus {
+  border-color: #3a7afe;
+  box-shadow: 0 0 0 3px rgba(58, 122, 254, 0.1);
+}
+
+/* ===== BUTTON ===== */
+#catalogueForm button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #3a7afe;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#catalogueForm button:hover {
+  background: #2f63d8;
+  transform: translateY(-2px);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+  .catalogue-modal-content {
+    padding: 25px 20px;
+  }
+}
