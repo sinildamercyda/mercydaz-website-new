@@ -1955,6 +1955,68 @@ html, body {
 .badge-advanced { background: #059669; color: #fff; }
 .badge-rugged { background: #dc2626; color: #fff; }
 
+/* Blurred Card Container */
+.product-card.upcoming {
+  position: relative;
+  opacity: 0.9;
+}
+
+/* Blur everything inside the card */
+.product-card.upcoming .card-media img,
+.product-card.upcoming .card-body {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+
+/* Keep ribbon sharp and unblurred */
+.badge-ribbon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  white-space: nowrap;
+  border-radius: 8px;
+  filter: none;
+  -webkit-filter: none;
+}
+
+/* Optional: Add glow effect to ribbon */
+.badge-ribbon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  border-radius: 8px;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+/* Optional: Remove blur on hover */
+.product-card.upcoming:hover .card-media img,
+.product-card.upcoming:hover .card-body {
+  filter: blur(0px);
+}
+
+.btn-disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
 .card-wishlist {
   position: absolute;
   bottom: 12px;
