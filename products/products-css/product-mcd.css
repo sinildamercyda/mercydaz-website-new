@@ -706,26 +706,17 @@ html, body {
 }
 
 /* Hero Section */
-
 .hero-section {
-    background:
-      linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-      url('../../assets/bg3.png');
-
-    background-size: cover;
-    background-position: center;
-
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('../../assets/download.jpg');
+    background-size: cover, 80% auto;
+    background-position: center, center;
     color: white;
-
     padding: 140px 0;
     margin-top: 90px;
-
     position: relative;
     overflow: hidden;
-
-    min-height: 100vh; /* full screen hero */
-    display: flex;
-    align-items: center;
+    height: 500px;
 }
 
 .hero-content {
@@ -739,48 +730,49 @@ html, body {
     animation: fadeInUp 1s ease;
 }
 
-
-@media (max-width: 768px) {
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 25px;
-  }
-
-  .cta-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 100%;
-  }
-
-  .cta-buttons a {
-    width: 100%;
-  }
-
-  .hero-section {
-    padding: 110px 20px 80px;
-    min-height: auto; /* prevent too tall mobile hero */
-  }
-
-  .product-name {
-    font-size: 28px;
-  }
-
-  .animated-title {
-    font-size: 18px;
-  }
-}
-
 .animated-title {
-    font-size: 2.0rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
     opacity: 0;
     text-align: center;
     transform: translateY(30px);
     animation: fadeInUp 1s ease forwards;
 }
+
+.product-name {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    text-align: center;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0;
+    text-align: center;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.4s forwards;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 
 .product-name {
     font-size: 3.5rem;

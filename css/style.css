@@ -310,6 +310,7 @@ html, body {
     top: 130%;
     right: 0;
     background: white;
+    z-index: 100;
     min-width: 180px;
     border-radius: 6px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
