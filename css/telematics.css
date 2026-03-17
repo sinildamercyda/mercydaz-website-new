@@ -1444,8 +1444,9 @@ html, body {
     url("../assets/telematics-bg.png");
   background-size: cover;
   background-position: center;
-  margin-top: 80px;
+  margin-top: 90px;
   padding-top: calc(80px + 10px);
+  height: 700px;
   overflow: hidden;
   color: white;
   z-index: 1;
