@@ -187,32 +187,35 @@ function initCursorEffects() {
     });
 }
 
-
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-        dropdown.addEventListener('mouseenter', () => {
-            const content = dropdown.querySelector('.dropdown-content');
-            if (content) content.style.display = 'block';
-        });
-
-        dropdown.addEventListener('mouseleave', () => {
-            const content = dropdown.querySelector('.dropdown-content');
-            if (content) content.style.display = 'none';
-        });
+   
+ document.querySelectorAll('.dropdown').forEach(dropdown => {
+    dropdown.addEventListener('mouseenter', () => {
+        const content = dropdown.querySelector('.dropdown-content');
+        if (content) content.style.display = 'block';
     });
 
-    document.querySelectorAll('.sub-dropdown').forEach(sub => {
-        const btn = sub.querySelector('.sub-dropbtn');
-        const content = sub.querySelector('.sub-dropdown-content');
+    dropdown.addEventListener('mouseleave', () => {
+        const content = dropdown.querySelector('.dropdown-content');
+        if (content) content.style.display = 'none';
+    });
+});
 
-        if (btn && content) {
-            btn.addEventListener('click', e => {
-                e.preventDefault();
-                document.querySelectorAll('.sub-dropdown-content')
-                    .forEach(c => c.style.display = 'none');
-                content.style.display =
-                    content.style.display === 'block' ? 'none' : 'block';
-            });
-        }
+    document.querySelectorAll('.sub-dropbtn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const parent = this.parentElement;
+            const submenu = parent.querySelector('.sub-dropdown-content');
+
+            // close only sibling menus
+            parent.parentElement.querySelectorAll(':scope > .sub-dropdown .sub-dropdown-content')
+                .forEach(menu => {
+                    if (menu !== submenu) menu.style.display = 'none';
+                });
+
+            submenu.style.display =
+                submenu.style.display === 'block' ? 'none' : 'block';
+        });
     });
 
 

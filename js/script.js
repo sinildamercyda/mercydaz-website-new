@@ -413,3 +413,9 @@ const observer = new IntersectionObserver((entries) => {
 solutionCards.forEach(card => observer.observe(card));
 
 
+document.getElementById("faqBtn").addEventListener("click", function() {
+  window.open(
+    "https://drive.google.com/file/d/1rjeOQ07SevhH-wBze7cRYfo_Q97jGiAG/view",
+    "_blank"
+  );
+});
