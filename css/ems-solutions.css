@@ -1489,3 +1489,37 @@ body {
 .chat-footer small {
   color: #777;
 }
+
+
+
+/* ================= VIDEO SECTION ================= */
+.video-section {
+  padding: 80px 20px;
+  background: #f8f9fc;
+  text-align: center;
+}
+
+.video-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.video-header p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+}

@@ -140,32 +140,34 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        🔗 8. SMOOTH SCROLL FOR ANCHOR LINKS
        ===================================================== */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                
-                // Close mobile menu if open
-                if (overlay?.classList.contains('active')) {
-                    toggleMenu();
-                }
-                
-                // Calculate position with header offset
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            e.preventDefault();
+
+            // FIXED
+            const overlayEl = document.getElementById('mobileOverlay');
+            if (overlayEl && overlayEl.classList.contains('active')) {
+                overlayEl.classList.remove('active');
+                document.body.style.overflow = '';
             }
-        });
+
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     });
+});
 
     /* =====================================================
        🎨 9. HEADER SCROLL EFFECT
@@ -314,27 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const content = item.querySelector('.timeline-content');
         if (!content) return;
         
-        content.addEventListener('click', (e) => {
-            // Don't toggle if clicking a link inside
-            if (e.target.closest('a')) return;
-            
-            const isActive = item.classList.contains('active');
-            
-            // Close all others
-            timelineItems.forEach(i => {
-                if (i !== item) i.classList.remove('active');
-            });
-            
-            // Toggle current
-            item.classList.toggle('active', !isActive);
-            
-            // Optional: scroll to show details on mobile
-            if (!isActive && window.innerWidth <= 768) {
-                setTimeout(() => {
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
-            }
-        });
+   
         
         // Keyboard accessibility
         content.setAttribute('tabindex', '0');

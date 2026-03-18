@@ -1055,3 +1055,58 @@ html, body {
     margin: 40px 16px;
   }
 }
+
+
+/* Global Presence */
+.global-presence {
+  padding: 80px 20px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.map-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.map-wrapper img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Markers */
+.marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff3b3b;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 59, 59, 0.8);
+  animation: pulse 1.5s infinite;
+}
+
+/* Marker Positions (adjust if needed) */
+.marker.india { top: 55%; left: 68%; }
+.marker.uae { top: 52%; left: 63%; }
+.marker.europe { top: 32%; left: 48%; }
+.marker.africa { top: 60%; left: 50%; }
+.marker.asia { top: 45%; left: 75%; }
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  70% { transform: scale(1.6); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}

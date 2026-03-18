@@ -983,9 +983,7 @@ html, body {
     filter: brightness(1.05);
 }
 .hero-btn {
-    opacity: 0;
-    animation: heroBtnReveal 1s ease forwards;
-    animation-delay: 0.6s;
+    opacity: 1; /* FIX */
 }
 
 @keyframes heroBtnReveal {
@@ -3145,3 +3143,32 @@ html {
     }
 }
 
+.hero-btn-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hero-btn {
+  padding: 12px 24px;
+  background: #3a7afe;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #2f63d6;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #3a7afe;
+  border: 2px solid #3a7afe;
+}
+
+.secondary-btn:hover {
+  background: #3a7afe;
+  color: #fff;
+}
