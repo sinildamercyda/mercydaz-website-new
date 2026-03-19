@@ -127,26 +127,36 @@ html, body {
 
 }
 
-.brand-logo {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-}
-
 .brand-title {
-    font-size: 1.4rem;
+    display: flex;
+    align-items: flex-start;
     font-weight: 700;
     color: #04034f;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-bottom: 20px;
-    font-size: 30px;
-    letter-spacing: 0.5px;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+
+    /* Responsive font size */
+    font-size: clamp(18px, 2.5vw, 32px);
+
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1;
 }
 
-.brand-title sup {
-    font-size: 34px;
-    vertical-align: super;
-    margin-left: 2px;
+/* Superscript styling */
+.brand-sup {
+    font-size: 0.45em;          /* scales automatically */
+    margin-left: 3px;
+    position: relative;
+    top: -0.6em;                /* perfect vertical alignment */
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Logo (if used beside text) */
+.brand-logo {
+    width: clamp(40px, 5vw, 55px);
+    height: auto;
+    object-fit: contain;
 }
  sup {
     font-size: 24px;

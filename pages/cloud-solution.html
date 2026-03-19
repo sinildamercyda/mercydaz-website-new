@@ -516,6 +516,10 @@
   </div>
 </section>
 
+
+
+
+
  <!-- ===================== FACILITY OVERVIEW (Modernized) ===================== -->
 <section class="facility-overview" aria-labelledby="fo-heading">
   <div class="container">
@@ -579,6 +583,26 @@
         </article>
       </div>
     </div>
+  </div>
+</section>
+
+
+
+<section class="video-section">
+  <div class="video-container">
+
+    <iframe id="youtubeVideo"
+      width="100%"
+      height="500"
+      src="https://www.youtube.com/embed/aXqpp3fDpuY?enablejsapi=1"
+      title="Mercyda Cloud Solutions"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+
+    
+
   </div>
 </section>
 
@@ -917,7 +941,7 @@
 
   <div class="footer-contact">
     <p>
-      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, North Kerala, Wayanad, Kerala - 673592
+      <strong>Address:</strong> 9/594 E, Near Govt. Technical High School, Sulthan Bathery, North Kerala - 673592
     </p>
     <p>
       <strong>Phone:</strong> <a href="tel:918921568935">+91 89215 68935</a>
@@ -1268,6 +1292,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.25 });
 
   cards.forEach(card => observer.observe(card));
+});
+
+
+
+let isPlaying = false;
+const iframe = document.getElementById("youtubeVideo");
+
+function sendCommand(command) {
+    iframe.contentWindow.postMessage(JSON.stringify({
+        event: "command",
+        func: command,
+        args: []
+    }), "*");
+}
+
+document.getElementById("playPauseBtn").addEventListener("click", function () {
+    if (!isPlaying) {
+        sendCommand("unMute");
+        sendCommand("setVolume");
+        sendCommand("playVideo");
+        this.innerHTML = "⏸ Pause";
+        isPlaying = true;
+    } else {
+        sendCommand("pauseVideo");
+        this.innerHTML = "▶ Play";
+        isPlaying = false;
+    }
 });
 
   </script>
