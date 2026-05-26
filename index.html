@@ -15,6 +15,7 @@
 
 
     <link rel="stylesheet" href="./css/style.css">
+     <link rel="stylesheet" href="./css/catelogue.css">
 
 </head>
 <body>
@@ -1299,6 +1300,15 @@
     <p>
       <strong>Phone:</strong> <a href="tel:918921568935">+91 89215 68935</a>
     </p>
+     <p>
+      <strong>West Bengal Customer care:</strong> <a href="tel:918921568935">+91 89215 68935</a>
+    </p>
+    <p>
+      <strong>Karnataka Customer care:</strong> <a href="tel:918921568935">+91 89215 68935</a>
+    </p>
+    <p>
+      <strong>Kerala Customer care:</strong> <a href="tel:918921568935">+91 89215 68935</a>
+    </p>
     <p>
       <strong>Email:</strong> <a href="mailto:mercyda@mercydaz.com">mercyda@mercydaz.com</a>
     </p>
@@ -1306,9 +1316,37 @@
 </div>
 
 </footer>
+
+
+
 <!-- FAQ Floating Button -->
 <div class="faq-float" id="faqBtn">
   <img src="./assets/faq_logo.png" alt="FAQ Support">
+</div>
+
+
+
+<!-- Chatbot Modal -->
+<div id="faqModal" class="faq-modal">
+
+  <div class="chat-container">
+
+    <!-- Header -->
+    <div class="chat-header">
+      Support Chat
+      <span id="closeFaq">✖</span>
+    </div>
+
+    <!-- Messages -->
+    <div id="chatMessages" class="chat-messages">
+      <div class="bot-msg">Hi 👋<br>Select a category to get started.</div>
+    </div>
+
+    <!-- Options -->
+    <div id="chatOptions" class="chat-options"></div>
+
+  </div>
+
 </div>
 
 <!-- WhatsApp Floating Button -->
@@ -1367,7 +1405,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="./js/script.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/catelogue.js"></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 

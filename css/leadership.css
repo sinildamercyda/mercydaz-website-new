@@ -932,7 +932,9 @@ html, body {
   color: #000;
 }
 
-
+/* ===============================
+   LEADERS SECTION
+================================ */
 .leaders-section {
   padding: 100px 20px;
   background: #f9fbff;
@@ -952,80 +954,189 @@ html, body {
   color: #666;
 }
 
-/* Grid */
+/* GRID */
 .leaders-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-/* Card */
+/* ===============================
+   LEADER CARD
+================================ */
+/* ===============================
+   LEADER CARD FIX (FINAL)
+================================ */
 .leader-card {
-  background: #fff;
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
-  text-align: center;
+  cursor: pointer;
   transition: 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* ✅ KEY FIX */
+  height: fit-content;
+  display: block;
 }
 
-/* Hover effect */
 .leader-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* Image */
+/* ===============================
+   IMAGE (FIXED)
+================================ */
 .leader-img {
-  height: 280px;
+  position: relative;
+  height: 340px;
   overflow: hidden;
 }
 
 .leader-img img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
-  transition: 0.4s;
+
+  /* ✅ FIX: show face/top properly */
+  object-position: top center;
+
+  transition: 0.5s ease;
 }
 
-.leader-card:hover img {
+/* ZOOM */
+.leader-card:hover .leader-img img {
   transform: scale(1.08);
 }
 
-/* Info */
-.leader-info {
-  padding: 20px;
-}
-
-.leader-info h3 {
-  margin-bottom: 5px;
-  font-size: 1.2rem;
-}
-
-.leader-info span {
-  color: #3a7afe;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-/* Optional glow line */
-.leader-card::after {
-  content: "";
+/* ===============================
+   NAME + DESIGNATION (VISIBLE)
+================================ */
+.leader-overlay-info {
   position: absolute;
-  left: 0;
   bottom: 0;
-  width: 0%;
-  height: 3px;
-  background: #3a7afe;
-  transition: 0.4s;
-}
-
-.leader-card:hover::after {
+  left: 0;
   width: 100%;
+  padding: 18px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.3),
+    transparent
+  );
+
+  color: #fff;
+  z-index: 2;
 }
 
+.leader-overlay-info h3 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
 
+.leader-overlay-info span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ===============================
+   DESCRIPTION OVERLAY
+================================ */
+.leader-desc {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 3, 79, 0.96);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+
+  z-index: 3;
+}
+
+/* SHOW OVERLAY */
+.leader-card:hover .leader-desc,
+.leader-card.active .leader-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BLUR IMAGE */
+.leader-card:hover .leader-img img {
+  filter: blur(3px);
+  transform: scale(1.05);
+}
+
+/* ===============================
+   DESC CONTENT
+================================ */
+.desc-content {
+  text-align: center;
+  color: #fff;
+  max-width: 260px;
+}
+
+.desc-content img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #3a7afe;
+}
+
+.desc-content h4 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.desc-content p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ===============================
+   MOBILE FIX
+================================ */
+@media (max-width: 768px) {
+  .leader-img {
+    height: 260px;
+  }
+
+  .leader-overlay-info {
+    padding: 14px;
+  }
+
+  .leader-overlay-info h3 {
+    font-size: 1rem;
+  }
+
+  .leader-overlay-info span {
+    font-size: 0.8rem;
+  }
+
+  .desc-content img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .desc-content p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===============================
+   CTA SECTION (UNCHANGED CLEAN)
+================================ */
 .leadership-cta {
   padding: 100px 20px;
   background: linear-gradient(135deg, #3a7afe, #6a5cff);
@@ -1035,25 +1146,23 @@ html, body {
   overflow: hidden;
 }
 
-/* Soft glowing background effect */
-.leadership-cta::before {
-  content: "";
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: rgba(255,255,255,0.1);
-  filter: blur(100px);
-  top: -100px;
-  left: -100px;
-}
-
+.leadership-cta::before,
 .leadership-cta::after {
   content: "";
   position: absolute;
   width: 400px;
   height: 400px;
+  filter: blur(100px);
+}
+
+.leadership-cta::before {
+  background: rgba(255,255,255,0.1);
+  top: -100px;
+  left: -100px;
+}
+
+.leadership-cta::after {
   background: rgba(255,255,255,0.08);
-  filter: blur(120px);
   bottom: -100px;
   right: -100px;
 }
@@ -1076,7 +1185,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* Buttons */
 .cta-buttons {
   display: flex;
   justify-content: center;
@@ -1092,7 +1200,6 @@ html, body {
   transition: 0.3s;
 }
 
-/* Primary */
 .cta-btn.primary {
   background: #fff;
   color: #3a7afe;
@@ -1102,7 +1209,6 @@ html, body {
   background: #eaefff;
 }
 
-/* Secondary */
 .cta-btn.secondary {
   border: 2px solid #fff;
   color: #fff;

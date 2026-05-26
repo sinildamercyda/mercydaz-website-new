@@ -1,4 +1,3 @@
-
 // ✅ GLOBAL (VERY IMPORTANT)
 function openCatalogueForm() {
   document.getElementById("catalogueModal").classList.add("active");
